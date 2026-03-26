@@ -18,3 +18,4 @@ sum += arr[i];
 avg = double(sum) / size;
 return avg;
 }
+//ok

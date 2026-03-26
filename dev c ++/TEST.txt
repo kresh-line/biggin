@@ -1,8 +1,0 @@
-#include <stdio.h>
-
-int main() {
-   int i,A[] ={ 5,10,15,20,25 };
-   for (i=0; i<10; i++)
-   printf("%d\n",A[i]);
-   getchar();
-}

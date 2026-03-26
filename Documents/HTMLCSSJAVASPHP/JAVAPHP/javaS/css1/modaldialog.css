@@ -14,6 +14,8 @@
     min-height: 300px;
     margin: auto;
     background-color:#bbbbff;
+    opacity: 0.1;
+    transition: opacity 2s ease;
 }
 
 #modaldialog .mddata header div{
@@ -24,4 +26,7 @@
 }
 #modaldialog .mddata header div span:hover{
     cursor: pointer;
+}
+#modaldialog .setopacity{
+    opacity: 1.0;
 }

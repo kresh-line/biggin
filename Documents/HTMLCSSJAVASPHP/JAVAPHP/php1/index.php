@@ -21,10 +21,13 @@ session_start();
          ΕΙΚΟΝΑ
         </div>
         <div id="center">
-        <h1> PHP ΣΕΛΙΔΑ </h1> </div>
+        <h1> PHP ΣΕΛΙΔΑ </h1> 
+        <?php echo session_id(); ?>
+        </div>
      <div id="logdialog">
 
    <?php
+
    // Διαχείριση σύνδεσης και αποσύνδεσης χρήστη
       if (isset($_GET["selection"]) && $_GET["selection"] == 8 && isset($_POST["user"])) {
       if (isset($_POST["user"]))
@@ -35,11 +38,16 @@ session_start();
     if (isset($_GET["selection"]) && $_GET["selection"] == 9) {
       if (isset($_SESSION["user"])) 
           unset($_SESSION["user"]);
+         if (isset($_SESSION["numshow"])) 
+          unset($_SESSION["numshow"]);
+         if (isset($_SESSION["images"])) 
+          unset($_SESSION["images"]);
              
       }
-         if (isset($_SESSION["user"])) 
-          echo "<p>Καλωσηρθες</p>";
-         else
+         if (isset($_SESSION["user"])) {
+          echo "<p>Καλωσηρθες " . $_SESSION["user"];
+          echo " <a href='index.php?selection=9'>Αποσύνδεση</a></p>";
+         }  else
             {
 ?>
             
@@ -80,8 +88,9 @@ session_start();
       <li><a href="index.php?selection=7">Εισαγωγη Μαθητη</a></li>
 		<li><a href="index.php?selection=4">Πληροφορίες</a></li>
       <li><a href="index.php?selection=5">Εικονες</a></li>
+      <li><a href="index.php?selection=10">Αγορες</a></li>
       <li><a href="index.php?selection=8">Συνδέση</a></li>
-      <li><a href="index.php?selection=9">Αποσύνδεση</a></li>
+     
 		</ul>
 		</div>
 	    
@@ -120,8 +129,12 @@ session_start();
          echo "<h3>Καλώς ήρθες χρήστη!</h3>";
              include("pages/page1.php");
             }
+
             else if ($_GET["selection"] == 9) {         
            echo "<h3>Έχεις αποσυνδεθεί!</h3>";
+            }
+            else if ($_GET["selection"] == 10) {
+               include ("pages/page10.php");
             }
              else {
             echo "Δεν βρέθηκε επιλογή";
@@ -145,4 +158,4 @@ session_start();
   </body>
  </html> 
 
- /*git*/
+ 

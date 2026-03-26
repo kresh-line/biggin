@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+       
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="formask.html" method="get"> 
+            <fieldset> <legend> Υπολογισμος Δ.Μ.Σ. </legend>  <br>
+                <label for="var"> Βαρος σε Kg:</label>
+                
+            <input type="number" name="var" id="var" min="10.0" max="150"  step="0.5" value="75.0" autofocus><br>
+    <label for="ipsos"> Υψος σε m:</label>
+            <input type="number" name="ipsos" id="ipsos" min="1.0" max="2.5"  step="0.1" value="1.80"><br>
+            <label> Φυλο:</label>
+            <label for="man"> Male </label>
+            <input type="radio" name="fylo" value="1" id="man" checked="male" >
+            <label for="fel"> Female </label>
+            <input type="radio" name="fylo" value="2" id="fel" > <br>
+           
+            <button type="reset"> Καθαρισμο </button>
+            <button type="submit">Υπολογισμος 
+           
+             
+            </fieldset>
+        </form> 
+        
+
+        <h2> Αποστολις Δεματος</h2>
+       <form action="formask2.html" method="get"> 
+            <fieldset> <legend> Στοιχεια </legend>  
+                 <label for="on">Οναμα:</label> 
+            <input type="text" name="on" id="on" required autofocus placeholder=" βαλε Ονομα..." title="Βαλε το ονομα σου"><br>
+      <label for="epo">Επονυμο:</label> 
+            <input type="text" name="on" id="epo" required autofocus placeholder=" βαλε επονυμο..." title="Βαλε το επονυμο σου"><br>
+      <label for="databaz">Ημερομηνια Παραδοσης:</label> 
+            <input type="date" name="datebaz" id="datebaz" ><br>
+            <label for="plat"> Πλατος δεματος σε cm:</label>
+            <input type="number" name="platos" id="plat" min="1.0" max="60"  step="0.1"value="50"><br>
+            <label for="ipsos"> Υψος δεματος σε cm :</label>
+            <input type="number" name="ipsos" id="ipsos" min="1.0" max="60"  step="0.1"value="50"> <br>
+            <label for="bar"> Βαρος δεματος:</label>
+            <input type="number" name="baros" id="bar" min="0.1" max="10"  step="0.1"value="0.5"><br>
+            <label for="epdema"> Επιλογη Courier:</label>
+            <select name="epdema" id="epdema" > 
+                <option value="1"> ΕΛΤΑ</option>
+                <option value="2"> DHL</option> 
+                <option value="3" selected> ACS</option>
+                <option value="4"> SPENDEX</option>
+                
+            </select><br>
+            <label> Ασφαλια Αποστολις:</label>
+            <label for="ye"> Ναι </label>
+            <input type="radio" name="ye" value="1" id="ye" checked="Ναι" >
+            <label for="no"> Οχι</label>
+            <input type="radio" name="no" value="2" id="no" > <br>
+             <label for="plitro">Πληκτολογηστε τθχον σχολια που εχετε:</label> 
+             <textarea name="sxolio" id="plitro" ></textarea> <br>
+             <label for="vathm">Αν εχετε ξαναχρησιμοποιησει την υπερεσια βαθμολογηστε την απο 0 εως 5:</label>
+            <input type="range" name="vathm" id="vathm" min="0" max="5" value="4"><br>
+            
+            <button type="reset"> Καθαρισμο </button>
+            <button type="submit"> Αποστολη </button>
+            
+            </fieldset>
+       </form>
+    </body>
+</html>

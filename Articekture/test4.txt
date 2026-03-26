@@ -1,0 +1,10 @@
+.text
+.globl main
+
+main:
+addi $16, $0, 59
+addi $17, $0, 8
+
+addi $18, $0, 4
+
+slt $18, $16, $17 #$18=1, if ($16>$17) else $18=0

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>  
+        <form action="forma.html" method="get"> <fieldset>
+            <label for="name">Επωνυμο:</label> 
+            <input type="text" name="on" id="on" required autofocus placeholder="Ονοματεπψνεμο..." title="Βαλε το ονομα σου"><br>
+            <label for="date">Ημ/νια Γεννησης:</label> 
+            <input type="date" name="birthdate" id="birthdate" value="2025-09-20"><br>
+            <label for ="eggamos">Ειστε Εγγαμος:</label>
+            <input type="checkbox" id="eggamos" name="eggamos" title="patise an " > <br>
+            <label for="man"> Αντρας</label><input type="radio" name="fylo" value="1" id="man" > 
+            <label for="woman" >Γυναικα </label> <input type="radio" name="fylo" value="2" id="woman"> 
+            <label for="admit" >Τιποτα </label><input type="radio" name="fylo" value="3" id="admit"checked> <br>
+            <label for="vathm">Βαθμολογια Υπηεσιων:</label>
+            <input type="range" name="vathm" id="vathm" min="0" max="10" value="2"><br>
+            
+             <label for="ipsos"> Υψος:</label>
+            <input type="number" name="ipsos" id="ipsos" min="1.0" max="2.5"  step="0.1"value="1.7"><br>
+            <label for="email"> Βαλε το EMAIL:</label>
+            <input type="email" name="email" id="email" placeholder="someone@domain.com"> <br>
+            <label for="color"> Αγαπημενο χρωμα:</label>
+            <input type="color" name="color" id="color"  value="#53B480"> <br>
+            <label for="sxolio"> Σχολια:</label>
+            <textarea name="sxolio" id="sxolio" title="πληκτρολογικο  τα εγγραφα"></textarea> <br
+                <label for="poli"> Επιλογη Πολης:</label>
+            <select name="poli" id="poli" > 
+                <option value="1"> Χανια</option>
+                <option value="2"> Ρεθυμνο</option> 
+                <option value="3" selected> Ηρακλειο</option>
+                <option value="4"> Σητεια</option>
+            </select><br>
+            
+            <label for="xora"> Επιλογη Χωρας:</label> <br>
+            <select name="xora" id="xora" multiple > 
+                <option value="1"> Ελλαδα</option>
+                <option value="2">Γαλλια </option> 
+                <option value="3"> Σπανια</option>
+                <option value="4" selected> Αλβανια</option>
+            </select><br>
+            
+            <input type="submit" value="Αποστολη">
+            <input type="reset" value="Καθαρισμος"> 
+            <input type="image" src="imgs/logos/webbrowsersimgs.png" width="100" height="100"
+                   <button type="submit"><strong> A</strong> ποστολη
+                
+            </button>
+                    <button type="reset">
+                
+            </button>
+            </fieldset>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+.mainmenu {
+   background-color: #bbbbff;
+   min-height: 40px;
+}
+
+nav.mainmenu ul {
+    display:flex;
+    flex-direction: row;
+    flex-wrap : wrap;
+    list-style-type: none;
+}
+
+nav.mainmenu ul li {
+    width:20%;
+}
+
+nav.mainmenu ul li a {
+    display:inline-block;
+    text-decoration:none;
+    width:100%;
+    background-color: #5b5bd7;
+    border:1px outset #2d2db9;  
+    color: #ffffff;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+nav.mainmenu ul li a:hover {
+    background-color: #6f6fdc;
+    border:1px inset #5b5bd7;
+    font-weight: bold;
+}
+/*Κάνε το div position: absolute ώστε να εμφανιστεί σε σχέση με τον
+κοντινότερο πρόγονό του που είναι positioned.
+Επίσης βάλε display: none για να μην φαίνεται και z-index: 1 ώστε οταν
+εμφανιστεί να εμφανιστεί πάνω από τα άλλα. */
+
+
+
+div.submenu {
+    display:none;
+    position: absolute;
+   
+    z-index:1;
+}
+/* Μόλις στο <li class="withsubmenu"> πάει το ποντίκι πάνω βάζουμε στο
+div. submenu που είναι μέσα του το display: block ώστε να εμφανιστεί το submenu.*/
+
+li.withsubmenu:hover .submenu{
+    display: block;
+}
+/* Για να διασφαλίσω ότι ο πατέρας του div ειναι positioned.*/
+li.withsubmenu {
+    position: relative;
+}
+/*
+
+Κάνε τα <li> που είναι στο submenu να είναι block για να βγούνε κάθετα και όχι
+οριζόντια όπως στο βασικό μενού που είναι οριζόντια.*/
+div.submenu ul li {
+    display: block;
+    width: 100%;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+    nav.mainmenu ul {
+        flex-direction: column;
+    }
+    nav.mainmenu ul li {
+        width:100%;
+    }
+}

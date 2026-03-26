@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+int N=15;
+double fact=1 ;
+int number=1;
+for (number=1; number<=N; number ++) ;
+{
+    fact=fact*number; 
+    
+}
+    printf("Factorial is %f", fact);
+    scanf("%d",&N);
+}

@@ -1,0 +1,31 @@
+.rot{
+    transform:rotate(45deg);
+}
+.scal{
+    transform:scale(1,0.5);
+}
+.rotscal{
+    transform:scale(1,0.5) rotate(45deg);
+}
+.t5 rot3d{
+    transform:rotate3d(1,1,1,60deg);
+}
+.strev{
+    transform:translate(100%,0%);
+}
+@keyframes anim1 {
+    from {width:300px;}
+    to {width:100px;}
+}
+
+@keyframes anim2 {
+    0%{width:300px; transform:rotate(0deg); left:0px}
+    50% {width:100px; transform:rotate(360deg);left:500px}
+    100% {width:300px;transform:rotate(0deg); left:0px}
+}
+img.movingim {
+    display: inline-block;
+    animation-name: anim1;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}

@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    margin:0px;
+    padding:0px;
+    
+}
+
+body {
+    background-color: #5555aa;
+}
+
+.pageheader {
+    min-height: 100px;
+    background-color: #ff9999;
+    display:flex;
+    flex-direction: row;
+    flex-wrap : wrap;
+}
+
+
+
+.mainarticle {
+    background-color: #bbffbb;
+    min-height: 100px;
+    width: 50%;
+}
+
+.featurearea div:nth-child(even) {
+    background-color: #ffcccc;
+    min-height: 80px;
+}
+
+.featurearea div:nth-child(odd) {
+    background-color: #ddddff;
+    min-height: 80px;
+}
+
+.pagefooter {
+    background-color: #f2f1d5;
+    min-height: 100px;
+}
+
+
+
+/* Î¤Î¿ div Ï€Î¿Ï… Ï€ÎµÏÎ¹Î­Ï‡ÎµÎ¹ ÏŒÎ»Î· Ï„Î· ÏƒÎµÎ»Î¯Î´Î± */
+
+.pagecontent {
+    width: 90%;
+    margin:auto;
+}
+
+
+#centerdiv {
+    display:flex;
+    flex-direction: row;
+    flex-wrap : wrap;
+    background-color: #ffffff;
+}
+div.leftmenu {
+    width: 15%;
+}
+main.maincontent {
+    width: 60%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap : wrap;
+}
+
+div.featurearea {
+    width: 25%;
+}
+
+
+#logoimg {
+    width:70%;
+    height:70%;
+    margin:auto;
+}
+#rightlogoimg {
+    width:70%;
+    height:70%;
+    margin:auto;
+}
+
+#leftheader {
+    width:25%;
+    text-align: center;
+}
+#centerheader {
+    width:50%;
+    text-align: center;
+}
+#rightheader {
+    width:25%;
+    text-align: center;
+}
+
+/* Î“Î¹Î± tablet Î® Î“Î¹Î± ÎºÎ¹Î½Î·Ï„ÏŒ landscape */
+@media only screen and (max-width: 800px) {
+    #centerdiv {
+        flex-direction: column;
+    }
+    
+    main.maincontent {
+        width: 100%;
+    }
+    div.featurearea {
+        width: 100%;
+    }
+    
+    .pagecontent {
+        width: 100%;
+    }
+
+}
+
+/* Î“Î¹Î± ÎºÎ¹Î½Î·Ï„ÏŒ portrait */
+@media only screen and (max-width: 600px) {
+    main.maincontent {
+        flex-direction: column;
+    }
+    
+    .mainarticle {
+        width: 100%;
+    }
+    
+    
+    #logoimg {
+        display:block;
+        width:50%;
+        height:50%;
+        margin:auto;
+    }
+    
+    .pageheader {
+        flex-direction: column;
+    }
+    
+    #leftheader {
+        width:100%;
+    }
+    #centerheader {
+        width:100%;
+    }
+    #rightheader {
+        width:100%;
+    }
+}

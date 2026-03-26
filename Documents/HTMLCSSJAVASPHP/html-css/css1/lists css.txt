@@ -1,0 +1,20 @@
+
+ul {
+    list-style-type: square; 
+list-style-image: url(" ../images/chromeimgsmall.jpg");
+list-style-position: outside;
+   
+}
+ul li {line-height: 34px;
+    vertical-align: middle;
+border: 1px solid #99000}
+
+ul.kiklos {list-style-type: circle;
+list-style-image: none; }
+
+ol{list-style-type:lower-greek;}
+ol.roman {
+    list-style-type:lower-greek;
+}
+dt {font-weight: bold;}
+dd{ font-style: italic;}

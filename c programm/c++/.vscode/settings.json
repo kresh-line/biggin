@@ -1,0 +1,7 @@
+{
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && C:/fauc/ucrt64/bin/g++ -std=c++20 $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt"
+    },
+    "code-runner.runInTerminal": true,
+    "C_Cpp.errorSquiggles": "disabled"
+}

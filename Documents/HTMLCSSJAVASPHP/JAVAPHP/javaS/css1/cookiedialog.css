@@ -1,0 +1,49 @@
+.cookiedialog {
+    position:fixed;
+    top:-250px;
+    width: 500px;
+    left: calc(100% / 2 - 250px);
+    border: 1px solid blue;
+    background-color: #eeee;
+    padding: 10;
+    border-radius: 8px;
+    z-index: 100;
+    transition: top 2s ease ;
+}
+
+.cdshow{
+    top: 20px;
+}
+
+.cookiedialog header {
+    text-align: center;
+    color: #5b5bd7;
+}
+
+.cookiedialog .cddata  {
+   margin: 10px 0px;
+   padding-left: 15px;
+}
+
+.cookiedialog .cdbuttons {
+    width: 80%;
+    margin: 20px auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.cookiedialog .cdbuttons .cdbutton {
+ width: calc(100%/ 2 - 40px);
+ background-color: #5b5bd7;
+ color: white;
+ font-weight: bold;
+ padding: 5px 2px;
+ border: 0px;
+ 
+}
+
+.cookiedialog .cdbuttons .cdbutton:hover {
+    background-color: #6f6fdc;
+    cursor: pointer;
+}

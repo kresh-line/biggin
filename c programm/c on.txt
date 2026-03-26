@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+int i,j,k,m,max;
+printf("ender numbers:");
+scanf("%d,%d,%d,%d",&i,&j,&k,&m);
+if (i>j) max =i;
+else max =j;
+if(k>max) max=k;
+if (m>max) max=m;
+printf("Max number= %d\n", max);
+
+
+
+    return 0;
+}

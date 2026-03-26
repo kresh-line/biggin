@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+int a,b,x;
+printf("ender a");
+scanf("%f",&a);
+printf("ender b");
+scanf("%f",&b);
+
+
+if (a==0)
+if(b==0)
+printf("apeires lysis\n");
+else 
+printf("den eiparxi lysi\n");
+else {
+    if(b==0), x=0;
+    
+    else x=-b/a; 
+    
+    printf ("mia lysi: x=%f\n,x");
+}
+
+
+
+
+    return 0;
+}

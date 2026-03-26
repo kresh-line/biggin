@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+int a,ypol;
+printf("Dwste akeraio:");
+scanf("%d,&a");
+ypol =a%6 ;
+ypol++;
+if (ypol==1)
+printf ("Zari=>1\n");
+else if (ypol==2)
+printf("Zari=>2\n");
+else if (ypol==3)
+printf("Zari=>3\n")
+else if (ypol==4)
+printf("Zari=>4\n");
+else if (ypol==5)
+printf("Zari=>5\n");
+else
+printf("Zari=>6\n");
+
+return 0 
+}

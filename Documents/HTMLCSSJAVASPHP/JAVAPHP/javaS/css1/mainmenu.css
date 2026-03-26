@@ -1,0 +1,85 @@
+.mainmenu {
+   background-color: #bbbbff;
+   min-height: 40px;
+}
+
+nav.mainmenu ul {
+    display:flex;
+    flex-direction: row;
+    flex-wrap : wrap;
+    list-style-type: none;
+}
+
+nav.mainmenu ul li {
+    width:20%;
+}
+
+nav.mainmenu ul li a {
+    display:inline-block;
+    text-decoration:none;
+    width:100%;
+    background-color: #5b5bd7;
+    border:1px outset #2d2db9;  
+    color: #ffffff;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+nav.mainmenu ul li a:hover {
+    background-color: #6f6fdc;
+    border:1px inset #5b5bd7;
+    font-weight: bold;
+}
+
+/* ---------------------------    Î“Î¹Î± submenu   -------------------------------- */
+
+/*  ÎšÎ¬Î½Îµ Ï„Î¿ div position:absolute ÏŽÏƒÏ„Îµ Î½Î± ÎµÎ¼Ï†Î±Î½Î¹ÏƒÏ„ÎµÎ¯ ÏƒÎµ ÏƒÏ‡Î­ÏƒÎ· Î¼Îµ Ï„Î¿Î½
+    ÎºÎ¿Î½Ï„Î¹Î½ÏŒÏ„ÎµÏÎ¿ Ï€ÏÏŒÎ³Î¿Î½ÏŒ Ï„Î¿Ï… Ï€Î¿Ï… ÎµÎ¯Î½Î±Î¹ positioned.
+    Î•Ï€Î¯ÏƒÎ·Ï‚ Î²Î¬Î»Îµ display:none Î³Î¹Î± Î½Î± Î¼Î·Î½ Ï†Î±Î¯Î½ÎµÏ„Î±Î¹ ÎºÎ±Î¹ z-index:1 ÏŽÏƒÏ„Îµ Î¿Ï„Î±Î½
+    ÎµÎ¼Ï†Î±Î½Î¹ÏƒÏ„ÎµÎ¯ Î½Î± ÎµÎ¼Ï†Î±Î½Î¹ÏƒÏ„ÎµÎ¯ Ï€Î¬Î½Ï‰ Î±Ï€ÏŒ Ï„Î± Î¬Î»Î»Î±.  */
+div.submenu {
+    display:none;
+    position:absolute;
+    z-index: 1;
+}
+
+/*  ÎœÏŒÎ»Î¹Ï‚ ÏƒÏ„Î¿ <li class="withsubmenu"> Ï€Î¬ÎµÎ¹ Ï„Î¿ Ï€Î¿Î½Ï„Î¯ÎºÎ¹ Ï€Î¬Î½Ï‰ Î²Î¬Î¶Î¿Ï…Î¼Îµ ÏƒÏ„Î¿ 
+    div.submenu Ï€Î¿Ï… ÎµÎ¯Î½Î±Î¹ Î¼Î­ÏƒÎ± Ï„Î¿Ï… Ï„Î¿ display:block ÏŽÏƒÏ„Îµ Î½Î± ÎµÎ¼Ï†Î±Î½Î¹ÏƒÏ„ÎµÎ¯ Ï„Î¿ submenu.
+*/
+li.withsubmenu:hover .submenu {
+    display: block;
+}
+
+/*  Î“Î¹Î± Î½Î± Î´Î¹Î±ÏƒÏ†Î±Î»Î¯ÏƒÏ‰ ÏŒÏ„Î¹ Î¿ Ï€Î±Ï„Î­ÏÎ±Ï‚ Ï„Î¿Ï… div ÎµÎ¹Î½Î±Î¹ positioned.   */ 
+li.withsubmenu {
+    position:relative;
+}
+
+/*  ÎšÎ¬Î½Îµ Ï„Î± <li> Ï€Î¿Ï… ÎµÎ¯Î½Î±Î¹ ÏƒÏ„Î¿ submenu Î½Î± ÎµÎ¯Î½Î±Î¹ block Î³Î¹Î± Î½Î± Î²Î³Î¿ÏÎ½Îµ ÎºÎ¬Î¸ÎµÏ„Î± ÎºÎ±Î¹ ÏŒÏ‡Î¹
+    Î¿ÏÎ¹Î¶ÏŒÎ½Ï„Î¹Î± ÏŒÏ€Ï‰Ï‚ ÏƒÏ„Î¿ Î²Î±ÏƒÎ¹ÎºÏŒ Î¼ÎµÎ½Î¿Ï Ï€Î¿Ï… ÎµÎ¯Î½Î±Î¹ Î¿ÏÎ¹Î¶ÏŒÎ½Ï„Î¹Î±.
+*/
+div.submenu ul li {
+    display: block;
+    width: 100%;
+}
+
+div.submenu ul {
+    list-style-type: none;
+}
+
+
+
+
+/* ------------------------------------------------------------------------------ */
+
+/* Î“Î¹Î± ÎºÎ¹Î½Î·Ï„ÏŒ portrait */
+@media only screen and (max-width: 600px) {
+    nav.mainmenu ul {
+        flex-direction: column;
+    }
+    nav.mainmenu ul li {
+        width:100%;
+    }
+}

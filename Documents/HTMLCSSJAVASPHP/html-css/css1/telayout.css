@@ -1,0 +1,105 @@
+/*Συμπεριέλαβε στις διαστάσεις το border και το padding */
+
+*{
+    box-sizing: border-box;
+     padding: 0px;
+     margin: 0px;
+}
+
+
+
+#div1 {
+    background-color: #7cb0c2;
+    min-height: 100px;
+    width: 70%;
+}
+
+#div2 {
+    background-color: #bbffbb;
+    min-height: 100px;
+    width: 30%;
+}
+
+#div3 {
+    background-color: #ffcccc;
+    min-height: 50px;
+    
+}
+
+#div4 {
+    background-color: #9ed6be;
+    min-height: 300px;
+    width: 25%;
+}
+
+#div5 {
+    background-color: #ddf5ff;
+    min-height: 150px;
+    width: 55%;
+}
+
+#div6 {
+    background-color: #f6f5d5;
+    min-height: 60px;
+}
+#headerdiv{
+    display:flex;
+    flex-direction: row;
+    flex-wrap : wrap;
+  
+}
+#middlediv {
+    display:flex;
+    flex-direction: row;
+    flex-wrap : wrap;
+  
+}
+
+#extradiv {
+    background-color: #2accac;
+    min-height: 300px;
+    width: 20%;
+}
+nav.mainmenu ul {
+    display:flex;
+    flex-direction: row;
+    flex-wrap : wrap;
+    list-style:  none;
+    background-color: #5b5bd7;
+    min-height: 30px;
+   
+}
+nav.mainmenu ul li {
+    width: 16.6%;
+    
+}
+
+nav.mainmenu ul li a  {
+    display: inline-block;
+    width:100%;
+    text-decoration: none;
+    color: white;
+    border: 1px inset #2d2db9;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+nav.mainmenu ul li a:hover  {
+    background-color: #6b6be7;
+    font-weight: bold;
+}
+
+
+@media only screen and (max-width: 800px){
+    #div5{width:75%;}
+    #extradiv{width: 100%;}
+}
+
+@media only screen and (max-width: 500px){
+   nav.mainmenu ul {
+    flex-direction:column;}
+   
+   nav.mainmenu ul li {
+    width: 100%;}
+}

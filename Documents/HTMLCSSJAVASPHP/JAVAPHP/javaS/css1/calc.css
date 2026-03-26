@@ -1,0 +1,23 @@
+
+
+#calcapp {
+    width:300px;
+}
+
+#calcapp  input {
+    width:100%;
+    display: block;
+    text-align: right;
+}
+
+#calcapp div {
+
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+
+}
+#calcapp div button {
+    width:25%;
+    min-height: 30px;
+}

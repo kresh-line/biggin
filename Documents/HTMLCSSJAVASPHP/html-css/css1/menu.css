@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+    background-color: rgb(240, 160, 160);
+    width:400px;
+    border:50px solid red;
+    padding:30px;
+    margin: auto;
+}
+
+
+#outdiv {
+    display: block;
+    background-color: rgb(160, 160, 160);
+    width:600px;
+    height:500px;
+    border:10px;
+    padding:10px;
+}
+
+span {
+    display:inline-block;
+    background-color: rgb(160, 250, 160);
+    width:400px;
+    height:200px;
+}
+
+/* MENU */
+nav a {
+    display: inline-block; 
+    background-color: rgb(50, 50, 120);
+    color: white;
+    width: 20%;
+    min-height: 30px;
+    text-decoration: none; 
+    text-align: center;
+    padding:10px 10px 10px 10px 
+}
+nav a:hover  {
+    background-color: rgb(90,90,190);
+}
+nav a:active {
+    font-weight:bolder;
+}

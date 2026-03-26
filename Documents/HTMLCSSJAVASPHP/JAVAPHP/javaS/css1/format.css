@@ -1,0 +1,38 @@
+#myclock {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: blue;
+}
+#divimgs {
+    display:flex;
+    flex-direction:row;
+    flex-wrap :wrap;
+}
+#divimgs div {
+    width: 20%;
+}
+#divimgs div img {
+    width: 100%;
+    opacity: 0.6;
+    display: block;
+        
+}
+#divimgs div img:hover {
+    width: 95%;
+    margin:auto;
+    opacity:1.0;
+    cursor: pointer;
+}
+#targetimg {
+    width: 80%;
+    display: inline-block;
+    margin:auto;
+}
+input [type="number"] {
+    width: 50px;
+
+}
+span.errormsg {
+    color: red;
+    font-weight: bold;
+}

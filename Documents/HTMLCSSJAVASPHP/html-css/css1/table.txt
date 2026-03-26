@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            table, th, td {
+                border: 1px dashed black;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption> Τιτλος Πινακας </caption>
+            <tr>
+                <th>Επικεφαλιδα Α</th>
+                <th>Επικεφαλιδα Β</th>
+                <th>Επικεφαλιδα G</th>
+
+            </tr> 
+            <tr>
+                <td colspan="3">περιεχομενο 1</td>
+               
+
+            </tr> 
+            <tr>
+                <td>περιεχομενο 4</td>
+                
+                <td colspan="2" , rowspan="2">περιεχομενο 5</td>
+                
+            </tr> 
+<tr>
+               
+                
+            </tr> 
+
+        </table>
+
+    </body>
+</html>

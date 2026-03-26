@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/pinakes.css"> 
+    </head>
+    <body>
+        
+        <form action="" method="post">
+            <fieldset>
+                <legend>Στοιχεία</legend>
+                
+            <label for="prod">Προϊόν: </label> 
+            <input type="text" name="prod" id="prod" autofocus required><br>
+            <label for="price">Τιμή: </label> 
+            <input type="number" name="price" id="price" min="0.0" step="0.01" value="5.0" required><br>
+            <label for="pd">Ημ/νία Παραγωγής: </label> 
+            <input type="date" name="pd" id="pd" value="2026-01-10" required><br>
+            
+            <label>Μονάδα: </label> 
+            <input type="radio" name="unit" id="unit1" value="1" checked>
+            <label for="unit1">Τεμάχια </label> 
+            <input type="radio" name="unit" id="unit2" value="2">
+            <label for="unit2">Κιλά </label> <br>
+            
+            <label for="dest">Προορισμός: </label>
+            <select name="dest" id="dest">
+                <option value="1">Χανιά</option>
+                <option value="2">Ρέθυμνο</option>
+                <option value="3" selected>Ηράκλειο</option>
+                <option value="4">Λασίθι</option>
+            </select><br>
+            
+            <button type="submit">Αποστολή</button>
+            <button type="reset">Καθαρισμός</button> 
+            </fieldset>
+        </form>   
+        
+        
+        <table class="pinstyle1">
+            <caption>Ομάδα ....</caption>
+            <tr><th>Κατάταξη</th><th>Όνομα</th><th>Χρόνος</th></tr>
+            <tr><td>1</td><td>Όνομα 1</td><td>Χρόνος</td></tr>
+            <tr><td>2</td><td>Όνομα 2</td><td>Χρόνος</td></tr>
+            <tr><td>3</td><td>Όνομα 3</td><td>Χρόνος</td></tr>
+            <tr><td>4</td><td>Όνομα 5</td><td>Χρόνος</td></tr>
+        </table>
+        
+    </body>
+</html>

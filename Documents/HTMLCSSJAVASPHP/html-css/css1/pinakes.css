@@ -1,0 +1,38 @@
+table.pinstyle1 {
+    width:50%;
+    margin:auto;
+    border:1px solid blue;
+    border-collapse: collapse;
+}
+
+table.pinstyle1 tr td {
+    border:1px solid blue;
+    
+}
+
+table.pinstyle1 tr th {
+    border:1px solid blue;
+    background-color: #ffffff;
+}
+
+table.pinstyle1 caption {
+    color: #2d2db9;
+    background-color: #dddddd;
+}
+
+table.pinstyle1 tr:nth-child(3n) {
+    background-color: #c0e0eb;
+}
+
+table.pinstyle1 tr:nth-child(3n+1) {
+    background-color: #a5c8d4;
+}
+
+table.pinstyle1 tr:nth-child(3n+2) {
+    background-color: #7cb0c2;
+}
+
+table.pinstyle1 td:nth-child(3n+1){
+    text-align:center;
+}
+

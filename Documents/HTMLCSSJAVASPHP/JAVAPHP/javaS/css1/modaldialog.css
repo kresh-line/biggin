@@ -1,0 +1,27 @@
+#modaldialog{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(255,255,255,0.7);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+}
+#modaldialog .mddata{
+    width: 50%;
+    min-height: 300px;
+    margin: auto;
+    background-color:#bbbbff;
+}
+
+#modaldialog .mddata header div{
+    text-align: right;
+}
+#modaldialog .mddata header div span{
+    font-size: 24px;
+}
+#modaldialog .mddata header div span:hover{
+    cursor: pointer;
+}

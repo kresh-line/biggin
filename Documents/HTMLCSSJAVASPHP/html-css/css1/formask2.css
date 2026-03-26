@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+}
+
+form.fs1 {
+    width:60%;
+    min-width: 400px;
+    margin:auto;
+    
+}
+
+form.fs1 fieldset legend {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #777777;
+    text-align: center;
+}
+
+form.fs1 fieldset {
+    background-color: #f4f7f8; 
+    box-shadow: 4px 4px 10px #999999;
+    border: 1px solid #777777;
+    border-radius: 5px;
+}
+
+form.fs1 fieldset label {
+    display: inline-block;
+    width: 40%;
+    margin: 10px 0px 10px 0px;
+}
+
+form.fs1 fieldset input {
+    display: inline-block;
+    width: 30%;
+    height: 25px;
+}
+
+form.fs1 fieldset input[type=radio] {
+    width: 10%;
+    height: 15px;
+}
+
+form.fs1 fieldset label.lsmall {
+    width:15%;
+}
+
+form.fs1 fieldset button {
+    width:25%;
+    min-width: 160px;
+    height:35px;
+    background-color: #1abc9c;
+    border: 0px;
+    box-shadow: 2px 2px 10px #999999;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size:1.05em;
+}
+
+form.fs1 fieldset button:hover {
+    background-color: #2accac;
+}
+
+form.fs1 fieldset button:active {
+    background-color: #0aac8c;
+}
+
+/* Second Form */
+
+form.fs2 {
+    width:80%;
+    min-width: 700px;
+    margin:auto;
+    
+}
+
+form.fs2 fieldset legend {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #777777;
+    text-align: center;
+}
+
+form.fs2 fieldset {
+    background-color: #f4f7f8; 
+    box-shadow: 4px 4px 10px #999999;
+    border: 1px solid #777777;
+    border-radius: 5px;
+}
+
+
+form.fs2 fieldset label {
+    display: inline-block;
+    width: 23%;
+    margin: 10px 0px 10px 0px;
+}
+
+form.fs2 fieldset input {
+    display: inline-block;
+    width: 23%;
+    height: 25px;
+}
+
+form.fs2 fieldset input[type=text] {
+    width: 60%;
+}
+
+form.fs2 fieldset input[type=radio] {
+    width: 10%;
+    height: 15px;
+}
+
+form.fs2 fieldset label.lbig {
+    width: 35%;
+    min-height: 80px;
+    vertical-align: top;
+}
+
+form.fs2 fieldset textarea {
+    width: 60%;
+}
+form.fs2 fieldset input[type=range] {
+    width: 60%;
+}
+
+form.fs2 fieldset button {
+    width:25%;
+    min-width: 160px;
+    height:35px;
+    background-color: #1abc9c;
+    border: 0px;
+    box-shadow: 2px 2px 10px #999999;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size:1.05em;
+}
+
+form.fs2 fieldset button:hover {
+    background-color: #2accac;
+}
+
+form.fs2 fieldset button:active {
+    background-color: #0aac8c;
+}
+
+form.fs2 fieldset input:focus, 
+form.fs2 fieldset select:focus, 
+form.fs2 fieldset textarea:focus
+{
+    background-color: #f7f3e6;
+}

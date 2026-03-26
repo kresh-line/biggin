@@ -1,0 +1,72 @@
+
+* {
+    box-sizing: border-box;
+    margin:0px;
+}
+
+div {
+    min-height: 100px;
+}
+
+div:nth-child(3n) {
+    background-color: #ff9999;
+}
+
+div:nth-child(3n+1) {
+    background-color: #99ff99;
+}
+
+div:nth-child(3n+2) {
+    background-color: #9999ff;
+}
+#fd {
+    background-color: white;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    width:70%;
+}
+#fd div {
+    
+    width: 50%;
+    border: 1px solid black;
+}
+#middle {
+    background-color: white;
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#div7 {
+    width: 30%;
+}
+
+#hd {
+    
+    background-color: white;
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap; 
+}
+#hd div {
+    width:50%;
+    border: 1px solid black;
+} /* ΓΙΑ TABLET*/
+@media only screen and (max-width: 800px) {
+    
+    #middle {flex-direction: column;}
+    
+    
+
+#fd , #div7 {
+    width: 100%;}
+
+}
+@media only screen and (max-width: 600px) {
+    #fd {flex-direction: column;
+    width: 100%}
+    
+    #fd div {
+        width:100%;
+    }
+}

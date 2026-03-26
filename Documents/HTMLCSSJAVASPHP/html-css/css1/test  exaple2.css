@@ -1,0 +1,17 @@
+
+p {color: antiquewhite;
+font-size:30px;
+font-weight:800;
+font-style:italic;
+font-family: Arial;
+tex-align: center;} 
+*{ font-family: sans-serif;
+}
+article { background-color: #ccccff; }
+.advert { background-color: #ccffcc; }
+#art1 {color: #3333ff;}
+
+
+p#art1 { color: #3333ff}
+
+h3, section, .advert, #art1 { color: #3333ff}

@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/forms.css"> 
+    </head>
+    <body>
+        
+        <form class="fs1" action="formaskiseis.html" method="get">
+            <fieldset>
+                <legend>Υπολογισμός Δ.Μ.Σ.</legend>
+                
+            <label for="varos">Βάρος σε Kg: </label> 
+            <input type="number" name="varos" id="varos" min="10.0" max="150.0" step="0.5" value="75.0" autofocus required>
+            <label for="ipsos">Ύψος σε m: </label> 
+            <input type="number" name="ipsos" id="ipsos" min="0.5" max="2.5" step="0.05" value="1.65" required>
+
+            <label>Φύλο: </label> 
+            <input type="radio" name="fylo" id="man" value="1" checked>
+            <label class="lsmall" for="man">Male </label> 
+            <input type="radio" name="fylo" id="woman" value="2">
+            <label class="lsmall" for="woman">Female </label>
+            
+            <button type="reset">Καθαρισμός</button>    
+            <button type="submit">Υπολογισμός</button>
+            
+            </fieldset>
+        </form>
+        
+        
+<h1>Αποστολή Δέματος</h1>
+
+<form class="fs2" action="formaskiseis.html" method="post">
+<fieldset>
+<legend>Στοιχεία</legend>
+<label for="onoma">Όνομα:</label>
+<input type="text" id="onoma" name="onoma" required>
+<label for="eponimo">Επώνυμο:</label>
+<input type="text" id="eponimo" name="eponimo" required>
+<label for="imparad">Ημερομηνία Παράδοσης:</label> 
+<input type="date" id="imparad" name="imparad" required>
+<label for="platosdem">Πλάτος δέματος σε cm:</label> 
+<input type="number" id="platosdem" name="platosdem" value="50" min="5" max="100" step="1" required>
+<label for="ipsosdem">Ύψος δέματος σε cm:</label> 
+<input type="number" id="ipsosdem" name="ipsosdem" value="50" min="5" max="100" step="1" required>
+<label for="varosdem">Βάρος δέματος:</label> 
+<input type="number" id="varosdem" name="varosdem" value="0.5" min="0.1" max="5" step="0.1">
+<label for="cour">Επιλογή Courier:</label>
+<select name="cour" id="cour">
+    <option value="ΕΛΤΑ">ΕΛΤΑ</option>
+    <option value="ΓΤ">ΓΕΝΙΚΗ ΤΑΧΥΔΡΟΜΙΚΗ</option>
+    <option value="ACS" selected>ACS</option>
+</select><br>
+<label>Ασφάλεια Αποστολής:</label>
+<input type="radio" name="asfaleia" id="asfnai" value="1" checked> <label for="asfnai">Ναι</label>
+<input type="radio" name="asfaleia" id="asfoxi" value="0"> <label for="asfoxi">Όχι</label>
+<br>
+<label class="lbig" for="sxolia">Πληκτρολογήστε τυχόν σχόλια που έχετε:</label>
+<textarea id="sxolia" name="sxolia" cols="50" rows="5" 
+          placeholder="Βάλε τα σχόλιά σου ..."></textarea>
+<br>
+<label class="lbig" for="vathm">Αν έχετε ξαναχρησιμοποιήσει την υπηρεσία βαθμολογήστε την από 0 έως 5:</label>
+<input type="range" id="vathm" name="vathm" value="3" min="0" max="5" step="1"><br>
+<label></label>
+<button type="submit">Αποστολή</button>
+<button type="reset">Καθαρισμός</button>
+</fieldset>
+</form>
+        
+        
+        
+        
+    </body>
+</html>

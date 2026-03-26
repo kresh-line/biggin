@@ -1,0 +1,7 @@
+ <img
+              srcset="images/msiproh610m-g.jpg 1352w ,images/Sheet-Pan-Dinner-019.jpg 800w"
+          sizes="(max-width: 1280px) 800px, 1352px"
+          
+          src="images/msiproh610m-g.jpg" 
+          
+          

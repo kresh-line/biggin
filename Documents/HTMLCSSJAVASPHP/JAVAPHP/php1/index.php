@@ -89,8 +89,6 @@ session_start();
 		<li><a href="index.php?selection=4">Πληροφορίες</a></li>
       <li><a href="index.php?selection=5">Εικονες</a></li>
       <li><a href="index.php?selection=10">Αγορες</a></li>
-      <li><a href="index.php?selection=8">Συνδέση</a></li>
-     
 		</ul>
 		</div>
 	    
@@ -125,8 +123,10 @@ session_start();
            include("pages/page7.php"); 
          
            }
-         else if ($_GET["selection"] == 8) {         
-         echo "<h3>Καλώς ήρθες χρήστη!</h3>";
+         else if ($_GET["selection"] == 8) {
+            if (isset($_SESSION["user"])) {
+               echo "<h3>Καλώς ήρθες χρήστη!</h3>";
+            }
              include("pages/page1.php");
             }
 

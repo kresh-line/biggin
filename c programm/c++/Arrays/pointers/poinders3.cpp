@@ -18,7 +18,7 @@ cout << *current << '\n';
 }
 int main ()
 {
-int numbers[] = {10,20,30};
+int numbers[] = {10,20,30,40,50};
 increment_all (numbers,numbers+3);
 print_all (numbers,numbers+3);
 return 0;

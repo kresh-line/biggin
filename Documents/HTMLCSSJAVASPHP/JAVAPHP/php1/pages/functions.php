@@ -1,12 +1,12 @@
 <?php 
-function showProducts() {
+function showProducts($q) {
 
 // Create connection
 // με οναμα χρήστη root και χωρίς κωδικό πρόσβασης και με όνομα βάσης δεδομένων productsdb
 $conn = mysqli_connect("localhost", "root", "", "productsdb");
 
 
-$res = mysqli_query($conn, "select * from products");
+$res = mysqli_query($conn, $q);
 
 //δες ποσες εγγραφές υπάρχουν
 $num = mysqli_num_rows($res);

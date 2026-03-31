@@ -30,7 +30,7 @@ function printUploadForm() {
    <form  enctype="multipart/form-data" action="index.php?selection=11" method="post">
     <fieldset>
         <legend> Ανέβασμα Αρχείων</legend>
-        <input type="hidden" name="MAX_FILE_SIZE" value="30000">
+        <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
         <label for="file">Επελεγμένο Αρχείο που θα ανεβάσεις:</label>
         <input type="file" name="f" id="f" required >
         

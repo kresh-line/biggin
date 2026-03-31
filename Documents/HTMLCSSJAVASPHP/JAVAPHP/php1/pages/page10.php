@@ -1,3 +1,3 @@
 <?php 
-showProducts("SELECT * FROM products WHERE price > 100");
+showRecords("SELECT * FROM categories", 2);
 ?>

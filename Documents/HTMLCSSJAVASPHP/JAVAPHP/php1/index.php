@@ -89,6 +89,7 @@ include("pages/functions.php");
 		<li><a href="index.php?selection=4">Πληροφορίες</a></li>
       <li><a href="index.php?selection=5">Εικονες</a></li>
       <li><a href="index.php?selection=10">Αγορες</a></li>
+      <li><a href="index.php?selection=10">Ανεβασμα Αρχείων</a></li>
 		</ul>
 		</div>
 	    
@@ -135,6 +136,9 @@ include("pages/functions.php");
             }
             else if ($_GET["selection"] == 10) {
                include ("pages/page10.php");
+            }
+            else if ($_GET["selection"] == 11) {
+               include ("pages/page11.php");
             }
              else {
             echo "Δεν βρέθηκε επιλογή";

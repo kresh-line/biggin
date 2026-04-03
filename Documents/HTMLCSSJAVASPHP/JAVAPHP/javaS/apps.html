@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="css1/cookiedialog.css">
         <link rel="stylesheet" type="text/css" href="css1/modaldialog.css">
         <script src="js1/cookiedialog.js" defer></script>
+        <script src="js1/modaldialog.js" defer></script>
     </head>
     <body>
         <div id="calcapp">
@@ -65,8 +66,9 @@
 
         </div>
         <div id="modaldialog"> 
-            <div class="mddata">
-                <header><div><span onclick="document.getElementById('modaldialog').style.display='none'">&times;</span> </div> </header>
+            
+            <div id="mddatadiv" class="mddata">
+                <header><div><span id="mdclose">[Close]</span></div> </header>
                 <p> Αυτή είναι μια απλή αριθμομηχανή.
                     Μπορείτε να κάνετε μαθηματικές πράξεις όπως πρόσθεση,
                     αφαίρεση, πολλαπλασιασμό και διαίρεση.
@@ -75,3 +77,4 @@
         </div>
     </body>
 </html>
+<!-- 31.03.2026 -->

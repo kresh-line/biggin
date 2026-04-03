@@ -10,18 +10,29 @@
     align-items: center;
 }
 #modaldialog .mddata{
-    width: 50%;
-    min-height: 300px;
+    width: 20%;
+    height: 20%;
+    
     margin: auto;
     background-color:#bbbbff;
+    opacity: 0.1;
+    transition: opacity 5s ease, width 5s ease;
+   
 }
 
 #modaldialog .mddata header div{
     text-align: right;
 }
 #modaldialog .mddata header div span{
-    font-size: 24px;
+  cursor: pointer;
 }
 #modaldialog .mddata header div span:hover{
     cursor: pointer;
+    
+}
+#modaldialog .setopacity{
+    width: 50%; 
+    height: 50%;
+    opacity: 1.0;
+   
 }

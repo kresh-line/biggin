@@ -1,4 +1,17 @@
+
 <?php
+if(isset($_SESSION["user"])){
+if (isset($_SESSION["images"])) 
+$_SESSION["images"]++;
+else {
+    $_SESSION["images"]=1;
+}
+echo "<p> Ειναι η " . $_SESSION["images"] . "η φορα </p>";
+}
+?>
+
+<?php
+if (isset($_SESSION["user"])) {
 $carimgs = ["car1.1.jpg","car2.2.jpg","car3.3.jpg","car4.4.jpg","car5.5.jpg"];
 
 $carnum = count($carimgs);
@@ -21,3 +34,8 @@ function showCar(src) {
     img.style.display = 'block';
 }
 </script>
+<?php
+} else {
+    echo "<p>Δεν έχεις δικαίωμα. Παρακαλώ κάνε login.</p>";
+}
+?>

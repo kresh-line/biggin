@@ -30,9 +30,16 @@ echo "</table>";
 
 
 <h2>Μαθητές</h2>
+
 <?php
-if (isset($_SESSION["user"])) {
+if (isset($_SESSION["numshow"])) 
+$_SESSION["numshow"]++;
+else {
+    $_SESSION["numshow"]=1;
+}
+echo "<p> Ειναι η " . $_SESSION["numshow"] . "η φορα </p>";
 //Ανοιγο το αρχειο για διαβασμα
+if (isset($_SESSION["user"])) {
 $fp1 = fopen("data/mathites.txt", "r");
 ?>
 

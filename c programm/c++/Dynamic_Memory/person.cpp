@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-
+#include <sstream>
 using namespace std;
 
 typedef struct
@@ -9,7 +9,6 @@ typedef struct
     string name;
     string address;
     string telephone;
-    /* data */
 } Person;
 
 int main()
@@ -17,25 +16,25 @@ int main()
     Person p1;
     Person *person_ptr;
     person_ptr = &p1;
-    cout << "Dwse id: ";
-    cin >> p1.id;
+    string mystr;
 
-    cin.ignore();
+    cout << "Dwse kodiko: ";
+    getline(cin, mystr);
+    stringstream(mystr) >> p1.id;
 
     cout << "Dwse onoma: ";
     getline(cin, p1.name);
+    // stringstream(mystr) >> p1.name;
 
-    cout << "Dwse dieuthnsi: ";
+    cout << "Dwse dieuthinsi: ";
     getline(cin, p1.address);
+    // stringstream(mystr) >> p1.address;
 
-    cout << "Dwse tilefono: ";
+    cout << "Dwse tilefwno: ";
     getline(cin, p1.telephone);
+    // stringstream(mystr) >> p1.telephone;
 
-    cout << "Ta stoixeia tou atomou einai: " << endl;
-    cout << "Id: " << person_ptr->id << endl;
-    cout << "Onoma: " << person_ptr->name << endl;
-    cout << "Dieuthnsi: " << person_ptr->address << endl;
-    cout << "Tilefono: " << person_ptr->telephone << endl;
-    cin.get();
-    return 0;
+    cout << "Stoixeia:" << endl;
+    cout << person_ptr->id << " " << person_ptr->name << " ";
+    cout << person_ptr->address << " " << person_ptr->telephone << " ";
 }

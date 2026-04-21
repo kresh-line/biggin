@@ -36,3 +36,17 @@ span.errormsg {
     color: red;
     font-weight: bold;
 }
+#parentmovdiv {
+   overflow: hidden;
+   height: 150px;
+}
+#movdiv {
+    position: relative;
+    top: 105px;
+    /*z-index: -100;*/
+}
+#movdiv img {
+    width: 50%;
+    
+   
+}

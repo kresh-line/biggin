@@ -63,7 +63,7 @@ int main()
     getline(cin, mystr);
     stringstream(mystr) >> n;
 
-    vector<Account> accounts(n);
+    vector<Account> accounts;
     
     readAccounts(accounts);
     printAccounts(accounts);

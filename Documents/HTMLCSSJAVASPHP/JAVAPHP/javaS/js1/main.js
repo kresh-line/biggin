@@ -36,9 +36,14 @@ function changeBGColor(e) {
         alert ("Πατησε σε image");
 }
 
-function getvalue() {
+/*function getvalue() {
     let v = prompt('Δωσε τιμη:');
     
+}
+    */
+   // arrow function 
+let getvalue = () => {
+    let v = prompt('Δωσε τιμη:');
 }
 
 function printvalue() {

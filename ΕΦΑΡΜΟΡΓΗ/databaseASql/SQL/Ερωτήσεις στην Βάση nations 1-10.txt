@@ -40,5 +40,10 @@
 
 
 8.	Εμφανίστε το όνομα και την περιοχή που ανήκει η κάθε χώρα
+				
+				SELECT countries.name, regions.name
+				FROM countries, regions
+				WHERE countries.region_id = regions.region_id;
+
 9.	Εμφανίστε το όνομα και την ήπειρο που ανήκει η κάθε περιοχή.
 10.	Εμφανίστε το όνομα και την ήπειρο  που ανήκει η κάθε χώρα

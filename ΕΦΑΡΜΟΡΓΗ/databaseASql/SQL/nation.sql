@@ -290,3 +290,6 @@ SELECT name
 FROM countries
 WHERE national_day > '1900-01-01'
 
+SELECT countries.name, regions.name
+FROM countries, regions
+WHERE countries.region_id = regions.region_id;

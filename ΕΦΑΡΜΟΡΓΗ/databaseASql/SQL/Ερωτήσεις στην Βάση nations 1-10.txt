@@ -1,0 +1,44 @@
+Ερωτήσεις στην Βάση nations 1-10
+1.	Εμφανίστε τα ονόματα όλων των χωρών
+
+			SELECT name 
+			FROM countries;
+
+2.	Εμφανίστε το όνομα της χώρας και την έκτασή της
+
+			SELECT name , area
+			FROM countries;
+
+3.	Εμφανίστε το όνομα και τους κωδικούς κάθε χώρας.
+			
+			SELECT name, country_code2, country_code3
+			FROM countries;
+			
+4.	Εμφανίστε το όνομα των χωρών που έχουν «εθνική μέρα»
+
+			SELECT name
+			FROM countries
+			WHERE national_day IS NOT NULL;
+
+5.	Εμφανίστε το όνομα των χωρών που δεν έχουν «εθνική μέρα»
+
+				SELECT name
+				FROM countries
+				WHERE national_day IS NULL;
+				
+6.	Εμφανίστε το πλήθος των χωρών που έχουν «εθνική μέρα»
+
+				select count(name)
+				from countries
+				WHERE national_day is not null;
+				
+7.	Εμφανίστε το όνομα των χωρών που η εθνική τους μέρα είναι μετά το 1900
+
+				SELECT name
+				FROM countries
+				WHERE national_day > '1900-01-01'
+
+
+8.	Εμφανίστε το όνομα και την περιοχή που ανήκει η κάθε χώρα
+9.	Εμφανίστε το όνομα και την ήπειρο που ανήκει η κάθε περιοχή.
+10.	Εμφανίστε το όνομα και την ήπειρο  που ανήκει η κάθε χώρα

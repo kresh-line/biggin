@@ -46,4 +46,15 @@
 				WHERE countries.region_id = regions.region_id;
 
 9.	Εμφανίστε το όνομα και την ήπειρο που ανήκει η κάθε περιοχή.
+
+				SELECT regions.name, continents.name
+				FROM regions, continents
+				WHERE regions.continent_id = continents.continent_id;
+
+
 10.	Εμφανίστε το όνομα και την ήπειρο  που ανήκει η κάθε χώρα
+				
+				SELECT countries.name, continents.name
+				FROM countries, regions, continents
+				WHERE countries.region_id = regions.region_id
+				AND regions.continent_id = continents.continent_id;

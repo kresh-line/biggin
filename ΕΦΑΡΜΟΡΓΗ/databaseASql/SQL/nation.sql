@@ -269,27 +269,37 @@ UNLOCK TABLES;
 
 -- Dump completed on 2019-10-18 11:48:19
 SELECT name , area
-FROM countries;
+  FROM countries;
 
 SELECT name, country_code2, country_code3
-FROM countries;
+  FROM countries;
 
 SELECT name
-FROM countries
-WHERE national_day IS NOT NULL;
+  FROM countries
+  WHERE national_day IS NOT NULL;
 
 SELECT name
-FROM countries
-WHERE national_day IS NULL;
+   FROM countries
+  WHERE national_day IS NULL;
 
 select count(name)
-from countries
-WHERE national_day is not null;
+  from countries
+  WHERE national_day is not null;
 
 SELECT name
-FROM countries
-WHERE national_day > '1900-01-01'
+   FROM countries
+   WHERE national_day > '1900-01-01'
 
 SELECT countries.name, regions.name
-FROM countries, regions
-WHERE countries.region_id = regions.region_id;
+   FROM countries, regions
+   WHERE countries.region_id = regions.region_id;
+
+SELECT regions.name, continents.name
+			FROM regions, continents
+			WHERE regions.continent_id = continents.continent_id;
+
+
+SELECT countries.name, continents.name
+				FROM countries, regions, continents
+				WHERE countries.region_id = regions.region_id
+				AND regions.continent_id = continents.continent_id;

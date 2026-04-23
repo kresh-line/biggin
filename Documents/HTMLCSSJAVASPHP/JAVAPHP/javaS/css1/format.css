@@ -38,11 +38,12 @@ span.errormsg {
 }
 #parentmovdiv {
    overflow: hidden;
-   height: 150px;
+   /*height: 150px;*/
 }
 #movdiv {
     position: relative;
-    top: 105px;
+    /*right:-40px;*/
+    /*top: 105px;*/
     /*z-index: -100;*/
 }
 #movdiv img {

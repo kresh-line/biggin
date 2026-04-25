@@ -4,11 +4,13 @@ graph = {}
 graph["you"] = ["alice", "bob", "claire"]
 graph["bob"] = ["anuj", "peggy"]
 graph["alice"] = ["peggy"]
-graph["claire"] = ["thom", "jonny"]
-graph["anuj"] = []
-graph["peggy"] = []
-graph["thom"] = []
-graph["jonny"] = []
+graph["claire"] = ["jon", "jonny"]
+graph["anuj"] = ["jem","thef"]
+graph["peggy"] = ["mag"]
+graph["thon"] = []
+graph["jonny"] = ["sdd","jon"]
+graph["jon"] = ["anam"]
+
 
 def person_is_seller(name):
     return name[-1] == 'm'

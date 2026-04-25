@@ -1,3 +1,4 @@
+from collections import deque
 def person_is_seller(name):
     return name[-1]=='m'
 def search(name):
@@ -10,7 +11,7 @@ def search(name):
             if person_is_seller(person):
 
              print(person + "is a mango seller!")
-            return True
+             return True
         else:
              search_queue+=graph[person]
              searched.add(person)

@@ -23,3 +23,20 @@ function moveDiv(executiontime){
 }
 
 requestAnimationFrame(moveDiv);
+/*------------------------------
+*/
+var gmdiv = document.getElementById('globalmovdiv');
+var gmtopval = 0;
+var step =2;
+
+
+function moveGMD(executiontime){
+    gmdiv.style.top = gmtopval + "px";
+    gmtopval += step;
+    if (gmtopval > window.innerHeight-gmdiv.offsetHeight || gmtopval < 0){
+        step = -step;
+    }
+    requestAnimationFrame(moveGMD);
+}
+
+requestAnimationFrame(moveGMD);

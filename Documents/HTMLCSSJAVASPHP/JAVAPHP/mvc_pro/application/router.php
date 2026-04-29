@@ -31,11 +31,7 @@ switch ($request) {
 		$selection = "USERS";
         //require __DIR__ . $viewDir . 'users.php';
 		break;
-    case $siteDir . '/parusiasi':
-        case $siteDir . '/παροθσιαση/':
-		$selection = "ΠΑΡΟΥΣΙΑΣΗ";
-        //require __DIR__ . $viewDir . 'contact.php';
-		break;
+
     case $siteDir . '/contact':
         case $siteDir . '/contact/':
 		$selection = "CONTACT";

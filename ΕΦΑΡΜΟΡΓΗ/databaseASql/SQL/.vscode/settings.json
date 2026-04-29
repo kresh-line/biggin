@@ -5,6 +5,21 @@
             "driver": "SQLite",
             "name": "kathhg",
             "database": "${workspaceFolder:SQL}/school.db"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "nations",
+            "database": "nations",
+            "username": "root",
+            "password": ""
         }
     ],
     "sqltools.useNodeRuntime": true

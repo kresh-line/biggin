@@ -365,3 +365,5 @@ FROM regions r
 JOIN countries c ON r.region_id = c.region_id
 GROUP BY r.region_id, r.name
 HAVING COUNT(c.country_id) > 10;
+
+

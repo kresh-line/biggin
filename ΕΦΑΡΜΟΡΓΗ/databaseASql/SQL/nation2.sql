@@ -269,5 +269,60 @@ UNLOCK TABLES;
 describe languages;
 
 describe continents;
-describe contry_languages;
-select continent_name, 
+describe country_languages;
+
+--01
+select count(*) from country_languages;
+
+--02
+select languages. language from languages , country_languages
+,countries
+where languages. language_id=country_languages. language_id
+and country_languages. country_id= countries. country_id and
+countries. name like 'South Africa';
+
+--03
+select countries. name, count(languages. language) from languages
+,country_languages , countries
+where languages. language_id=country_languages. language_id
+and country_languages. country_id= countries. country_id and
+countries. name like 'South Africa';
+
+--04
+select languages. language from languages , country_languages
+,countries
+where languages. language_id=country_languages.language_id
+and country_languages. country_id= countries. country_id and
+countries. name like 'South Africa'
+and official=1;
+
+--05
+select name from countries where area=(select max(area) from countries);
+
+--06
+SELECT name
+FROM countries
+WHERE area = (SELECT MIN(area) FROM countries);
+
+--07
+SELECT c.name
+FROM countries c
+JOIN country_stats cs ON c.country_id = cs.country_id
+WHERE cs.year = 2015
+  AND cs.population BETWEEN 10000 AND 100000;
+
+--08
+SELECT name
+FROM countries
+WHERE name LIKE 'A%'
+  AND national_day > '1900-01-01';
+
+--09
+SELECT name, area
+FROM countries
+WHERE area < 10000;
+
+--10
+SELECT COUNT(*) AS plithos_xoron
+FROM countries
+WHERE area > 10000;

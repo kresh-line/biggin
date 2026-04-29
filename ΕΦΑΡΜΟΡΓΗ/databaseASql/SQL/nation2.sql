@@ -326,3 +326,42 @@ WHERE area < 10000;
 SELECT COUNT(*) AS plithos_xoron
 FROM countries
 WHERE area > 10000;
+
+------------------------
+--17
+select countries.name, regions.name from
+countries,regions, continents
+where countries.region_id=regions.region_id
+and regions.continent_id=continents.continent_id
+and continents. name like '%Asia%';
+
+--18
+select name from countries order by name limit 10;
+--19
+select name from countries order by name desc limit 10;
+--20
+select name from countries order by name limit 5 offset 5;
+--21
+select name from countries order by name desc limit 5 offset 5;
+--22
+SELECT name
+FROM countries
+ORDER BY name ASC
+LIMIT 1 OFFSET 9;
+--23
+SELECT name
+FROM countries
+ORDER BY name DESC
+LIMIT 1 OFFSET 9;
+--24
+SELECT r.name, COUNT(c.country_id) AS plithos_xoron
+FROM regions r
+JOIN countries c ON r.region_id = c.region_id
+GROUP BY r.region_id, r.name;
+
+--25
+SELECT r.name, COUNT(c.country_id) AS plithos_xoron
+FROM regions r
+JOIN countries c ON r.region_id = c.region_id
+GROUP BY r.region_id, r.name
+HAVING COUNT(c.country_id) > 10;

@@ -37,15 +37,4 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                 <li><a href="/mvcproject/contact/">Επικοινωνία</a></li>
 		</ul>
 		</div>
-                <div id="content">
-        <h1>Καλωσήρθατε στην αρχική σελίδα</h1>
-    </div>
-
-	</div>
-	<div id="footer">
-           
-	</div>
-</div>
-        <script src="/mvcproject/js/main.js"></script>
-    </body>
-</html>
+            

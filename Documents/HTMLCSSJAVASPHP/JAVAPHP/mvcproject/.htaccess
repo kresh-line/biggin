@@ -1,6 +1,6 @@
 RewriteEngine On
-RewriteBase /phpprojects/mvc/
+RewriteBase /mvcproject/
 RewriteRule ^index\\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /phpprojects/mvc/index.php [L]
+RewriteRule . /mvcproject/index.php [L]

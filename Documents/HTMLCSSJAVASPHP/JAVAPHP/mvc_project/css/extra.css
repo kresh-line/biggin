@@ -1,0 +1,11 @@
+#divimgs {
+    display:flex;
+    flex-direction:row;
+    flex-wrap :wrap;
+}
+
+#targetimg {
+    width:80%;
+    display:block;
+    margin:auto;
+}

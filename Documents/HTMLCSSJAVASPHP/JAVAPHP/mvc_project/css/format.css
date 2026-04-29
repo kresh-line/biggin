@@ -1,0 +1,214 @@
+body {
+	background-color:#DFEFF0;
+}
+
+div {
+	border:0px solid #000000;
+	background-color:#ffffff;
+}
+
+/* Εξωτερικό div*/
+#main {
+	width:800px;
+	margin:auto;
+}
+
+/* header div*/
+#header {
+	min-height:100px;
+        display:flex;
+        flex-direction: row;
+        flex-wrap : wrap;
+}
+
+#logo {
+    width:20%;
+}
+#centerheader {
+    width:50%;
+}
+#logdialog {
+    width:30%;
+}
+
+#header h1 {
+	font-size:1.5em;
+	font-weight:bold;
+	text-align:center;
+	color:#444DBF;
+}
+
+/* footer div*/
+#footer {
+	height:100px;
+}
+
+#horizontal {
+	background-color:#A4BDBF;
+	padding:0 5px 0 5px;
+}
+
+/* Μεσαίο div*/
+#middle {
+	background-color:#A4BDBF;	
+	margin:0px;
+	padding:0px;
+}
+
+/* Τα 2 επόμενα divs βρίσκονται μέσα στο μεσαίο div */
+
+/* Μέσα στο μεσαίο και βρίσκεται στα αριστερά με πλάτος 30% του μεσαίου */
+#menu {
+	display:inline-block;
+	width:190px;
+	vertical-align:top;
+	background-color:#A4BDBF;
+	margin:0px;
+	border:0px;
+	padding:0px;
+}
+/* Μέσα στο μεσαίο και βρίσκεται στα δεξιά με πλάτος 68% του μεσαίου */
+#content {
+	display:inline-block;
+	width:598px;
+	vertical-align:top;
+	background-color:#ffffff;
+	margin:0px;
+	border:0px;
+	padding:0 4px 0 4px;
+	min-height:400px;
+}
+
+ul.verticalmenu {
+	list-style-type: none;
+	margin:0px;
+	padding:0px;
+}
+
+ul.verticalmenu  li {
+	display:inline-block;	
+}
+
+ul.verticalmenu  li a {
+	display:inline-block;
+	width:190px;
+	height:40px;
+	text-align:center;
+	text-decoration:none;
+	border: 1px outset #94ADAF;
+	margin:1px;
+	vertical-align: middle;
+	line-height:36px;
+	color:#ffffff;
+	font-weight: bolder;
+}
+ul.verticalmenu  li a:hover {
+	background-color:#94ADAF;
+	border: 1px inset #849D9F;
+	font-size:102%;
+}
+
+ul.horizontalmenu {
+	list-style-type: none;
+	margin:0px;
+	padding:0px;
+}
+
+ul.horizontalmenu  li {
+	display:inline-block;	
+}
+
+ul.horizontalmenu  li a {
+	display:inline-block;
+	width:190px;
+	height:20px;
+	text-align:center;
+	text-decoration:none;
+	border: 1px outset #94ADAF;
+	margin:1px;
+	vertical-align: middle;
+	line-height:18px;
+	color:#ffffff;
+}
+ul.horizontalmenu  li a:hover {
+	background-color:#94ADAF;
+	border: 1px inset #849D9F;
+	font-size:102%;
+}
+
+table.results {
+	/* συγχώνευσε ένωσε τα borders */
+	border-collapse: collapse;
+	width: 500px;
+	margin:auto;
+	/* ΣΚΙΑ */
+	-moz-box-shadow: 2px 2px 2px #333;
+	-webkit-box-shadow: 2px 2px 2px #333;
+	box-shadow: 2px 2px 2px #333;
+}
+
+table.results th, tr, td {
+	/*	Βάλε στα th, tr, td του πίνακα κλάσης 
+		results border πάχους 1, συμπαγές και
+		χρώμα #888888 */ 
+	border:1px solid #888888;
+}
+tr:nth-of-type(3n) { 
+	background-color: #b2a9cf; 
+}
+tr:nth-of-type(3n+1) { 
+	background-color:#A9C5CF; 
+}
+tr:nth-of-type(3n+2) { 
+	background-color:#b2cfa9; 
+}
+
+th {
+	background-color:#ffffff;
+}
+
+label {
+	display:inline-block;
+	width:170px;
+	color:#b2a9cf;
+}
+
+fieldset {
+	width: 400px;
+	margin:auto;
+	/* ΣΚΙΑ */
+	-moz-box-shadow: 2px 2px 2px #333;
+	-webkit-box-shadow: 2px 2px 2px #333;
+	box-shadow: 2px 2px 2px #333;
+}
+
+#loginform fieldset {
+	width: 180px;
+	margin:auto;
+	/* ΣΚΙΑ */
+	-moz-box-shadow: 2px 2px 2px #333;
+	-webkit-box-shadow: 2px 2px 2px #333;
+	box-shadow: 2px 2px 2px #333;
+}
+
+#loginform fieldset label {
+	width: 45%;
+}
+#loginform fieldset input {
+	width: 45%;
+}
+
+input.inputnumber {
+	width:40px;
+}
+input:required {
+	background-color:lightyellow;
+}
+/*
+input:required:invalid {
+	background-color:red;
+}
+*/
+input:focus {
+	background-color:#f7eed5;
+}

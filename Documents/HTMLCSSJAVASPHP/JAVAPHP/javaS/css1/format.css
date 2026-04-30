@@ -66,15 +66,30 @@ span.errormsg {
     
 }
 #globalmovdiv {
-    position: fixed;
+    /*position: fixed;*/
     /*right:-40px;*/
     top: 0px;
     z-index: 100;
-    width: 400px;
+    /*width: 400px;*/
     background-color: white;
     padding: 10px;
 }
 #globalmovdiv img {
+
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+#globalmovdiv2{
+    /*position: fixed;*/
+    /*right:-40px;*/
+    top: 0px;
+    z-index: 100;
+    /*width: 400px;*/
+    background-color: white;
+    padding: 10px;
+}
+#globalmovdiv2 img {
 
     float: left;
     width: 50%;

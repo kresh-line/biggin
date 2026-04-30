@@ -24,7 +24,7 @@ function moveDiv(executiontime){
 
 requestAnimationFrame(moveDiv);
 /*------------------------------
-*/
+
 var gmdiv = document.getElementById('globalmovdiv');
 var gmtopval = 0;
 var step =2;
@@ -39,4 +39,12 @@ function moveGMD(executiontime){
     requestAnimationFrame(moveGMD);
 }
 
-requestAnimationFrame(moveGMD);
+requestAnimationFrame(moveGMD);*/
+
+
+var d1 = new viewportAdvertising('globalmovdiv', 3, 140, 100, 300);
+requestAnimationFrame(() => d1.animleft());
+
+var d2 = new viewportAdvertising('globalmovdiv2', 3, 200, 110, 500);
+requestAnimationFrame(() => d2.animtop());
+var x =  new cleverContainer('.cleverp');

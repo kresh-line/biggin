@@ -4,16 +4,21 @@ graph = {}
 graph["you"] = ["alice", "bob", "claire"]
 graph["bob"] = ["anuj", "peggy"]
 graph["alice"] = ["peggy"]
-graph["claire"] = ["jon", "jonny"]
+graph["claire"] = ["jonny", "jon"]
 graph["anuj"] = ["jem","thef"]
 graph["peggy"] = ["mag"]
-graph["thon"] = []
+graph["thef"] = []
 graph["jonny"] = ["sdd","jon"]
 graph["jon"] = ["anam"]
+graph["mag"] = []
+graph["jem"] = []
+graph["sdd"] = []
+graph["anam"] = []
+
 
 
 def person_is_seller(name):
-    return name[-1] == 'm'
+    return name[0] == 'j'
 
 def search(name):
     search_queue = deque()

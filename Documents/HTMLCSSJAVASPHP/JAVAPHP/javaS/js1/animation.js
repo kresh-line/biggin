@@ -1,5 +1,5 @@
 
-var movdiv = document.getElementById('movdiv');
+/*var movdiv = document.getElementById('movdiv');
 var pmovdiv = document.getElementById('parentmovdiv');
 var topval = pmovdiv.offsetHeight;
 const stepval=-2;
@@ -22,7 +22,7 @@ function moveDiv(executiontime){
     requestAnimationFrame(moveDiv);
 }
 
-requestAnimationFrame(moveDiv);
+requestAnimationFrame(moveDiv);*/
 /*------------------------------
 
 var gmdiv = document.getElementById('globalmovdiv');
@@ -42,9 +42,16 @@ function moveGMD(executiontime){
 requestAnimationFrame(moveGMD);*/
 
 
-var d1 = new viewportAdvertising('globalmovdiv', 3, 140, 100, 300);
+var d1 = new viewportAdvertising('globalmovdiv', 3, 140, 100, 300, "red", 0.5);
+//console.log(d1);
 requestAnimationFrame(() => d1.animleft());
 
-var d2 = new viewportAdvertising('globalmovdiv2', 3, 200, 110, 500);
+
+var d2 = new viewportAdvertising('globalmovdiv2', 3, 200, 110, 500, "white", 1.0);
 requestAnimationFrame(() => d2.animtop());
+var d3 = new viewportAdvertising('globalmovdiv3', 3, 300, 100, 400, "blue", 1.0);
+requestAnimationFrame(() => d3.animleft());
+//var d4 = new viewportAdvertising('farea ', 2, 100, 50, 400, "green", 1.0);
+//requestAnimationFrame(() => d4.animtop());
+
 var x =  new cleverContainer('.cleverp');

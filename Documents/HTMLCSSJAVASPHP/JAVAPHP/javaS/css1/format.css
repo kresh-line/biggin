@@ -95,3 +95,19 @@ span.errormsg {
     width: 50%;
     padding: 5px;
 }
+
+#globalmovdiv3{
+    /*position: fixed;*/
+    /*right:-40px;*/
+    top: 0px;
+    z-index: 100;
+    width: 300px;
+    background-color: #66ffff;
+    padding: 10px;
+}
+#globalmovdiv3 img {
+
+    float: left;
+    width: 50%;
+    padding: 5px;
+}

@@ -1,4 +1,4 @@
-var movdiv2 = document.getElementById('movdiv2');
+/*var movdiv2 = document.getElementById('movdiv2');
 var pmovdiv2= document.getElementById('parentmovdiv2');
 
 var topval2 = pmovdiv2.offsetHeight;
@@ -16,4 +16,4 @@ function moveDiv2(){
 }
 
 //setInterval(moveDiv2, 100);
-moveDiv2();
+moveDiv2();*/

@@ -29,8 +29,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
 		<li><a href=<?php echo $GLOBALS ['siteDir'] . "/"; ?>>Αρχική Σελίδα</a></li>
          
 		<li><a href=<?php echo $GLOBALS ['siteDir'] . "/paroysiasi/"; ?>>Παρουσίαση</a></li>
-		<li><a href=<?php echo $GLOBALS ['siteDir'] . "/products/show/"; ?>>Προβολή Προϊόντων</a></li>
-        <li><a href=<?php echo $GLOBALS ['siteDir'] . "/products/add/"; ?>>Εισαγωγή Προϊόντος</a></li>
+		<li><a href=<?php echo $GLOBALS ['siteDir'] . "/product/show/"; ?>>Προβολή Προϊόντων</a></li>
+        <li><a href=<?php echo $GLOBALS ['siteDir'] . "/product/add/"; ?>>Εισαγωγή Προϊόντος</a></li>
 		
         <li><a href=<?php echo $GLOBALS ['siteDir'] . "/info/"; ?>>Πληροφορίες</a></li>
 

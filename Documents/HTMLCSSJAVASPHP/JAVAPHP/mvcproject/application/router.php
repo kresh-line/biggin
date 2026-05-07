@@ -24,7 +24,7 @@ $modelDir = 'application/models/';
 $viewDir = 'views';
 
 require_once($controllerDir . "/BasicController.php");
-require_once($controllerDir . "/StudentController.php");
+require_once($controllerDir . "/ProductController.php");
 //require_once($modelDir . "/DBConnector.php");
 
 switch ($request) {
@@ -39,15 +39,15 @@ switch ($request) {
             $bc = new BasicController();
             $bc->paroysiasi();
             break;
-    case $siteDir . '/students/show':
-	case $siteDir . '/students/show/':
-            $sc = new StudentController();
+    case $siteDir . '/products/show':
+	    case $siteDir . '/products/show/':
+            $sc = new ProductController();
             $sc->show();
             break;
             
-    case $siteDir . '/students/add':
-	case $siteDir . '/students/add/':
-            $sc = new StudentController();
+    case $siteDir . '/products/add':
+	case $siteDir . '/products/add/':
+            $sc = new ProductController();
             $sc->add();
             break;
     

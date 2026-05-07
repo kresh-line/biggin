@@ -1,5 +1,5 @@
 <?php
-require_once('$modelDir' . "/DBConnector.php");
+require_once($GLOBALS['modelDir'] . "DBConnector.php");
 class StudentController {
     private $x;
     

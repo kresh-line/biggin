@@ -8,14 +8,22 @@ class BasicController {
     }
     
     function home() {
-        require_once('views/home.php'); 
+
+        require_once($GLOBALS ['viewDir'] . '/home.php'); 
     }
     
     function paroysiasi() {
-        require_once('views/paroysiasi.php'); 
+        require_once($GLOBALS ['viewDir'] . '/paroysiasi.php'); 
     }
     
     function info() {
-        require_once('views/info.php'); 
+        require_once($GLOBALS ['viewDir'] . '/info.php'); 
     }
 }
+
+
+// CLASS DBConnector {
+//     function __construct() {
+        
+//     }
+// }

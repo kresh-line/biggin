@@ -14,13 +14,18 @@ $request = $_SERVER['REQUEST_URI'];
 $siteDir = '/mvcproject';
 
 //Αποθήκευσε το φάκελο που είναι οι controllers
-$controllerDir = '/controllers/';
+$controllerDir = 'application/controllers/';
 
 //Αποθήκευσε το φάκελο που είναι οι views
-$viewDir = '/views/';
+$modelDir = 'application/models/';
 
-require_once("application/controllers/BasicController.php");
-require_once("application/controllers/StudentController.php");
+// Η views ειναο global γιατί θα την χρησιμοποιούν οι controllers για να φορτώνουν τις σελίδες
+// Η χρήση του $GLOBALS είναι απαραίτητη γιατί οι controllers είναι σε διαφορετικό scope από τον router
+$viewDir = 'views';
+
+require_once($controllerDir . "/BasicController.php");
+require_once($controllerDir . "/StudentController.php");
+//require_once($modelDir . "/DBConnector.php");
 
 switch ($request) {
     case $siteDir:

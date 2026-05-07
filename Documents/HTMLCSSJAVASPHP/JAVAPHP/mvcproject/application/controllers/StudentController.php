@@ -1,5 +1,5 @@
 <?php
-
+require_once('$modelDir' . "/DBConnector.php");
 class StudentController {
     private $x;
     
@@ -8,11 +8,14 @@ class StudentController {
     }
     
     function show() {
-        require_once('views/students/show.php'); 
+        $dbc = new DBConnector();
+        $dbc->openConnection();
+        $dbc->closeConnection();
+        require_once($GLOBALS ['viewDir'] . '/students/show.php'); 
     }
     
     function add() {
-        require_once('views/students/add.php'); 
+        require_once($GLOBALS ['viewDir'] . '/students/add.php'); 
     }
     
 }

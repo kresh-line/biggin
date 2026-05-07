@@ -30,7 +30,7 @@ class DBConnector {
         $str="<table class='results'>";
         for ($i=0; $i<$num; $i++) {
             $r = mysqli_fetch_array($res);
-            $str .= "<tr><td>$r[0]</td><td>$r[1]</td><td>$r[2]</td></tr><td>$r[3]</td></tr>";
+            $str .= "<tr><td>$r[0]</td><td>$r[1]</td><td>$r[2]</td><td>$r[3]</td></tr>";
         }
         $str .= "</table>";
         return $str;

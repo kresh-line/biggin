@@ -39,14 +39,14 @@ switch ($request) {
             $bc = new BasicController();
             $bc->paroysiasi();
             break;
-    case $siteDir . '/products/show':
-	    case $siteDir . '/products/show/':
+    case $siteDir . '/product/show':
+	    case $siteDir . '/product/show/':
             $sc = new ProductController();
             $sc->show();
             break;
-            
-    case $siteDir . '/products/add':
-	case $siteDir . '/products/add/':
+
+    case $siteDir . '/product/add':
+	case $siteDir . '/product/add/':
             $sc = new ProductController();
             $sc->add();
             break;

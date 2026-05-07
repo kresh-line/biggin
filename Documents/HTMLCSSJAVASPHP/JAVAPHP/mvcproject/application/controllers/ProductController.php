@@ -1,23 +1,23 @@
 <?php
 require_once($GLOBALS['modelDir'] . "DBConnector.php");
-class StudentController {
+class ProductController {
     private $x;
-    
+
     function __construct() {
-        
+
     }
-    
+
     function show() {
         $dbc = new DBConnector();
         $dbc->openConnection();
         $dbc->closeConnection();
-        require_once($GLOBALS ['viewDir'] . '/students/show.php'); 
+        require_once($GLOBALS ['viewDir'] . '/product/show.php');
     }
-    
+
     function add() {
-        require_once($GLOBALS ['viewDir'] . '/students/add.php'); 
+        require_once($GLOBALS ['viewDir'] . '/product/add.php');
     }
-    
+
 }
 
 

@@ -23,4 +23,19 @@ class DBConnector {
             mysqli_close($this->conn);
         }
     }
+    function getProducts() {
+        $res = mysqli_query($this->conn, "SELECT * FROM products");
+        $num = mysqli_num_rows($res);
+
+        echo "<table class='results'>";
+        for ($i=0; $i<$num; $i++) {
+            $r = mysqli_fetch_array($res);
+        echo "<tr><td>$r[0]</td><td>$r[1]</td><td>$r[2]</td></tr>$r[3]</td></tr>";
+    }
+    echo "</table>";
+
+    }
 }
+
+
+

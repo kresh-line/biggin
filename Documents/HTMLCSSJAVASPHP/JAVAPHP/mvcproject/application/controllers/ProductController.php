@@ -10,7 +10,8 @@ class ProductController {
     function show() {
         $dbc = new DBConnector();
         $dbc->openConnection();
-        $dbc ->getProducts();
+        $GLOBALS ['results'] =  $dbc ->getProducts();
+
         $dbc->closeConnection();
         require_once($GLOBALS ['viewDir'] . '/product/show.php');
     }

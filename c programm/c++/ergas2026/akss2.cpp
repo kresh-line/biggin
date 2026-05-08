@@ -16,7 +16,7 @@ int main() {
     int synolkoiBathmoi = 0;
     int maxTermata = 0;
 
-    for (int i = 1; i <= 3; i++) {
+    for (int i = 1; i <= 28; i++) {
         cout << "Αγώνας " << i << " - Τέρματα ομάδας: ";
         cin >> termataShmeiose;
         cout << "Αγώνας " << i << " - Τέρματα αντιπάλου: ";

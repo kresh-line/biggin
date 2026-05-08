@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="sq">
+<head>
+<meta charset="utf-8" />
+<title>iPad Pratic — 14.5"</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: #f6f7f8;
+    background-image: radial-gradient(circle, #c9ccd1 1px, transparent 1px);
+    background-size: 22px 22px;
+    color: #111;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    place-items: center;
+  }
+
+  header {
+    width: 100%;
+    padding: 16px 28px 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .title {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #111;
+  }
+  .meta {
+    font-size: 12px;
+    color: #555;
+    font-variant-numeric: tabular-nums;
+  }
+  .meta b { color: #111; }
+
+  .stage {
+    width: 100%; height: 100%;
+    perspective: 2400px;
+    perspective-origin: 50% 45%;
+    display: grid; place-items: center;
+    overflow: hidden;
+  }
+
+  .rig {
+    position: relative;
+    width: 600px;
+    height: 620px;
+    transform-style: preserve-3d;
+    transform: rotateX(-12deg) rotateY(-22deg);
+    transition: transform 0.4s cubic-bezier(.2,.7,.2,1);
+  }
+  .rig.spin { animation: spin 16s linear infinite; }
+  @keyframes spin {
+    0%   { transform: rotateX(-12deg) rotateY(-22deg); }
+    50%  { transform: rotateX(-12deg) rotateY(158deg); }
+    100% { transform: rotateX(-12deg) rotateY(338deg); }
+  }
+
+  /* Pivot anchor — iPad mid-edge pivot point, rides with arm tilt */
+  .pivot-anchor {
+    position: absolute;
+    top: 290px;
+    left: 50%;
+    width: 0; height: 0;
+    transform-style: preserve-3d;
+    transform-origin: 50% 180px;
+  }
+
+  .ipad {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 520px;
+    height: 360px;
+    transform: translate(-50%, -50%) rotateX(0deg);
+    transform-origin: 50% 50%;
+    transform-style: preserve-3d;
+    transition: transform 0.4s cubic-bezier(.2,.7,.2,1);
+  }
+  .face { position: absolute; backface-visibility: hidden; }
+
+  /* FRONT — black bezel + blue screen */
+  .front {
+    inset: 0;
+    border-radius: 22px;
+    background: #0a0b0d;
+    transform: translateZ(4px);
+    box-shadow: inset 0 0 0 1px #000, inset 0 0 14px rgba(0,0,0,0.8);
+    padding: 8px;
+  }
+  .screen {
+    width: 100%; height: 100%;
+    border-radius: 14px;
+    background: radial-gradient(140% 90% at 25% 15%, #5a7da0 0%, #3a5d80 60%, #243f5c 100%);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .screen::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(115deg,
+      rgba(255,255,255,0.18) 0%,
+      rgba(255,255,255,0.04) 25%,
+      rgba(255,255,255,0) 45%);
+    pointer-events: none;
+  }
+  .notch {
+    position: absolute;
+    top: 4px; left: 50%;
+    transform: translateX(-50%);
+    width: 28px; height: 8px;
+    border-radius: 3px;
+    background: #1a1c20;
+    z-index: 2;
+  }
+
+  /* BACK — gray gradient with Apple logo */
+  .back {
+    inset: 0;
+    border-radius: 22px;
+    transform: translateZ(-4px) rotateY(180deg);
+    background: linear-gradient(135deg, #d6d9dd 0%, #b9bcc1 50%, #6c6f74 100%);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18);
+    display: grid; place-items: center;
+  }
+  .apple-logo {
+    width: 70px;
+    height: 84px;
+    fill: #2a2c30;
+    opacity: 0.85;
+    filter: drop-shadow(0 1px 0 rgba(255,255,255,0.25));
+  }
+
+  /* SIDES — 8px thick, dark aluminum */
+  .top, .bottom {
+    left: 0; width: 100%; height: 8px;
+    background: linear-gradient(180deg, #5a5d62 0%, #2a2c30 50%, #1b1d20 100%);
+  }
+  .top    { top: 0;    transform: translateY(-4px) rotateX(90deg); }
+  .bottom { bottom: 0; transform: translateY(4px) rotateX(-90deg); }
+
+  .left-face, .right-face {
+    top: 0; width: 8px; height: 100%;
+    background: linear-gradient(90deg, #1b1d20 0%, #2a2c30 50%, #5a5d62 100%);
+  }
+  .left-face  { left: 0;  transform: translateX(-4px) rotateY(-90deg); }
+  .right-face { right: 0; transform: translateX(4px) rotateY(90deg); }
+
+  /* Pivot dots at mid-edge of each side */
+  .pivot {
+    position: absolute;
+    top: 50%;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #c9ccd1 0%, #6c6f74 50%, #1a1c20 100%);
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.4);
+    z-index: 3;
+  }
+  .pivot::after {
+    content: ""; position: absolute; inset: 5px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #0a0b0d 0%, #2a2c30 80%);
+  }
+  .pivot.l { left: -22px;  transform: translateY(-50%) rotateY(-90deg); }
+  .pivot.r { right: -22px; transform: translateY(-50%) rotateY(90deg); }
+
+  /* COUNTERBALANCE ARMS */
+  .arm {
+    position: absolute;
+    width: 10px;
+    height: 180px;
+    top: 290px;
+    background: linear-gradient(90deg, #4a4d52 0%, #b9bcc1 45%, #e8eaee 60%, #b9bcc1 75%, #4a4d52 100%);
+    border-radius: 90px 90px 5px 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+    transform-origin: 50% 100%;
+  }
+  .arm.l { left: calc(50% - 245px); }
+  .arm.r { left: calc(50% + 235px); }
+  .arm::before {
+    content: "";
+    position: absolute;
+    top: -9px; left: 50%;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(circle at 35% 35%, #d4d6da 0%, #6c6f74 60%, #1a1c20 100%);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  }
+  .arm::after {
+    content: "";
+    position: absolute;
+    bottom: -3px; left: 50%;
+    width: 26px; height: 8px;
+    border-radius: 3px;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, #6c6f74, #2a2c30);
+  }
+
+  /* MAGIC KEYBOARD — 3D box */
+  .kb-box {
+    position: absolute;
+    top: 470px;
+    left: 50%;
+    width: 520px;
+    height: 360px;
+    transform: translateX(-50%) rotateX(90deg);
+    transform-origin: center top;
+    transform-style: preserve-3d;
+  }
+  .kb-face { position: absolute; backface-visibility: hidden; }
+  .keyboard {
+    inset: 0;
+    background: linear-gradient(180deg, #1a1c1f 0%, #0e1012 100%);
+    border-radius: 16px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -1px 0 rgba(0,0,0,0.6);
+    padding: 16px;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr) 110px;
+    gap: 5px;
+    transform: translateZ(15px);
+  }
+  .kb-bottom {
+    inset: 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #c9ccd1 0%, #9ea1a6 60%, #5a5d62 100%);
+    transform: translateZ(-15px) rotateY(180deg);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.45);
+  }
+  .kb-side {
+    background: linear-gradient(180deg, #2a2c30 0%, #16181b 100%);
+  }
+  .kb-side.n { top: 0;    left: 0;   width: 100%; height: 30px; transform: translateY(-15px) rotateX(90deg); transform-origin: center top; }
+  .kb-side.s { bottom: 0; left: 0;   width: 100%; height: 30px; transform: translateY(15px) rotateX(-90deg); transform-origin: center bottom; }
+  .kb-side.w { top: 0;    left: 0;   width: 30px; height: 100%; transform: translateX(-15px) rotateY(-90deg); transform-origin: left center; }
+  .kb-side.e { top: 0;    right: 0;  width: 30px; height: 100%; transform: translateX(15px) rotateY(90deg); transform-origin: right center; }
+  .trackpad {
+    justify-self: center;
+    width: 320px;
+    height: 95px;
+    margin-top: 6px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #2e3136 0%, #1d1f23 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.08),
+      inset 0 -1px 0 rgba(0,0,0,0.5),
+      inset 0 0 0 1px rgba(0,0,0,0.4);
+  }
+  .kb-row { display: grid; grid-auto-flow: column; gap: 5px; }
+  .kb-row.r1 { grid-template-columns: repeat(14, 1fr); }
+  .kb-row.r2 { grid-template-columns: 1.4fr repeat(13, 1fr); }
+  .kb-row.r3 { grid-template-columns: 1.6fr repeat(11, 1fr) 1.6fr; }
+  .kb-row.r4 { grid-template-columns: 2fr repeat(10, 1fr) 2fr; }
+  .kb-row.r5 { grid-template-columns: 1fr 1fr 1fr 6fr 1fr 1fr 1fr 1fr; }
+  .kb-key {
+    background: linear-gradient(180deg, #2b2e33, #16181b);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5);
+  }
+
+  /* Footer controls */
+  footer {
+    padding: 14px 24px 22px;
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  button.ctrl {
+    appearance: none;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: #fff;
+    color: #111;
+    padding: 9px 16px;
+    border-radius: 999px;
+    font: inherit; font-size: 13px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    transition: background 0.15s ease;
+  }
+  button.ctrl:hover { background: #f0f1f3; }
+  button.ctrl[aria-pressed="true"] { background: #111; color: #fff; border-color: #111; }
+
+  .slider-wrap {
+    display: flex; align-items: center; gap: 10px;
+    background: #fff;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(0,0,0,0.12);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    font-size: 13px;
+  }
+  .slider-wrap input { accent-color: #111; }
+  .slider-wrap output { font-variant-numeric: tabular-nums; min-width: 56px; color: #555; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="title">iPad Pratic</div>
+    <div class="meta">
+      <b>14.5"</b> display &nbsp;·&nbsp; <b>5.1mm</b> thin &nbsp;·&nbsp; 360° screen / 180° arm
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <div class="rig" id="rig">
+
+      <!-- Magic Keyboard — 3D box, always flat on the table -->
+      <div class="kb-box">
+        <div class="kb-face kb-bottom"></div>
+        <div class="kb-face kb-side n"></div>
+        <div class="kb-face kb-side s"></div>
+        <div class="kb-face kb-side w" style="width: 10px;"></div>
+        <div class="kb-face kb-side e" style="width: 10px;"></div>
+        <div class="kb-face keyboard">
+          <div class="kb-row r1">
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+            <span class="kb-key"></span><span class="kb-key"></span>
+          </div>
+          <div class="kb-row r2">
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+            <span class="kb-key"></span><span class="kb-key"></span>
+          </div>
+          <div class="kb-row r3">
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+            <span class="kb-key"></span>
+          </div>
+          <div class="kb-row r4">
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+          </div>
+          <div class="kb-row r5">
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+            <span class="kb-key"></span><span class="kb-key"></span><span class="kb-key"></span>
+            <span class="kb-key"></span><span class="kb-key"></span>
+          </div>
+          <div class="trackpad"></div>
+        </div>
+      </div>
+
+      <!-- Counterbalance arms (left + right) -->
+      <div class="arm l" id="arm-l"></div>
+      <div class="arm r" id="arm-r"></div>
+
+      <!-- Pivot anchor — iPad orbits around this point -->
+      <div class="pivot-anchor" id="pivot-anchor">
+        <div class="ipad" id="ipad">
+          <div class="face front">
+            <div class="notch"></div>
+            <div class="screen"></div>
+          </div>
+          <div class="face back">
+            <!-- Apple logo SVG -->
+            <svg class="apple-logo" viewBox="0 0 170 204" xmlns="http://www.w3.org/2000/svg">
+              <path d="M150.37 158.6c-2.76 6.37-6.02 12.23-9.79 17.61-5.14 7.34-9.35 12.42-12.6 15.24-5.04 4.63-10.43 7-16.21 7.13-4.15 0-9.15-1.18-14.97-3.57-5.84-2.38-11.21-3.56-16.12-3.56-5.15 0-10.67 1.18-16.58 3.56-5.92 2.39-10.69 3.63-14.34 3.76-5.54.24-11.06-2.2-16.57-7.32-3.52-3.07-7.92-8.33-13.18-15.78-5.65-7.96-10.29-17.18-13.93-27.69-3.9-11.36-5.85-22.36-5.85-33.01 0-12.2 2.64-22.72 7.91-31.54 4.14-7.09 9.65-12.68 16.55-16.78 6.9-4.1 14.36-6.19 22.39-6.32 4.41 0 10.19 1.36 17.37 4.04 7.16 2.69 11.76 4.05 13.78 4.05 1.51 0 6.62-1.59 15.27-4.77 8.18-2.95 15.08-4.17 20.74-3.69 15.34 1.24 26.86 7.29 34.52 18.18-13.71 8.31-20.49 19.95-20.36 34.88.12 11.63 4.34 21.31 12.63 29 3.76 3.56 7.95 6.32 12.62 8.27-1.01 2.94-2.08 5.75-3.23 8.45zM119.31 4.06c0 9.1-3.32 17.6-9.94 25.46-7.99 9.34-17.66 14.74-28.14 13.89-.13-1.09-.21-2.24-.21-3.45 0-8.74 3.81-18.07 10.57-25.71 3.37-3.87 7.66-7.09 12.86-9.66 5.19-2.53 10.1-3.93 14.72-4.17.13 1.22.21 2.44.21 3.65z"/>
+            </svg>
+          </div>
+          <div class="face top"></div>
+          <div class="face bottom"></div>
+          <div class="face left-face"></div>
+          <div class="face right-face"></div>
+          <div class="pivot l"></div>
+          <div class="pivot r"></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="slider-wrap">
+      <label for="screen-angle">Screen</label>
+      <input type="range" id="screen-angle" min="-180" max="180" value="0" />
+      <output id="screen-val">0°</output>
+    </div>
+    <div class="slider-wrap">
+      <label for="arm-angle">Arm</label>
+      <input type="range" id="arm-angle" min="0" max="180" value="90" />
+      <output id="arm-val">90°</output>
+    </div>
+    <button class="ctrl" id="btn-spin" aria-pressed="false">Auto-rotate</button>
+    <button class="ctrl" id="btn-front">Front</button>
+    <button class="ctrl" id="btn-iso">3/4 view</button>
+    <button class="ctrl" id="btn-side">Side</button>
+  </footer>
+
+<script>
+(() => {
+  const rig = document.getElementById('rig');
+  const stage = document.getElementById('stage');
+  const ipadEl = document.getElementById('ipad');
+  const armL = document.getElementById('arm-l');
+  const armR = document.getElementById('arm-r');
+  const pivotAnchor = document.getElementById('pivot-anchor');
+
+  let rx = -12, ry = -22;
+  let dragging = false, lastX = 0, lastY = 0;
+  let spinning = false;
+
+  function applyRig() {
+    if (spinning) return;
+    rig.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+  }
+
+  function setView(name) {
+    stopSpin();
+    if (name === 'front') { rx = 0;   ry = 0;   }
+    if (name === 'iso')   { rx = -12; ry = -22; }
+    if (name === 'side')  { rx = 0;   ry = -85; }
+    applyRig();
+  }
+
+  function startSpin() {
+    spinning = true;
+    rig.classList.add('spin');
+    document.getElementById('btn-spin').setAttribute('aria-pressed', 'true');
+  }
+  function stopSpin() {
+    if (!spinning) return;
+    spinning = false;
+    rig.classList.remove('spin');
+    applyRig();
+    document.getElementById('btn-spin').setAttribute('aria-pressed', 'false');
+  }
+
+  // Drag to rotate
+  stage.addEventListener('pointerdown', (e) => {
+    if (e.target.closest('input, button, .slider-wrap')) return;
+    stopSpin();
+    dragging = true;
+    lastX = e.clientX; lastY = e.clientY;
+    stage.setPointerCapture(e.pointerId);
+    rig.style.transition = 'none';
+  });
+  stage.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    ry += (e.clientX - lastX) * 0.5;
+    rx -= (e.clientY - lastY) * 0.5;
+    rx = Math.max(-60, Math.min(40, rx));
+    lastX = e.clientX; lastY = e.clientY;
+    applyRig();
+  });
+  stage.addEventListener('pointerup', () => { dragging = false; rig.style.transition = ''; });
+  stage.addEventListener('pointercancel', () => { dragging = false; rig.style.transition = ''; });
+
+  // Keyboard arrow + space
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft')  { stopSpin(); ry -= 12; applyRig(); }
+    if (e.key === 'ArrowRight') { stopSpin(); ry += 12; applyRig(); }
+    if (e.key === 'ArrowUp')    { stopSpin(); rx -= 8;  rx = Math.max(-60, rx); applyRig(); }
+    if (e.key === 'ArrowDown')  { stopSpin(); rx += 8;  rx = Math.min(40, rx);  applyRig(); }
+    if (e.code === 'Space')     { e.preventDefault(); spinning ? stopSpin() : startSpin(); }
+  });
+
+  document.getElementById('btn-spin').onclick  = () => spinning ? stopSpin() : startSpin();
+  document.getElementById('btn-front').onclick = () => setView('front');
+  document.getElementById('btn-iso').onclick   = () => setView('iso');
+  document.getElementById('btn-side').onclick  = () => setView('side');
+
+  // Hinge controls
+  const screenSlider = document.getElementById('screen-angle');
+  const screenVal    = document.getElementById('screen-val');
+  const armSlider    = document.getElementById('arm-angle');
+  const armVal       = document.getElementById('arm-val');
+
+  function updateHinge() {
+    // Screen: 0° = upright, positive = tilt backward, negative = tilt forward
+    const hinge = +screenSlider.value;
+    screenVal.textContent = hinge + '°';
+    ipadEl.style.transform = `translate(-50%, -50%) rotateX(${-hinge}deg)`;
+
+    // Arm: 90° = vertical, 0° = forward, 180° = backward
+    const tilt = +armSlider.value;
+    armVal.textContent = tilt + '°';
+    const armRot = 90 - tilt;
+    armL.style.transform = `rotateX(${armRot}deg)`;
+    armR.style.transform = `rotateX(${armRot}deg)`;
+    pivotAnchor.style.transform = `translateX(-50%) rotateX(${armRot}deg)`;
+  }
+
+  screenSlider.addEventListener('input', updateHinge);
+  armSlider.addEventListener('input', updateHinge);
+  updateHinge();
+
+  applyRig();
+})();
+</script>
+</body>
+</html>

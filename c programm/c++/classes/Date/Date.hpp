@@ -1,4 +1,4 @@
-
+#pragma once
 #include <iostream>
 #include <string>
 using namespace std;
@@ -21,12 +21,7 @@ private:
         return 31;
     }
 
-    string getMonthName(int m) {
-        string months[] = {"Ianouariou", "Febrouariou", "Martiou", "Apriliou",
-                           "Maioy", "Iouniou", "Iouliou", "Augustou",
-                           "Septembriou", "Octobriou", "Novembriou", "Decembriou"};
-        return months[m-1];
-    }
+    string getMonthName(int m) ;
 
 public:
     // Default constructor
@@ -77,7 +72,6 @@ public:
                 month = 1;
                 year++;
             }
-        }
     }
 
     // Add months
@@ -105,24 +99,3 @@ public:
         }
     }
 };
-
-int main() {
-    Date d1;
-    d1.print();        // 01/01/2000
-    d1.printLong();    // January 1, 2000
-
-    Date d2(11, 16, 2021);
-    d2.print();        
-    d2.printLong();
-
-    d2.addDays(20);
-    d2.print();
-
-    d2.addMonths(2);
-    d2.print();
-
-    d2.addYears(1);
-    d2.printLong();
-
-    return 0;
-}

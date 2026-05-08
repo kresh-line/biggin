@@ -1,5 +1,5 @@
 // classes example
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 class Rectangle {
     int width, height;
@@ -48,4 +48,35 @@ int main () {
    // cout << "area: " << rect.area() << endl;
 
     return 0;
+}*/
+
+#include <iostream>
+using namespace std;
+class Rectangle {
+    int width, height;
+  public:
+    Rectangle ();
+    Rectangle (int,int);
+    int getWidth() {return width;}
+int getHeight() {return height;}
+    int area() {return width*height;}
+};
+Rectangle::Rectangle () {
+  width = 1;
+  height = 1;
+}
+Rectangle::Rectangle (int a, int b) : width(a), height(b) {}
+
+int main () {
+  Rectangle recta (3,4);
+  Rectangle rectb;
+  cout << "RectA width = " << recta.getWidth() << endl;
+  cout << "RectA height = " << recta.getHeight() << endl;
+  cout << "RectA area: " << recta.area() << endl 
+       <<endl;
+  cout << "RectB width = " << rectb.getWidth() << endl;
+  cout << "RectB height = " << rectb.getHeight() << endl;
+  cout << "RectB area: " << rectb.area() << endl;
+  
+ return 0;
 }

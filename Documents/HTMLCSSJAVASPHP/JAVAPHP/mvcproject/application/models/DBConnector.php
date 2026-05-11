@@ -10,7 +10,7 @@ class DBConnector {
      $this->host = "localhost";
      $this->user = "root";
      $this->pswd = "";
-     $this->db = "productsdb";
+     $this->db = "shop";//productsdb në shkoll
      $this->conn = "null";
 }
      function openConnection() {
@@ -24,7 +24,7 @@ class DBConnector {
         }
     }
     function getProducts() {
-        $res = mysqli_query($this->conn, "SELECT * FROM products");
+        $res = mysqli_query($this->conn , "SELECT * FROM products");
         $num = mysqli_num_rows($res);
         
         $str="<table class='results'>";

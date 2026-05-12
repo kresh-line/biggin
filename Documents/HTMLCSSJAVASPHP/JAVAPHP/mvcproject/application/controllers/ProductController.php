@@ -16,7 +16,8 @@ class ProductController {
             $dbc->closeConnection();
             if ($num ==1 )
                 $GLOBALS['case'] = "<h3>Ενημέρωση προϊόντος" . $_POST['pid'] . "</h3>";
-                else $GLOBALS['case'] = "<h3>δεν επιτυχής ενημέρωση"  . $_POST['pid'] . "</h3>";
+            else 
+                $GLOBALS['case'] = "<h3>δεν επιτυχής ενημέρωση"  . $_POST['pid'] . "</h3>";
         }
            else if (isset($_POST['delpit'])) {
             $GLOBALS['case'] = "<h3>Διαγραφή προϊόντος με κωδικό: " . $_POST['delpit'] . "</h3>";

@@ -54,21 +54,34 @@ class DBConnector {
         for ($i = 0; $i < $num; $i++) {
             $r = mysqli_fetch_array($res);
             $str = $str . "<form method='post'><fieldset>\n";
-            $str = $str . "<label for='pid'> κωδικος</label>\n";
-            $str = $str . "<input type='text' id='pid' name='pid' value='$r[0]'>\n";
-            $str = $str . "<label for='pname'>Ονομα</label>";
-            $str = $str . "<input type='text' id='pname' name='pname' value='$r[1]'>\n";
-            $str = $str . "<label for='pprice'>Τιμη</label>\n";
-            $str = $str . "<input type='number' id='pprice' name='pprice' value='$r[2]'>\n";
-            $str = $str . "<label for='pcat'> Κατιγορια</label>\n";
-            $str = $str . "<input type='text' id='pcat' name='pcat' value='$r[3]'>\n";
+            $str = $str . "<label for='pid$r[0]'> κωδικος</label>\n";
+            $str = $str . "<input type='text' id='pid$r[0]' name='pid' value='$r[0]'>\n";
+            $str = $str . "<label for='pname$r[0]'>Ονομα</label>";
+            $str = $str . "<input type='text' id='pname$r[0]' name='pname' value='$r[0]'>\n";
+            $str = $str . "<label for='pprice$r[0]'>Τιμη</label>\n";
+            $str = $str . "<input type='number' id='pprice$r[0]' name='pprice' value='$r[0]'>\n";
+            $str = $str . "<label for='pcat$r[0]'> Κατιγορια</label>\n";
+            $str = $str . "<input type='text' id='pcat$r[0]' name='pcat' value='$r[0]'>\n";
             $str = $str . "<button type='submit'>Ενιμεροσι </button>\n";
             $str = $str . "<input type='hidden' name='delpit' value='$r[0]'>\n";
             $str = $str . "<button type='submit'>delete </button>\n";
             $str = $str . " </fieldset></form>\n";
         }
+        $str = $str . "<input type='hidden' name='delpit' value='$r[0]'>\n";
+            $str = $str . "<button type='submit'>delete </button>\n";
+        $str = $str . "</table>";
         return $str;
     }
+   function updateProduct($pid, $name, $time){
+    $sql = "UPDATE products SET name='$name', price='$time' WHERE id='$pid'";
+
+    $res = mysqli_query($this->conn, $sql);
+
+    $num = mysqli_affected_rows($this->conn);
+
+
+    return $num;
+   } 
 
 }
 

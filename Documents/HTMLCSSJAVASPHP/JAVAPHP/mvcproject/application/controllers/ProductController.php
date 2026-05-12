@@ -10,7 +10,13 @@ class ProductController {
  // 2 βήματα: 1. να πάρει τα προϊόντα από τη βάση δεδομένων και 2. να φορτώσει τη σελίδα που θα εμφανίζει τα προϊόντα
     function show() {
         if (isset($_POST['pid']) ) {
-            $GLOBALS['case'] = "<h3>Ενημέρωση προϊόντος με κωδικό: " . $_POST['pid'] . "</h3>";
+            $dbc = new DBConnector();
+            $dbc->openConnection();
+            $num = $dbc->updateProduct($_POST['pid'], $_POST['pname'], $_POST['pprice']);
+            $dbc->closeConnection();
+            if ($num ==1 )
+                $GLOBALS['case'] = "<h3>Ενημέρωση προϊόντος" . $_POST['pid'] . "</h3>";
+                else $GLOBALS['case'] = "<h3>δεν επιτυχής ενημέρωση"  . $_POST['pid'] . "</h3>";
         }
            else if (isset($_POST['delpit'])) {
             $GLOBALS['case'] = "<h3>Διαγραφή προϊόντος με κωδικό: " . $_POST['delpit'] . "</h3>";

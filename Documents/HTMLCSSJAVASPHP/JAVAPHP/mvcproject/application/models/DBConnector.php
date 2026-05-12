@@ -64,7 +64,7 @@ class DBConnector {
             $str = $str . "<input type='text' id='pcat$r[0]' name='pcat' value='$r[3]'>\n";
             $str = $str . "<button type='submit'>Ενιμεροσι </button>\n";
             $str = $str . " </fieldset></form>\n";
-            
+
             $str = $str . "<form method='post'><fieldset>\n";
             $str = $str . "<input type='hidden' name='delpit' value='$r[0]'>\n";
             $str = $str . "<button type='submit'>delete </button>\n";
@@ -75,7 +75,7 @@ class DBConnector {
         return $str;
     }
    function updateProduct($pid, $name, $time){
-    $sql = "UPDATE products SET name='$name', price='$time' WHERE id='$pid'";
+    $sql = "UPDATE products SET name='$name', price=$time WHERE id=$pid";
 
     $res = mysqli_query($this->conn, $sql);
 
@@ -84,7 +84,16 @@ class DBConnector {
 
     return $num;
    } 
+function deleteProduct($pid){
+    $sql = "DELETE FROM products WHERE id=$pid";
 
+    $res = mysqli_query($this->conn, $sql);
+
+    $num = mysqli_affected_rows($this->conn);
+
+
+    return $num;
 }
 
 
+}

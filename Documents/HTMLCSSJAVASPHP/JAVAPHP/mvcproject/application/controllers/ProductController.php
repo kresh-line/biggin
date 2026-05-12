@@ -14,7 +14,7 @@ class ProductController {
             $dbc->openConnection();
             $num = $dbc->updateProduct($_POST['pid'], $_POST['pname'], $_POST['pprice']);
             $dbc->closeConnection();
-            if ($num ==1 )
+            if ($num==1)
                 $GLOBALS['case'] = "<h3>Ενημέρωση προϊόντος" . $_POST['pid'] . "</h3>";
             else 
                 $GLOBALS['case'] = "<h3>δεν επιτυχής ενημέρωση"  . $_POST['pid'] . "</h3>";
@@ -23,7 +23,16 @@ class ProductController {
             $GLOBALS['case'] = "<h3>Διαγραφή προϊόντος με κωδικό: " . $_POST['delpit'] . "</h3>";
            }
            else {
-            $GLOBALS['case'] = "<h3>Εμφάνιση προϊόντων</h3>";}
+            if (isset($_POST['delid']) ) {
+            $dbc = new DBConnector();
+            $dbc->openConnection();
+            $num = $dbc->deleteProduct($_POST['delid']);
+            $dbc->closeConnection();
+            if ($num==1)
+                $GLOBALS['case'] = "<h3>Διαγραφή προϊόντος " . $_POST['delid'] . "</h3>";
+            else
+                $GLOBALS['case'] = "<h3>δεν επιτυχής διαγραφή " . $_POST['delid'] . "</h3>";
+        }
             
         
         $dbc = new DBConnector();
@@ -40,7 +49,7 @@ class ProductController {
 
 }
 
-
+}
 
 
 

@@ -10,7 +10,7 @@ class DBConnector {
      $this->host = "localhost";
      $this->user = "root";
      $this->pswd = "";
-     $this->db = "shop";//productsdb në shkoll
+     $this->db = "productsdb";//productsdb në shkoll
      $this->conn = "null";
 }
      function openConnection() {

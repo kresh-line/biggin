@@ -41,7 +41,35 @@ class DBConnector {
         $str .= "</table>";
         return $str;
     }
-}
+    function getProductsAsFroms() {
+        if ($this->conn === null) {
+            return "<p>Λαθος.</p>";
+        }
+        $sql = "SELECT * from products";
+        $res = mysqli_query($this->conn, $sql);
+        $num = mysqli_num_rows($res);
 
+        $str = "<table class='results'>";
+        $str .= "<tr><th>ID</th><th>Name</th><th>Price</th><th>Category</th></tr>";
+        for ($i = 0; $i < $num; $i++) {
+            $r = mysqli_fetch_array($res);
+            $str = $str . "<form method='post'><fieldset>\n";
+            $str = $str . "<label for='pid'> κωδικος</label>\n";
+            $str = $str . "<input type='text' id='pid' name='pid' value='$r[0]'>\n";
+            $str = $str . "<label for='pname'>Ονομα</label>";
+            $str = $str . "<input type='text' id='pname' name='pname' value='$r[1]'>\n";
+            $str = $str . "<label for='pprice'>Τιμη</label>\n";
+            $str = $str . "<input type='number' id='pprice' name='pprice' value='$r[2]'>\n";
+            $str = $str . "<label for='pcat'> Κατιγορια</label>\n";
+            $str = $str . "<input type='text' id='pcat' name='pcat' value='$r[3]'>\n";
+            $str = $str . "<button type='submit'>Ενιμεροσι </button>\n";
+            $str = $str . "<input type='hidden' name='delpit' value='$r[0]'>\n";
+            $str = $str . "<button type='submit'>delete </button>\n";
+            $str = $str . " </fieldset></form>\n";
+        }
+        return $str;
+    }
+
+}
 
 

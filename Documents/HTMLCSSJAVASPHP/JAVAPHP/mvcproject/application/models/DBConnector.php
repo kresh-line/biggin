@@ -57,11 +57,11 @@ class DBConnector {
             $str = $str . "<label for='pid$r[0]'> κωδικος</label>\n";
             $str = $str . "<input type='text' id='pid$r[0]' name='pid' value='$r[0]'>\n";
             $str = $str . "<label for='pname$r[0]'>Ονομα</label>";
-            $str = $str . "<input type='text' id='pname$r[0]' name='pname' value='$r[0]'>\n";
+            $str = $str . "<input type='text' id='pname$r[0]' name='pname' value='$r[1]'>\n";
             $str = $str . "<label for='pprice$r[0]'>Τιμη</label>\n";
-            $str = $str . "<input type='number' id='pprice$r[0]' name='pprice' value='$r[0]'>\n";
+            $str = $str . "<input type='number' id='pprice$r[0]' name='pprice' value='$r[2]'>\n";
             $str = $str . "<label for='pcat$r[0]'> Κατιγορια</label>\n";
-            $str = $str . "<input type='text' id='pcat$r[0]' name='pcat' value='$r[0]'>\n";
+            $str = $str . "<input type='text' id='pcat$r[0]' name='pcat' value='$r[3]'>\n";
             $str = $str . "<button type='submit'>Ενιμεροσι </button>\n";
             $str = $str . "<input type='hidden' name='delpit' value='$r[0]'>\n";
             $str = $str . "<button type='submit'>delete </button>\n";

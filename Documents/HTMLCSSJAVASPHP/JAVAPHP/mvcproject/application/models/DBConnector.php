@@ -63,13 +63,15 @@ class DBConnector {
             $str = $str . "<label for='pcat$r[0]'> Κατιγορια</label>\n";
             $str = $str . "<input type='text' id='pcat$r[0]' name='pcat' value='$r[3]'>\n";
             $str = $str . "<button type='submit'>Ενιμεροσι </button>\n";
+            $str = $str . " </fieldset></form>\n";
+            
+            $str = $str . "<form method='post'><fieldset>\n";
             $str = $str . "<input type='hidden' name='delpit' value='$r[0]'>\n";
             $str = $str . "<button type='submit'>delete </button>\n";
             $str = $str . " </fieldset></form>\n";
         }
-        $str = $str . "<input type='hidden' name='delpit' value='$r[0]'>\n";
-            $str = $str . "<button type='submit'>delete </button>\n";
-        $str = $str . "</table>";
+        
+     
         return $str;
     }
    function updateProduct($pid, $name, $time){

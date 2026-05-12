@@ -24,7 +24,8 @@ class DBConnector {
         }
     }
     function getProducts() {
-        $res = mysqli_query($this->conn , "SELECT * FROM products");
+        $sql = "SELECT products.ID, products.name, price, categories.name FROM products INNER JOIN categories ON products.categoriesid = categories.id";
+        $res = mysqli_query($this->conn , $sql);
         $num = mysqli_num_rows($res);
         
         $str="<table class='results'>";

@@ -11,31 +11,35 @@ class DBConnector {
      $this->user = "root";
      $this->pswd = "";
      $this->db = "productsdb";//productsdb në shkoll
-     $this->conn = "null";
+     $this->conn = null;
 }
      function openConnection() {
       $this->conn = mysqli_connect($this->host, $this->user, $this->pswd , $this->db);
-       
 }
 
     function closeConnection() {
-        if ($this->conn != "null") {
+        if ($this->conn !== null) {
             mysqli_close($this->conn);
+            $this->conn = null;
         }
     }
+
     function getProducts() {
-        $sql = "SELECT products.ID, products.name, price, categories.name FROM products INNER JOIN categories ON products.categoriesid = categories.id";
-        $res = mysqli_query($this->conn , $sql);
+        if ($this->conn === null) {
+            return "<p>Gabim: lidhja me bazën e të dhënave nuk është hapur.</p>";
+        }
+        $sql = "SELECT products.id, products.name, products.price, categories.name FROM products INNER JOIN categories ON products.catid = categories.id";
+        $res = mysqli_query($this->conn, $sql);
         $num = mysqli_num_rows($res);
-        
-        $str="<table class='results'>";
-        for ($i=0; $i<$num; $i++) {
+
+        $str = "<table class='results'>";
+        $str .= "<tr><th>ID</th><th>Name</th><th>Price</th><th>Category</th></tr>";
+        for ($i = 0; $i < $num; $i++) {
             $r = mysqli_fetch_array($res);
             $str .= "<tr><td>$r[0]</td><td>$r[1]</td><td>$r[2]</td><td>$r[3]</td></tr>";
         }
         $str .= "</table>";
         return $str;
-
     }
 }
 

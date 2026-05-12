@@ -55,28 +55,30 @@ using namespace std;
 class Rectangle {
     int width, height;
   public:
-    Rectangle ();
+    //Rectangle ();
     Rectangle (int,int);
     int getWidth() {return width;}
 int getHeight() {return height;}
     int area() {return width*height;}
+    void print();
 };
-Rectangle::Rectangle () {
+/*Rectangle::Rectangle () {
   width = 1;
   height = 1;
+}*/
+Rectangle::Rectangle (int width = 1, int height = 1){
+    this->width = width;
+    this->height = height;
 }
-Rectangle::Rectangle (int a, int b) : width(a), height(b) {}
-
+void Rectangle::print() {
+    cout << "Rectangle: " << width << " x " << height << endl;
+    cout << "Area = " << area() << endl;
+}
 int main () {
   Rectangle recta (3,4);
+    recta.print();
   Rectangle rectb;
-  cout << "RectA width = " << recta.getWidth() << endl;
-  cout << "RectA height = " << recta.getHeight() << endl;
-  cout << "RectA area: " << recta.area() << endl 
-       <<endl;
-  cout << "RectB width = " << rectb.getWidth() << endl;
-  cout << "RectB height = " << rectb.getHeight() << endl;
-  cout << "RectB area: " << rectb.area() << endl;
+    rectb.print();
   
  return 0;
 }

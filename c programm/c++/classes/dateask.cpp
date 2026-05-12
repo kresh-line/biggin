@@ -37,15 +37,15 @@ public:
     }
 
     // Parameterized constructor
-    Date(int m, int d, int y) {
-        setDate(m, d, y);
+    Date(int month, int day, int year) {
+        setDate(month, day, year);
     }
 
     // Setter
-    void setDate(int m, int d, int y) {
-        month = m;
-        day = d;
-        year = y;
+    void setDate(int month, int day, int year) {
+        this->month = month;
+        this->day = day;
+        this->year = year;
     }
 
     // Getters

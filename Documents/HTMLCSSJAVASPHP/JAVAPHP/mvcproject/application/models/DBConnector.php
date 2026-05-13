@@ -1,99 +1,132 @@
-<?php 
+<?php
+
 class DBConnector {
-    private $host; // to localhost είναι το όνομα του server που τρέχει η βάση δεδομένων
-    private $user; // to onoma xristi pou exei o server gia na kanei connect stin vasi
-    private $pswd; // to kalitero kwdikos pou exei o xristis
-    private $db; // to onoma tis vasis pou tha xrisimopoioume
-    private $conn; // to connection object pou tha xrisimopoioume gia na kanoume queries stin vasi
-
+    private $host; //Το host που τρέχει ο MySQL Server
+    private $user; //Το όνομα χρήστη με το οποίο συνδέομαι
+    private $pswd; //Ο κωδικός χρήστη με το οποίο συνδέομαι
+    private $db; //Το όνομα της ΒΔ
+    private $conn; //Εδώ αποθηκεύεται η σύνδεση που έχω κάνει
+    
+    //Ο δημιουργός της κλάσης ο οποίος συνήθως αρχικοποιεί
+    //τις ιδιότητες της κλάσης
     function __construct() {
-     $this->host = "localhost";
-     $this->user = "root";
-     $this->pswd = "";
-     $this->db = "productsdb";//productsdb në shkoll
-     $this->conn = null;
-}
-     function openConnection() {
-      $this->conn = mysqli_connect($this->host, $this->user, $this->pswd , $this->db);
-}
-
+        $this->host = "localhost";
+        $this->user = "root";
+        $this->pswd = "";
+        $this->db = "productsdb";
+        $this->conn = null;
+    }
+    
+    function openConnection() {
+        $this->conn = mysqli_connect($this->host, $this->user, $this->pswd, $this->db);
+    }
+    
+    
     function closeConnection() {
-        if ($this->conn !== null) {
-            mysqli_close($this->conn);
-            $this->conn = null;
+        //Κλείσε τη σύνδεση
+        if ($this->conn != null) {
+            mysqli_close($this->conn);  
         }
     }
-
+    
     function getProducts() {
-        if ($this->conn === null) {
-            return "<p>Gabim: lidhja me bazën e të dhënave nuk është hapur.</p>";
-        }
-        $sql = "SELECT products.id, products.name, products.price, categories.name FROM products INNER JOIN categories ON products.catid = categories.id";
+        $sql = "select products.id, products.name, price, categories.name ";
+        $sql = $sql . " from products inner join categories on products.catid=categories.id";
+        //Εκτέλεση ερωτήματος
         $res = mysqli_query($this->conn, $sql);
+        //Δες πόσες εγγραφές επιλέχτηκαν
         $num = mysqli_num_rows($res);
-
-        $str = "<table class='results'>";
-        $str .= "<tr><th>ID</th><th>Name</th><th>Price</th><th>Category</th></tr>";
-        for ($i = 0; $i < $num; $i++) {
+        
+        $str = "<table class='results'>\n";
+        $str = $str . "<tr><th>Κωδικός</th><th>Όνομα</th><th>Τιμή</th><th>Κατηγορία</th></tr>";
+        for ($i=0; $i<$num; ++$i) {
             $r = mysqli_fetch_array($res);
-            $str .= "<tr><td>$r[0]</td><td>$r[1]</td><td>$r[2]</td><td>$r[3]</td></tr>";
+            $str = $str . "<tr><td>$r[0]</td><td>$r[1]</td><td>$r[2]</td><td>$r[3]</td></tr>\n";
         }
-        $str .= "</table>";
-        return $str;
+        $str = $str . "</table>\n";
+        return $str;  
     }
-    function getProductsAsFroms() {
-        if ($this->conn === null) {
-            return "<p>Λαθος.</p>";
-        }
-        $sql = "SELECT * from products";
+   
+    function getProductsAsForms() {
+        //Πάρε τις κατηγορίες σαν πίνακα που κάθε στοιχείο του 
+        //είναι πίνακας δύο στοιχείων (id και name)
+        $categ = $this->getCategories();
+        
+        $sql = "select * from products";
+        //Εκτέλεση ερωτήματος
         $res = mysqli_query($this->conn, $sql);
+        //Δες πόσες εγγραφές επιλέχτηκαν
         $num = mysqli_num_rows($res);
-
-        $str = "<table class='results'>";
-        $str .= "<tr><th>ID</th><th>Name</th><th>Price</th><th>Category</th></tr>";
-        for ($i = 0; $i < $num; $i++) {
+        
+        $str = "";
+        for ($i=0; $i<$num; ++$i) {
             $r = mysqli_fetch_array($res);
+            $str = $str . "<div class='formdiv'>\n";
             $str = $str . "<form method='post'><fieldset>\n";
-            $str = $str . "<label for='pid$r[0]'> κωδικος</label>\n";
-            $str = $str . "<input type='text' id='pid$r[0]' name='pid' value='$r[0]'>\n";
-            $str = $str . "<label for='pname$r[0]'>Ονομα</label>";
+            $str = $str . "<label for='pid$r[0]'>Κωδικός</label>\n";
+            $str = $str . "<input type='text' id='pid$r[0]' name='pid' value='$r[0]' readonly>\n";
+            $str = $str . "<label for='pname$r[0]'>Όνομα</label>\n";
             $str = $str . "<input type='text' id='pname$r[0]' name='pname' value='$r[1]'>\n";
-            $str = $str . "<label for='pprice$r[0]'>Τιμη</label>\n";
+            $str = $str . "<label for='pprice$r[0]'>Τιμή</label>\n";
             $str = $str . "<input type='number' id='pprice$r[0]' name='pprice' value='$r[2]'>\n";
-            $str = $str . "<label for='pcat$r[0]'> Κατιγορια</label>\n";
-            $str = $str . "<input type='text' id='pcat$r[0]' name='pcat' value='$r[3]'>\n";
-            $str = $str . "<button type='submit'>Ενιμεροσι </button>\n";
-            $str = $str . " </fieldset></form>\n";
-
+            
+            $str = $str . "<label for='pcat$r[0]'>Κατηγορία</label>\n";
+            $str = $str . "<select id='pcat$r[0]' name='pcat'>\n";
+            
+            for ($j=0; $j<count($categ); ++$j) {
+                if ($categ[$j][0]==$r[3])
+                $str = $str . "<option value='" . $categ[$j][0] . "' selected>" . $categ[$j][1] . "</option>\n";
+                else 
+                $str = $str . "<option value='" . $categ[$j][0] . "'>" . $categ[$j][1] . "</option>\n";
+            
+            }
+            
+            $str = $str . "</select>\n";
+            
+            
+            $str = $str . "<button type='submit'>Ενημέρωση</button>\n";
+            $str = $str . "</fieldset></form>\n";
+            
             $str = $str . "<form method='post'><fieldset>\n";
-            $str = $str . "<input type='hidden' name='delpit' value='$r[0]'>\n";
-            $str = $str . "<button type='submit'>delete </button>\n";
-            $str = $str . " </fieldset></form>\n";
+            $str = $str . "<input type='hidden' name='delpid' value='$r[0]'>\n";
+            $str = $str . "<button type='submit'>Διαγραφή</button>\n";
+            $str = $str . "</fieldset></form>\n";
+            $str = $str . "</div>\n";
         }
         
-     
-        return $str;
+        return $str;  
     }
-   function updateProduct($pid, $name, $time){
-    $sql = "UPDATE products SET name='$name', price=$time WHERE id=$pid";
-
-    $res = mysqli_query($this->conn, $sql);
-
-    $num = mysqli_affected_rows($this->conn);
-
-
-    return $num;
-   } 
-function deleteProduct($pid){
-    $sql = "DELETE FROM products WHERE id=$pid";
-
-    $res = mysqli_query($this->conn, $sql);
-
-    $num = mysqli_affected_rows($this->conn);
-
-
-    return $num;
+    
+    function updateProduct($pid, $name, $timi, $cid) {
+        $sql = "update products set name='$name', price=$timi, catid=$cid where id=$pid";
+        //Εκτέλεση ερωτήματος
+        $res = mysqli_query($this->conn, $sql);
+        //Βλέπουμε πόσες εγγραφές επηρεάστηκαν από το update 
+        $num = mysqli_affected_rows($this->conn); 
+        return $num;
+    }
+    function deleteProduct($pid) {
+        $sql = "delete from products where id=$pid";
+        //Εκτέλεση ερωτήματος
+        $res = mysqli_query($this->conn, $sql);
+        //Βλέπουμε πόσες εγγραφές επηρεάστηκαν από το update 
+        $num = mysqli_affected_rows($this->conn); 
+        return $num;
+    }    
+    
+    function getCategories() {
+        $sql = "select * from categories";
+        //Εκτέλεση ερωτήματος
+        $res = mysqli_query($this->conn, $sql);
+        //Δες πόσες εγγραφές επιλέχτηκαν
+        $num = mysqli_num_rows($res);
+        $categ = [];
+        for ($i=0; $i<$num; ++$i) {
+            $r = mysqli_fetch_array($res);
+            $categ[$i]= [$r[0], $r[1]];
+        }
+        
+        return $categ;
+    }
 }
 
-
-}

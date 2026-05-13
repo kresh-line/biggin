@@ -1,29 +1,22 @@
 <?php
 
 class BasicController {
-    private $x;
+    public $x;
+    
     
     function __construct() {
         
     }
-    
+    //Παίρνει παράμετρο το path που είναι τα views
     function home() {
-
-        require_once($GLOBALS ['viewDir'] . '/home.php'); 
+        require_once($GLOBALS['viewDir'] . '/home.php'); 
     }
     
     function paroysiasi() {
-        require_once($GLOBALS ['viewDir'] . '/paroysiasi.php'); 
+        require_once($GLOBALS['viewDir'] . '/paroysiasi.php'); 
     }
     
     function info() {
-        require_once($GLOBALS ['viewDir'] . '/info.php'); 
+        require_once($GLOBALS['viewDir'] . '/info.php'); 
     }
 }
-
-
-// CLASS DBConnector {
-//     function __construct() {
-        
-//     }
-// }

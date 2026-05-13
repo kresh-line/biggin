@@ -14,22 +14,24 @@ $request = $_SERVER['REQUEST_URI'];
 $siteDir = '/mvcproject';
 
 //Αποθήκευσε το φάκελο που είναι οι controllers
-$controllerDir = 'application/controllers/';
+$controllerDir = 'application/controllers';
+
+//Αποθήκευσε το φάκελο που είναι οι controllers
+$modelDir = 'application/Models';
+
 
 //Αποθήκευσε το φάκελο που είναι οι views
-$modelDir = 'application/models/';
-
-// Η views ειναο global γιατί θα την χρησιμοποιούν οι controllers για να φορτώνουν τις σελίδες
-// Η χρήση του $GLOBALS είναι απαραίτητη γιατί οι controllers είναι σε διαφορετικό scope από τον router
+//Η viewDir είναι global άρα θα αναφέρομαι σε αυτήν μέσα σε
+//functions γράφοντας $GLOBALS['viewDir'] 
 $viewDir = 'views';
 
 require_once($controllerDir . "/BasicController.php");
 require_once($controllerDir . "/ProductController.php");
-//require_once($modelDir . "/DBConnector.php");
 
 switch ($request) {
     case $siteDir:
     case $siteDir . '/':
+        
             $bc = new BasicController();
             $bc->home();
         break;
@@ -39,14 +41,14 @@ switch ($request) {
             $bc = new BasicController();
             $bc->paroysiasi();
             break;
-    case $siteDir . '/product/show':
-	    case $siteDir . '/product/show/':
+    case $siteDir . '/products/show':
+	case $siteDir . '/products/show/':
             $sc = new ProductController();
             $sc->show();
             break;
-
-    case $siteDir . '/product/add':
-	case $siteDir . '/product/add/':
+            
+    case $siteDir . '/products/add':
+	case $siteDir . '/products/add/':
             $sc = new ProductController();
             $sc->add();
             break;
@@ -69,4 +71,3 @@ switch ($request) {
 
 //Εμφάνισε τη σελίδα  
 //require_once('views/layout.php');  
-?>

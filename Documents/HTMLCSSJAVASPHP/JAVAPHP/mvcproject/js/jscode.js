@@ -4,6 +4,48 @@ function validateForm() {
     
 }
 
-/*function validateDeleteForm() {
-    return confirm("Are you sure you want to delete this product?");
-}*/
+function validateDeleteForm() {
+
+    let answer = confirm("Είστε σίγουροι ότι θέλετε να διαγράψετε αυτό το προϊόν;");
+    if (answer==true) 
+        return true;
+     else 
+
+        return false;
+}
+
+
+function validateUpdateForm() {
+    let errormsg = "";
+    let frm = document.getElementById('updateForm' + pid);
+    let prodname = frm.elements['pname'].value;
+    let prodprice = frm.elements['pprice'].value;
+
+    let num=1;
+    // ελεγχος για το ονομα, αν ειναι κενό, προσθετω στο errormsg, και αυξάνω το num για να ξεκινάει από 1 και να μετράει τα λάθη
+    if (prodname.trim() == "") {
+        errormsg = errormsg + num + ". Το όνομα του προϊόντος δεν μπορεί να είναι κενό.\n";
+        num++;
+    }
+    if (prodprice.trim() <= 0) {
+        errormsg = errormsg + num + ". Η τιμή του προϊόντος πρέπει να είναι θετικός αριθμός.\n";
+        num++;
+    }
+    // ελεχνο οσα θελω και αν βρω λαθη, τα προσθετω στο errormsg, και στο τελος αν δεν ειναι κενό, τα εμφανιζω ολα μαζι με alert
+    if (errormsg == "") 
+        return true;
+        else {
+        if (num <= 2) 
+            errormsg = "Υπάρχει το εξής λάθος:\n" + errormsg;
+            else
+                alert ("δεν μπορι να υποβληθεί η φόρμα για τους εξής λόγους:\n" + errormsg);    
+            return false;
+        }
+
+        
+    }
+
+
+ 
+    
+    

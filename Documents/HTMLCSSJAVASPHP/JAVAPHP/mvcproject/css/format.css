@@ -183,15 +183,15 @@ label {
     background-color: #eeddee;
 }
 
-fieldset {
-	/*width: 400px;
+/*fieldset {
+	width: 400px;
 	margin:auto;
 	 ΣΚΙΑ 
 	-moz-box-shadow: 2px 2px 2px #333;
 	-webkit-box-shadow: 2px 2px 2px #333;
-	box-shadow: 2px 2px 2px #333; */
+	box-shadow: 2px 2px 2px #333; 
 }
-
+*/
 #loginform fieldset {
 	width: 180px;
 	margin:auto;

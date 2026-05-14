@@ -61,7 +61,7 @@ class DBConnector {
         $str = "";
         for ($i=0; $i<$num; ++$i) {
             $r = mysqli_fetch_array($res);
-            $str = $str . "<div class='formdiv'>\n";
+            $str = $str . "<div class='productsformdiv'>\n";
             $str = $str . "<form method='post'><fieldset>\n";
             $str = $str . "<label for='pid$r[0]'>Κωδικός</label>\n";
             $str = $str . "<input type='text' id='pid$r[0]' name='pid' value='$r[0]' readonly>\n";

@@ -1,0 +1,9 @@
+.productsformdiv {
+    width: 80%;
+    margin:auto;
+    /* ΣΚΙΑ */
+    -moz-box-shadow: 2px 2px 2px #333;
+    -webkit-box-shadow: 2px 2px 2px #333;
+    box-shadow: 2px 2px 2px #333;
+    background-color: #eeddee;
+}

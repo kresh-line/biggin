@@ -15,7 +15,7 @@ function validateDeleteForm() {
 }
 
 
-function validateUpdateForm() {
+function validateUpdateForm(pid) {
     let errormsg = "";
     let frm = document.getElementById('updateForm' + pid);
     let prodname = frm.elements['pname'].value;
@@ -32,15 +32,15 @@ function validateUpdateForm() {
         num++;
     }
     // ελεχνο οσα θελω και αν βρω λαθη, τα προσθετω στο errormsg, και στο τελος αν δεν ειναι κενό, τα εμφανιζω ολα μαζι με alert
-    if (errormsg == "") 
+    if (errormsg == "")
         return true;
-        else {
-        if (num <= 2) 
-            errormsg = "Υπάρχει το εξής λάθος:\n" + errormsg;
-            else
-                alert ("δεν μπορι να υποβληθεί η φόρμα για τους εξής λόγους:\n" + errormsg);    
-            return false;
-        }
+    else {
+        if (num <= 2)
+            alert("Υπάρχει το εξής λάθος:\n" + errormsg);
+        else
+            alert("δεν μπορι να υποβληθεί η φόρμα για τους εξής λόγους:\n" + errormsg);
+        return false;
+    }
 
         
     }

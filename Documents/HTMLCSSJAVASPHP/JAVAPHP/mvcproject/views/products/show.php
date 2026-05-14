@@ -7,6 +7,7 @@
        // echo $GLOBALS['case'];
         echo $GLOBALS['results']; 
         ?>
+        <script src="/mvcproject/js/jscode.js"></script>
     </div>
 <?php 
     require_once("views/footer.php"); 

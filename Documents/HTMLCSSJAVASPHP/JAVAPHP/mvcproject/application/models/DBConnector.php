@@ -87,7 +87,7 @@ class DBConnector {
             $str = $str . "<br><button class='updateButton' type='submit'>Ενημέρωση</button>\n";
             $str = $str . "</fieldset></form>\n";
             
-            $str = $str . "<form method='post'><fieldset>\n";
+            $str = $str . "<form onsubmit='return validateDeleteForm()' method='post'><fieldset>\n";
             $str = $str . "<input type='hidden' name='delpid' value='$r[0]'>\n";
             $str = $str . "<button class='deleteButton' type='submit'>Διαγραφή</button>\n";
             $str = $str . "</fieldset></form>\n";

@@ -26,6 +26,7 @@ button.updateButton {
 button.updateButton:hover {
   box-shadow: 3px 6px #aaaaaa;
   background-color: #3355e5;
+  font-weight: bold;
 }
 button.deleteButton {
     background-color: #e55555;
@@ -41,6 +42,7 @@ button.deleteButton {
 button.deleteButton:hover {
   box-shadow: 3px 6px #aaaaaa;
   background-color: #e53333;
+  font-weight: bold;
 }
 .productsformdiv form fieldset {
     border: 0px;

@@ -5,5 +5,31 @@
     -moz-box-shadow: 2px 2px 2px #333;
     -webkit-box-shadow: 2px 2px 2px #333;
     box-shadow: 2px 2px 2px #333;
-    background-color: #eeddee;
+    background-color: #dfeff0;
+    margin: 5px;
+}
+.productsformdiv:hover
+{
+    background-color: #e5eff5;
+}
+button.updateButton {
+    background-color: #e5eff5;
+    color: #ffffff;
+    position: relative;
+    left: 70%;
+    width: 100px;
+
+    
+}
+button.deleteButton {
+    background-color: #e55555;
+    color: #ffffff;
+    position: relative;
+    left: 70%;
+    width: 100px;
+    
+    
+}
+.productsformdiv form fieldset {
+    border: 0px;
 }

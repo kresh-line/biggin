@@ -27,7 +27,10 @@ function validateUpdateForm(pid) {
         errormsg = errormsg + num + ". Το όνομα του προϊόντος δεν μπορεί να είναι κενό.\n";
         num++;
     }
-    if (prodprice.trim() <= 0) {
+    if (prodprice.trim() == "") {
+        errormsg = errormsg + num + ". Η τιμή του προϊόντος δεν μπορεί να είναι κενή.\n";
+        num++;
+    } else if (prodprice.trim() <= 0) {
         errormsg = errormsg + num + ". Η τιμή του προϊόντος πρέπει να είναι θετικός αριθμός.\n";
         num++;
     }

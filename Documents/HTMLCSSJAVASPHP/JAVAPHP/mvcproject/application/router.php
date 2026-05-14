@@ -28,6 +28,8 @@ $viewDir = 'views';
 require_once($controllerDir . "/BasicController.php");
 require_once($controllerDir . "/ProductController.php");
 
+$pageSelection ="general";
+
 switch ($request) {
     case $siteDir:
     case $siteDir . '/':
@@ -43,12 +45,14 @@ switch ($request) {
             break;
     case $siteDir . '/products/show':
 	case $siteDir . '/products/show/':
+            $pageSelection = "products";
             $sc = new ProductController();
             $sc->show();
             break;
             
     case $siteDir . '/products/add':
 	case $siteDir . '/products/add/':
+            $pageSelection = "products";
             $sc = new ProductController();
             $sc->add();
             break;

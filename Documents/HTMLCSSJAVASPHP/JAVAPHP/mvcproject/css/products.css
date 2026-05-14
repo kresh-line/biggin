@@ -18,7 +18,7 @@ button.updateButton {
     position: relative;
     left: 70%;
     width: 100px;
-
+    border:1px solod #e5eff5;
     
 }
 button.deleteButton {
@@ -27,6 +27,7 @@ button.deleteButton {
     position: relative;
     left: 70%;
     width: 100px;
+    border:1px solod #e55555;
     
     
 }

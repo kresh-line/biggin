@@ -13,13 +13,19 @@
     background-color: #e5eff5;
 }
 button.updateButton {
-    background-color: #e5eff5;
+    background-color: #50a9e0;
     color: #ffffff;
     position: relative;
     left: 70%;
     width: 100px;
-    border:1px solod #e5eff5;
+    border:1px solid #50a9e0;
+    box-shadow: 2px 4px #888888; 
+
     
+}
+button.updateButton:hover {
+  box-shadow: 3px 6px #aaaaaa;
+  background-color: #3355e5;
 }
 button.deleteButton {
     background-color: #e55555;
@@ -27,9 +33,14 @@ button.deleteButton {
     position: relative;
     left: 70%;
     width: 100px;
-    border:1px solod #e55555;
+    border:1px solid #e55555;
+    box-shadow: 2px 4px #888888;
     
     
+}
+button.deleteButton:hover {
+  box-shadow: 3px 6px #aaaaaa;
+  background-color: #e53333;
 }
 .productsformdiv form fieldset {
     border: 0px;

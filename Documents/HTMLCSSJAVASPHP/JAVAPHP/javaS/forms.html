@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css1/form.css">
+    </head>
+    <body>
+        <form action="" method="post" id="form1">
+            <fieldset><!-- comment -->
+                <legend>Φόρμα</legend>
+                <label for="choose">Προτιμάς μπανάνα ή κεράσι?</label>
+                <input type="text" id="choose" name="fruit" required pattern="[Μμ]παν[άα]να|[Κκ]ερ[άα]σι"><br>
+                <label for="dt">Ημερομηνία Ραντεβού:</label>
+                <input type="date" id="dt" name="dt" required min="2026-05-19" max="2026-06-19"><br>
+                <label for="email">Δώστε e-mail (@gmail.com):</label>
+                <input type="email" id="email" name="email" required><br>
+                <label>Επιλέξτε τουλάχιστον 2 αθλήματα που προτιμάτε:</label><br>
+                <label for="choice1">Ποδόσφαιρο </label>
+                <input type="checkbox" id="choice1" name="choice1"><br>
+                <label for="choice2">Τένις </label>
+                <input type="checkbox" id="choice2" name="choice2"><br>
+                <label for="choice3">Μπάσκετ </label>
+                <input type="checkbox" id="choice3" name="choice3"><br>
+                <button type="submit">Αποστολή</button>
+            </fieldset>
+        </form>
+        <span id="errorform1" class="errormgs"></span>
+
+        <form action="" method="post" id="formtocheck2">
+            <fieldset>
+                <legend>Φόρμα 2</legend>
+                <label for="choose2">Προτιμάς μπανάνα ή κεράσι?</label>
+                <input type="text" id="choose2" name="fruit" required pattern="[Μμ]παν[άα]να|[Κκ]ερ[άα]σι"><br>
+                <label for="dt2">Ημερομηνία Ραντεβού:</label>
+                <input type="date" id="dt2" name="dt" required min="2026-05-19" max="2026-06-19"><br>
+                <label for="email2">Δώστε e-mail (@gmail.com):</label>
+                <input type="email" id="email2" name="email" required><br>
+                <label>Επιλέξτε τουλάχιστον 2 αθλήματα που προτιμάτε:</label><br>
+                <label for="choice1b">Ποδόσφαιρο </label>
+                <input type="checkbox" id="choice1b" name="choice1"><br>
+                <label for="choice2b">Τένις </label>
+                <input type="checkbox" id="choice2b" name="choice2"><br>
+                <label for="choice3b">Μπάσκετ </label>
+                <input type="checkbox" id="choice3b" name="choice3"><br>
+                <button type="submit">Αποστολή</button>
+            </fieldset>
+        </form>
+        <span id="formerrormsg" class="errormgs"></span>
+        <script src="js1/forms.js"></script>
+    </body>
+</html>

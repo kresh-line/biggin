@@ -1,12 +1,12 @@
-#formtocheck fieldset input:invalid{
+#form1 fieldset input:invalid,
+#formtocheck1 fieldset input:invalid {
     border: 1px solid red;
-
 }
-span.errormsg{
+span.errormgs {
     color: red;
     font-weight: bold;
 }
-#formtocheck fieldset input.invalidfield{
+#form1 fieldset input.invalidfield,
+#formtocheck1 fieldset input.invalidfield {
     border: 1px solid red;
-
 }

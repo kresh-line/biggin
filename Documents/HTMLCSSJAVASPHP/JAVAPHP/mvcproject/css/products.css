@@ -50,11 +50,9 @@ button.deleteButton:hover {
 button.insertButton {
     background-color: #50a9e0;
     color: #ffffff;
-    position: relative;
-    left: 70%;
+    float: right;
+    margin-right: 10px;
     width: 100px;
-    border:1px solid #50a9e0;
-    box-shadow: 2px 4px #888888; 
-
-    
+    border: 1px solid #50a9e0;
+    box-shadow: 2px 4px #888888;
 }

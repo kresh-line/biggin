@@ -1,9 +1,16 @@
 // αν επιστρέφει false, δεν θα υποβληθεί η φόρμα αλιωσ θα ειναι true, οπότε θα υποβληθεί
 function validateForm() {
-    return false;
-    
-}
+    return false;}
 
+var infrm = document.getElementById('insertProductForm');
+//αν υπαρχι η φορμα με id insertProductForm, προσθεσε event listener για το submit, και καλεσε την validateInsertForm
+if (infrm!==null)
+    infrm.addEventListener('submit', validateInsertForm);
+
+function validateInsertForm(e) {
+
+    e.preventDefault();
+}
 function validateDeleteForm() {
 
     let answer = confirm("Είστε σίγουροι ότι θέλετε να διαγράψετε αυτό το προϊόν;");

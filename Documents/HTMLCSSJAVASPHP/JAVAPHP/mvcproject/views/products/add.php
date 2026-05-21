@@ -8,11 +8,11 @@
                 <fieldset>
         
             <label for='pname'>Όνομα</label>
-            <input type='text' id='pname' name='pname'  placeholder="Όνομα Προϊόντος">
+            <input type='text' id='pname' name='pname'  placeholder="Όνομα Προϊόντος" required><br>
             <label for='pprice'>Τιμή</label>
-            <input type='number' id='pprice' name='pprice' min="0.00" max="9999.99" step="0.01" value='0.00' >
+            <input type='number' id='pprice' name='pprice' min="0.00" max="9999.99" step="0.01" value='0.00' required><br>
 
-            <label for='pcat$r[0]'>Κατηγορία</label>
+            <label for='pcat$r[0]'>Κατηγορία</label required>
             <select id='pcat$r[0]' name='pcat'>
             <?php
             
@@ -30,6 +30,7 @@
  
             </form>
         </div>
+        <script src="js/jscode.js"></script>
     </div>
         
 <?php 

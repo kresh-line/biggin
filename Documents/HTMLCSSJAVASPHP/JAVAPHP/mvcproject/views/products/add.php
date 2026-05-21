@@ -11,7 +11,7 @@
                 echo "<p> Δεν έστειλες το φόρμα </p>";
         ?>
         <div class='productsformdiv'>
-            <form id='insertProductForm'  method='post'>
+            <form id='insertProductForm' method='post' novalidate>
                 <fieldset>
         
             <label for='pname'>Όνομα</label>

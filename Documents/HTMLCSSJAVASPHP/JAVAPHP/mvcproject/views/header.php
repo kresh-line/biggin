@@ -36,12 +36,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
 		<li><a href=<?php echo $GLOBALS['siteDir'] . "/"; ?>>Αρχική Σελίδα</a></li>
 		<li><a href=<?php echo $GLOBALS['siteDir'] . "/paroysiasi/"; ?>>Παρουσίαση</a></li>
 		<li><a href=<?php echo $GLOBALS['siteDir'] . "/products/show/"; ?>>Προβολή Προϊόντων</a></li>
-                <li><a href=<?php echo $GLOBALS['siteDir'] . "/products/add/"?>>Εισαγωγή Προϊόντος</a></li>
+        <li><a href=<?php echo $GLOBALS['siteDir'] . "/products/add/"?>>Εισαγωγή Προϊόντος</a></li>
 		<li><a href=<?php echo $GLOBALS['siteDir'] . "/info/"?>>Πληροφορίες</a></li>
                 <li><a href="index.php?selection=5">Εικόνες</a></li>
                 <li><a href="index.php?selection=10">Αγορές</a></li>
                 <li><a href="index.php?selection=11">Ανέβασμα Αρχείου</a></li>
-                <li><a href="/mvcproject/contact/">Επικοινωνία</a></li>
+                <li><a href=<?php echo $GLOBALS['siteDir'] . "/products/register/"?>>Εγγραφή</a></li>
 		</ul>
 		</div>
             

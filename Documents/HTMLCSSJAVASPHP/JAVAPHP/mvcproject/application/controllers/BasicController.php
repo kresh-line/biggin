@@ -19,4 +19,7 @@ class BasicController {
     function info() {
         require_once($GLOBALS['viewDir'] . '/info.php'); 
     }
+    function register() {
+        require_once($GLOBALS['viewDir'] . '/register.php'); 
+    }
 }

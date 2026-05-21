@@ -57,10 +57,10 @@ class ProductController {
             $dbc->closeConnection();
             if ($success) {
                 $GLOBALS["insertProductResult"] = true;
-                echo "to proion egine eisagwgi";
+                
             } else {
                 $GLOBALS["insertProductResult"] = false;
-                echo "to proion den egine eisagwgi";
+             
             }
         }
 

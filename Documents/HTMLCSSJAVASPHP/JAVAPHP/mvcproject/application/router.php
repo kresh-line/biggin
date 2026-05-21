@@ -63,9 +63,11 @@ switch ($request) {
             $bc->info();
             break;
         
-    case $siteDir . '/contact':
-        case $siteDir . '/contact/':
+    case $siteDir . '/products/register':
+        case $siteDir . '/products/register/':
 		$selection = "CONTACT";
+            $bc = new BasicController();
+            $bc->register();
 		break;
 
     default:

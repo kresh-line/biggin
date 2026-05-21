@@ -32,12 +32,12 @@
             </select>
 
             
-            <br><button class='insertButton' type='submit'>Εισαγωγή</button>
+            <span class="errormsg" id="ifem"></span><br>
+            <button class='insertButton' type='submit'>Εισαγωγή</button>
             </fieldset>
 
             </form>
         </div>
-        <span class="errormsg" id="ifem"></span>
         <script src="js/jscode.js"></script>
     </div>
 <?php 

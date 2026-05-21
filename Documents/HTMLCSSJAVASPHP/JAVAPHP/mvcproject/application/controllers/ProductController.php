@@ -50,10 +50,10 @@ class ProductController {
     }
     
     function add() {
-        if (isset($_POST["pname"])) {
+        if (isset($_POST["pname"]) && trim($_POST["pname"]) !== "" && floatval($_POST["pprice"]) > 0) {
             $dbc = new DBConnector();
             $dbc->openConnection();
-            $success = $dbc->insertProduct($_POST["pname"], $_POST["pprice"], $_POST["pcat"]);
+            $success = $dbc->insertProduct(trim($_POST["pname"]), $_POST["pprice"], $_POST["pcat"]);
             $dbc->closeConnection();
             if ($success) {
                 $GLOBALS["insertProductResult"] = true;

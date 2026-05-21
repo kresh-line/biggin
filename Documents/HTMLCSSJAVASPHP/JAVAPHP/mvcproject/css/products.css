@@ -1,12 +1,12 @@
 .productsformdiv {
     width: 80%;
-    margin:auto;
+    margin: 5px;
+    padding-bottom: 15px;
     /* ΣΚΙΑ */
     -moz-box-shadow: 2px 2px 2px #333;
     -webkit-box-shadow: 2px 2px 2px #333;
     box-shadow: 2px 2px 2px #333;
     background-color: #dfeff0;
-    margin: 5px;
 }
 .productsformdiv:hover
 {

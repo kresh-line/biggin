@@ -3,17 +3,24 @@
 ?>
     <div id="content">
         <h1>Εισαγωγή Προϊόντος</h1>
+        <?php 
+            if (isset($_POST["pname"])) 
+                echo "<p> Στάλθηκε η φόρμα </p>";
+            else 
+
+                echo "<p> Δεν έστειλες το φόρμα </p>";
+        ?>
         <div class='productsformdiv'>
             <form id='insertProductForm'  method='post'>
                 <fieldset>
         
             <label for='pname'>Όνομα</label>
-            <input type='text' id='pname' name='pname'  placeholder="Όνομα Προϊόντος"><br>
+            <input type='text' id='pname' name='pname'  placeholder="Όνομα Προϊόντος" required><br>
             <label for='pprice'>Τιμή</label>
             <input type='number' id='pprice' name='pprice' min="0.00" max="9999.99" step="0.01" value='0.00' required><br>
 
-            <label for='pcat$r[0]'>Κατηγορία</label required>
-            <select id='pcat$r[0]' name='pcat'>
+            <label for='pcat'>Κατηγορία</label>
+            <select id='pcat' name='pcat' required>
             <?php
             
             for ($j=0; $j<count($GLOBALS['categories']); ++$j) {
@@ -31,9 +38,9 @@
 
             </form>
         </div>
+        <span class="errormsg" id="ifem"></span>
         <script src="js/jscode.js"></script>
     </div>
-    <span class="errormsg" id="ifem"></span>
 <?php 
     require_once("views/footer.php"); 
 ?>	

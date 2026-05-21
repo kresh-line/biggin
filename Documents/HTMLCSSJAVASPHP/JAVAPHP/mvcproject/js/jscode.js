@@ -1,7 +1,3 @@
-// αν επιστρέφει false, δεν θα υποβληθεί η φόρμα αλιωσ θα ειναι true, οπότε θα υποβληθεί
-function validateForm() {
-    return false;}
-
 var infrm = document.getElementById('insertProductForm');
 //αν υπαρχι η φορμα με id insertProductForm, προσθεσε event listener για το submit, και καλεσε την validateInsertForm
 if (infrm!==null)
@@ -9,10 +5,18 @@ if (infrm!==null)
 
 function validateInsertForm(e) {
     let msgstr = "";
+    //pname.addEventListener("")
+    infrm.elements['pname'].setCustomValidity("");
    if (infrm.elements['pname'].value.trim() ==="") {
        msgstr = msgstr + "Το όνομα του προϊόντος δεν μπορεί να είναι κενό.\n";
+       infrm.elements['pname'].setCustomValidity("Error.");
+       infrm.elements['pname'].value="";
+   } else if (infrm.elements['pname'].value.trim().length > 20) {
+       msgstr = msgstr + "Το όνομα του προϊόντος δεν μπορεί να είναι πάνω από 20 χαρακτήρες.\n";
+       infrm.elements['pname'].setCustomValidity("exi poli xaraktira.");
+   }
     
-   }    
+      
     if (msgstr!=="") {
         document.getElementById('ifem').innerHTML = msgstr;
         e.preventDefault();

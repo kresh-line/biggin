@@ -4,10 +4,9 @@
     <div id="content">
         <h1>Εισαγωγή Προϊόντος</h1>
         <?php 
-            if (isset($_POST["pname"])) 
+            if (isset($_POST["pname"]) && $_POST["pname"] !== "")
                 echo "<p> Στάλθηκε η φόρμα </p>";
-            else 
-
+            else
                 echo "<p> Δεν έστειλες το φόρμα </p>";
         ?>
         <div class='productsformdiv'>

@@ -18,12 +18,13 @@ function validateInsertForm(e) {
     
       
     if (msgstr!=="") {
-        document.getElementById('ifem').innerHTML = msgstr;
         e.preventDefault();
-    
+        document.getElementById('ifem').innerHTML = msgstr;
     }
-    else
+    else {
+        document.getElementById('ifem').innerHTML = "";
         return true;
+    }
 }
 function validateDeleteForm() {
 

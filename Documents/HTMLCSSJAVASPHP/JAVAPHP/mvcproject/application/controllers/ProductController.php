@@ -53,21 +53,23 @@ class ProductController {
         if (isset($_POST["pname"])) {
             $dbc = new DBConnector();
             $dbc->openConnection();
-            $num = $dbc->insertProduct($_POST["pname"], $_POST["pprice"], $_POST["pcat"]);
+            $success = $dbc->insertProduct($_POST["pname"], $_POST["pprice"], $_POST["pcat"]);
             $dbc->closeConnection();
-            if ($num == 1)
-                $GLOBALS['insertProduct'] = "<h3>Εισαγωγή προϊόντος " . $_POST["pname"] . " με επιτυχία</h3>";
-            else
-                $GLOBALS['insertProduct'] = "<h3>Αποτυχία εισαγωγής προϊόντος " . $_POST["pname"] . "</h3>";
+            if ($success) {
+                $GLOBALS["insertProductResult"] = true;
+                echo "to proion egine eisagwgi";
+            } else {
+                $GLOBALS["insertProductResult"] = false;
+                echo "to proion den egine eisagwgi";
+            }
         }
 
         $dbc = new DBConnector();
         $dbc->openConnection();
         $GLOBALS['categories'] = $dbc->getCategories();
         $dbc->closeConnection();
-        
 
-        require_once($GLOBALS['viewDir'] . '/products/add.php'); 
+        require_once($GLOBALS['viewDir'] . '/products/add.php');
     }
     
 }

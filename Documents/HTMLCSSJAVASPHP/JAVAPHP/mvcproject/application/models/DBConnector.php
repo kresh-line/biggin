@@ -128,5 +128,19 @@ class DBConnector {
         
         return $categ;
     }
+    function insertProduct($pname, $pprice, $pcat) {
+        $sql = "insert into products (name, price, catid) values ('$pname', $pprice, $pcat)";
+        //Εκτέλεση ερωτήματος
+        $res = mysqli_query($this->conn, $sql);
+        //Βλέπουμε πόσες εγγραφές επηρεάστηκαν από το update 
+        $num = mysqli_affected_rows($this->conn); 
+        if ($num==1)
+			return true;
+		else 
+			return false;
+        
+    }
+        
+    
 }
 

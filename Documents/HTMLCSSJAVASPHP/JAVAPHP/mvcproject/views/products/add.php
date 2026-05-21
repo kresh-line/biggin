@@ -25,14 +25,14 @@
             ?>
             </select>
 
+            <span class="errormsg" id="ifem"></span>
             <br><button class='insertButton' type='submit'>Εισαγωγή</button>
             </fieldset>
- 
+
             </form>
         </div>
         <script src="js/jscode.js"></script>
     </div>
-    <span class="errormsg" id="ifem"></span>    
 <?php 
     require_once("views/footer.php"); 
 ?>	

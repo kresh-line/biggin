@@ -8,7 +8,7 @@
                 <fieldset>
         
             <label for='pname'>Όνομα</label>
-            <input type='text' id='pname' name='pname'  placeholder="Όνομα Προϊόντος" required><br>
+            <input type='text' id='pname' name='pname'  placeholder="Όνομα Προϊόντος"><br>
             <label for='pprice'>Τιμή</label>
             <input type='number' id='pprice' name='pprice' min="0.00" max="9999.99" step="0.01" value='0.00' required><br>
 

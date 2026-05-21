@@ -222,3 +222,7 @@ input:required:invalid {
 input:focus {
 	background-color:#f7eed5;
 }
+span.errormsg {
+	color:red;
+	font-weight: bold;
+}

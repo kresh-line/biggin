@@ -8,8 +8,18 @@ if (infrm!==null)
     infrm.addEventListener('submit', validateInsertForm);
 
 function validateInsertForm(e) {
-
-    e.preventDefault();
+    let msgstr = "";
+   if (infrm.elements['pname'].value.trim() ==="") {
+       msgstr = msgstr + "Το όνομα του προϊόντος δεν μπορεί να είναι κενό.\n";
+    
+   }    
+    if (msgstr!=="") {
+        document.getElementById('ifem').innerHTML = msgstr;
+        e.preventDefault();
+    
+    }
+    else
+        return true;
 }
 function validateDeleteForm() {
 

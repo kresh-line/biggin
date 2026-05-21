@@ -3,7 +3,7 @@
 ?>
     <div id="content">
         <h1>Εισαγωγή Προϊόντος</h1>
-        <div class='productsformdiv'>\n";
+        <div class='productsformdiv'>
             <form id='insertProductForm'  method='post'>
                 <fieldset>
         
@@ -32,7 +32,7 @@
         </div>
         <script src="js/jscode.js"></script>
     </div>
-        
+    <span class="errormsg" id="ifem"></span>    
 <?php 
     require_once("views/footer.php"); 
 ?>	

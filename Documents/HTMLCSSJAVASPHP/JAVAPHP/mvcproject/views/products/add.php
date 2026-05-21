@@ -28,17 +28,17 @@
           
                }
            
-            ?>
+            ?><br>
             </select>
 
             
-            <span class="errormsg" id="ifem"></span><br>
-            <button class='insertButton' type='submit'>Εισαγωγή</button>
+            <button class='insertButton' type='submit'>Εισαγωγή</button><br>
+            <span class="errormsg" id="ifem"></span>
             </fieldset>
 
             </form>
         </div>
-        <script src="js/jscode.js"></script>
+        <script src="/mvcproject/js/jscode.js"></script>
     </div>
 <?php 
     require_once("views/footer.php"); 

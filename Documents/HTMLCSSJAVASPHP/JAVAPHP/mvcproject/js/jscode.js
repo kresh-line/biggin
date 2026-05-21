@@ -5,23 +5,27 @@ if (infrm!==null)
 
 function validateInsertForm(e) {
     let msgstr = "";
-    //pname.addEventListener("")
     infrm.elements['pname'].setCustomValidity("");
-   if (infrm.elements['pname'].value.trim() ==="") {
-       msgstr = msgstr + "Το όνομα του προϊόντος δεν μπορεί να είναι κενό.\n";
-       infrm.elements['pname'].setCustomValidity("Error.");
-       infrm.elements['pname'].value="";
-   } else if (infrm.elements['pname'].value.trim().length > 20) {
-       msgstr = msgstr + "Το όνομα του προϊόντος δεν μπορεί να είναι πάνω από 20 χαρακτήρες.\n";
-       infrm.elements['pname'].setCustomValidity("exi poli xaraktira.");
-   }
-    
-      
-    if (msgstr!=="") {
+    infrm.elements['pprice'].setCustomValidity("");
+
+    if (infrm.elements['pname'].value.trim() === "") {
+        msgstr += "Το όνομα του προϊόντος δεν μπορεί να είναι κενό.<br>";
+        infrm.elements['pname'].setCustomValidity("Error.");
+        infrm.elements['pname'].value = "";
+    } else if (infrm.elements['pname'].value.trim().length > 20) {
+        msgstr += "Το όνομα του προϊόντος δεν μπορεί να είναι πάνω από 20 χαρακτήρες.<br>";
+        infrm.elements['pname'].setCustomValidity("Error.");
+    }
+
+    if (infrm.elements['pprice'].value === "" || parseFloat(infrm.elements['pprice'].value) <= 0) {
+        msgstr += "Η τιμή του προϊόντος πρέπει να είναι θετικός αριθμός.<br>";
+        infrm.elements['pprice'].setCustomValidity("Error.");
+    }
+
+    if (msgstr !== "") {
         e.preventDefault();
         document.getElementById('ifem').innerHTML = msgstr;
-    }
-    else {
+    } else {
         document.getElementById('ifem').innerHTML = "";
         return true;
     }

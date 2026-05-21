@@ -47,3 +47,14 @@ button.deleteButton:hover {
 .productsformdiv form fieldset {
     border: 0px;
 }
+button.insertButton {
+    background-color: #50a9e0;
+    color: #ffffff;
+    position: relative;
+    left: 70%;
+    width: 100px;
+    border:1px solid #50a9e0;
+    box-shadow: 2px 4px #888888; 
+
+    
+}

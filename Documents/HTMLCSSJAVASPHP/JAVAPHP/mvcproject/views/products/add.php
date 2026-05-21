@@ -10,17 +10,18 @@
             <label for='pname'>Όνομα</label>
             <input type='text' id='pname' name='pname'  placeholder="Όνομα Προϊόντος">
             <label for='pprice'>Τιμή</label>
-            <input type='number' id='pprice' name='pprice' min="0.00" max="9999.99" step="0.01" value='0.00' placeholder="Τιμή Προϊόντος">
+            <input type='number' id='pprice' name='pprice' min="0.00" max="9999.99" step="0.01" value='0.00' >
 
             <label for='pcat$r[0]'>Κατηγορία</label>
             <select id='pcat$r[0]' name='pcat'>
             <?php
-            /*
-            for ($j=0; $j<count($categ); ++$j) {
+            
+            for ($j=0; $j<count($GLOBALS['categories']); ++$j) {
                
-               echo "<option value='" . $categ[$j][0] . "'>" . $categ[$j][1] . "</option>\n";
-            }
-           */ 
+               echo "<option value='" . $GLOBALS['categories'][$j][0] . "'>" . $GLOBALS['categories'][$j][1] . "</option>\n";
+          
+               }
+           
             ?>
             </select>
 

@@ -50,6 +50,13 @@ class ProductController {
     }
     
     function add() {
+
+        $dbc = new DBConnector();
+        $dbc->openConnection();
+        $GLOBALS['categories'] = $dbc->getCategories();
+        $dbc->closeConnection();
+        
+
         require_once($GLOBALS['viewDir'] . '/products/add.php'); 
     }
     

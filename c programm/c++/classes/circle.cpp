@@ -20,9 +20,19 @@ class circle {
 };
 
 int main() {
-    circle c1;
-    c1.setAktina(3.5);
-    cout << "Emvadon kyklou : " << c1.give_emvadon() << endl;
-    cout << "Perimetros kyklou : " << c1.give_perimetro() << endl;
+    circle *p;
+    p = new circle;
+    p->setAktina(3.5);
+    cout << "Emvadon kyklou : " << p->give_emvadon() << endl;
+    cout << "Perimetros kyklou : " << p->give_perimetro() << endl;
+
+    p = new circle;
+    p->setAktina(5);
+
+    cout << "Emvadon kyklou : " << p->give_emvadon() << endl;
+    cout << "Perimetros kyklou : " << p->give_perimetro() << endl;
+
+    delete p;
+
     return 0;
 }

@@ -61,12 +61,12 @@
         </div>
       </div>
 
-      <!-- Counterbalance arms (left + right) -->
-      <div class="arm l" id="arm-l"></div>
-      <div class="arm r" id="arm-r"></div>
-
-      <!-- Pivot anchor — iPad orbits around this point -->
+      <!-- Pivot anchor — iPad + arms orbit around this point together -->
       <div class="pivot-anchor" id="pivot-anchor">
+        <!-- Counterbalance arms live INSIDE the anchor so they share the iPad's 3D frame
+             and always sit behind the display, never piercing through it. -->
+        <div class="arm l" id="arm-l"></div>
+        <div class="arm r" id="arm-r"></div>
         <div class="ipad" id="ipad">
           <div class="face front">
             <div class="notch"></div>

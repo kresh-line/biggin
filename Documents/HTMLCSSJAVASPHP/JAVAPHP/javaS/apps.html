@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Calculator</title>
-        <link rel="icon" href="img/icons.png">
-        <link rel="stylesheet" type="text/css" href="css1/calc.css">
-        
-        <link rel="stylesheet" type="text/css" href="css1/cookiedialog.css">
-        <link rel="stylesheet" type="text/css" href="css1/modaldialog.css">
-        <script src="js1/cookiedialog.js" defer></script>
-        <script src="js1/modaldialog.js" defer></script>
-    </head>
-    <body>
-        <div id="calcapp">
-            
-            <input type="text" name="calcap_display" id="calcap_display" value="0" readonly>
-            <div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="icon" href="img/icons.png">
+    <link rel="stylesheet" type="text/css" href="css1/calc.css">
+
+    <link rel="stylesheet" type="text/css" href="css1/cookiedialog.css">
+    <link rel="stylesheet" type="text/css" href="css1/modaldialog.css">
+    <script src="js1/cookiedialog.js" defer></script>
+    <script src="js1/modaldialog.js" defer></script>
+</head>
+
+<body>
+    <div id="calcapp">
+
+        <input type="text" name="calcap_display" id="calcap_display" value="0" readonly>
+        <div>
             <button onclick="setMem()">M+</button>
             <button onclick="getMem()">M-</button>
             <button onclick="clearclac()">CL</button>
@@ -42,14 +44,14 @@
             <button onclick="calc(this)">=</button>
             <button onclick="calc(this)">+</button>
 
-            </div>
-
-            
-            <script src="js1/calc.js"></script>
         </div>
 
-        <div class="cookiedialog">
-            <header>
+
+        <script src="js1/calc.js"></script>
+    </div>
+
+    <div class="cookiedialog">
+        <header>
             <h2>Δήλωση χρήσης Cookies</h2>
         </header>
         <div class="cddata">
@@ -59,22 +61,25 @@
                 αποδέχεστε τη χρήση cookies.
             </p>
         </div>
-        <div class="cdbuttons">  
+        <div class="cdbuttons">
             <button class="cdbutton"> Συνφονω</button>
             <button class="cdbutton"> Διαφονο</button>
         </div>
 
+    </div>
+    <div id="modaldialog">
+
+        <div id="mddatadiv" class="mddata">
+            <header>
+                <div><span id="mdclose">[Close]</span></div>
+            </header>
+            <p> Αυτή είναι μια απλή αριθμομηχανή.
+                Μπορείτε να κάνετε μαθηματικές πράξεις όπως πρόσθεση,
+                αφαίρεση, πολλαπλασιασμό και διαίρεση.
+            </p>
         </div>
-        <div id="modaldialog"> 
-            
-            <div id="mddatadiv" class="mddata">
-                <header><div><span id="mdclose">[Close]</span></div> </header>
-                <p> Αυτή είναι μια απλή αριθμομηχανή.
-                    Μπορείτε να κάνετε μαθηματικές πράξεις όπως πρόσθεση,
-                    αφαίρεση, πολλαπλασιασμό και διαίρεση.
-                </p>
-            </div>
-        </div>
-    </body>
+    </div>
+</body>
+
 </html>
 <!-- 31.03.2026 -->

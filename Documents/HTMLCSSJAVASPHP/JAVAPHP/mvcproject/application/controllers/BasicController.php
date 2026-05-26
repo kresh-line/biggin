@@ -41,7 +41,7 @@ class BasicController {
             if ($msg == "") {
                 $dbc = new DBConnector();
                 $dbc->openConnection();
-               $res =  $dbc->insertUser($username, $pwd1, $bd);
+               $res =  $dbc->registerUser($username, $pwd1, $bd);
                 $dbc->closeConnection();
 
                 

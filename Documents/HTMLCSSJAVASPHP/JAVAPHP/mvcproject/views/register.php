@@ -10,13 +10,13 @@
             <fieldset>
                 <legend> Στοιχεία Εγγραφής</legend>
                 <label for="user">Όνομα Χρήστη: (email)</label>
-                <input type="email" id="user" name="user" required><br>
+                <input type="email" id="user" name="user" required placeholder="Email sto @gmail.com" title="Please enter a valid email address"><br>
 
                 <label for="pswd">Κωδικός Πρόσβασης:</label>
-                <input type="password" id="pswd" name="pswd" required><br>
+                <input type="password" id="pswd" name="pswd" required  title="Ο κωδικός πρόσβασης πρέπει να περιλαμβάνει τουλάχιστον 8 χαρακτήρες και να περιλαμβάνει τουλάχιστον έναν αριθμό"><br>
 
                  <label for="pswd2">Επιβεβαίωση Κωδικού:</label>
-                <input type="password" id="pswd2" name="pswd2" required><br>
+                <input type="password" id="pswd2" name="pswd2" required  title="Ο κωδικός πρόσβασης πρέπει να είναι ίδιος με τον πρώτο"><br>
 
                  <label for="bd">Ετος Γέννησης:</label>
                 <input type="number" id="bd" name="bd" min="1900" <?php echo "max='$etosmax'";?> <?php echo "min='$etosval'";?> required><br>

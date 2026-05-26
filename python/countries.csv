@@ -1,0 +1,50 @@
+Country,Population,Area,Capital,Continent
+Greece,10700000,131957,Athens,Europe
+Germany,83000000,357022,Berlin,Europe
+France,67000000,643801,Paris,Europe
+Italy,59000000,301340,Rome,Europe
+Spain,47000000,505990,Madrid,Europe
+Portugal,10300000,92212,Lisbon,Europe
+Netherlands,17000000,41543,Amsterdam,Europe
+Belgium,11500000,30528,Brussels,Europe
+Sweden,10000000,450295,Stockholm,Europe
+Norway,5400000,385207,Oslo,Europe
+Denmark,5800000,42933,Copenhagen,Europe
+Brazil,214000000,8515767,Brasilia,South America
+Argentina,45000000,2780400,Buenos Aires,South America
+Chile,19000000,756102,Santiago,South America
+Peru,,1285216,Lima,South America
+Colombia,51000000,1141748,Bogota,
+Venezuela,28000000,916445,Caracas,South America
+USA,331000000,9833517,Washington,North America
+Canada,38000000,9984670,Ottawa,North America
+Mexico,126000000,1964375,Mexico City,North America
+Cuba,11000000,109884,Havana,North America
+Japan,125000000,377975,Tokyo,Asia
+China,1412000000,9596961,Beijing,Asia
+India,1393000000,3287263,New Delhi,Asia
+South Korea,51000000,100210,Seoul,Asia
+Indonesia,273000000,1904569,Jakarta,Asia
+Thailand,70000000,513120,Bangkok,Asia
+Vietnam,97000000,331212,Hanoi,Asia
+Saudi Arabia,35000000,2149690,Riyadh,Asia
+Turkey,84000000,783356,Ankara,Asia
+Iran,85000000,1648195,Tehran,Asia
+Egypt,104000000,1002450,Cairo,Africa
+Nigeria,206000000,923768,Abuja,Africa
+Kenya,54000000,,Nairobi,Africa
+Morocco,37000000,446550,,Africa
+South Africa,60000000,1221037,Pretoria,Africa
+Algeria,43000000,2381741,Algiers,Africa
+Australia,26000000,7692024,Canberra,Oceania
+New Zealand,5000000,268838,Wellington,Oceania
+Fiji,900000,18274,Suva,Oceania
+Samoa,,2831,Apia,Oceania
+Papua New Guinea,9000000,462840,,Oceania
+,8000000,65000,Unknown,Oceania
+Iceland,366000,103000,Reykjavik,Europe
+Ireland,5000000,70273,Dublin,Europe
+Switzerland,8700000,41285,Bern,Europe
+Austria,8900000,83879,Vienna,Europe
+Poland,37000000,312679,Warsaw,Europe
+Czechia,10700000,78865,Prague,Europe

@@ -26,12 +26,20 @@
              <!-- <input type="submit" value="Εγγραφή"> -->
             </fieldset>
         </form>
+        <span class="errormsg">
         <?PHP 
-            echo $GLOBALS["registerMsg"];
+            echo $GLOBALS["registererrorMsg"];
         ?>
+        </span>
+        <span class="resultmsg">
+        <?PHP 
+            echo $GLOBALS["registerrezultMsg"];
+        ?>
+        </span>
     </div>
 <?php 
     require_once("views/footer.php"); 
 ?>	
+
 
     

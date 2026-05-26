@@ -140,6 +140,20 @@ class DBConnector {
 			return false;
         
     }
+        function registerUser($un, $pwd, $by) {
+            //kane hash τον κωδικό πρόσβασης πριν τον αποθηκεύσεις στη βάση
+        $hashpwd = password_hash($pwd, PASSWORD_DEFAULT);    
+        $sql = "insert into users (username, password, yearofbirth) values ('$un', '$hashpwd', $by)";
+        //Εκτέλεση ερωτήματος
+        $res = mysqli_query($this->conn, $sql);
+        //Βλέπουμε πόσες εγγραφές επηρεάστηκαν από το update 
+        $num = mysqli_affected_rows($this->conn); 
+        if ($num==1)
+			return true;
+		else 
+			return false;
+        
+    }
         
     
 }

@@ -21,7 +21,8 @@ class BasicController {
     }
     function register() {
         $msg = "";
-        $GLOBALS["registerMsg"] = "";
+        $GLOBALS["registererrorMsg"] = "";
+        $GLOBALS["registerrezultMsg"] = "";
         //Ελέγχω αν έχω υποβληθεί η φόρμα
         if (isset($_POST["user"]) ) {
             $username = $_POST["user"];
@@ -36,7 +37,22 @@ class BasicController {
             if (strlen($pwd1) < 8 || strlen($pwd1) > 30)
                 $msg = $msg . "<h3>Ο κωδικός πρόσβασης πρέπει να είναι τουλάχιστον 8 χαρακτήρες και το πολύ 30</h3>";
             //Εδώ θα έπρεπε να κάνω έλεγχο για το αν τα
-            $GLOBALS["registerMsg"] = $msg;
+            $GLOBALS["registererrorMsg"] = $msg;
+            if ($msg == "") {
+                $dbc = new DBConnector();
+                $dbc->openConnection();
+               $res =  $dbc->insertUser($username, $pwd1, $bd);
+                $dbc->closeConnection();
+
+                
+                //Εδώ θα έπρεπε να κάνω την εγγραφή του χρήστη στη βάση
+                if ($res) 
+                    $GLOBALS["registerrezultMsg"] = "<h3>Επιτυχής Εγγραφή</h3>";
+                 else 
+                    $GLOBALS["registerrezultMsg"] = "<h3>Η εγγραφή απέτυχε. Ίσως το email είναι ήδη καταχωρημένο.</h3>";
+                
+                //$GLOBALS["registerMsg"] = "<h3>Επιτυχής Εγγραφή</h3>";
+            }
         }
         
         require_once($GLOBALS['viewDir'] . '/register.php'); 

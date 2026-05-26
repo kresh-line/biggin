@@ -1,0 +1,21 @@
+<?php
+class HelperClass {
+        function printlongin() {
+            ?>
+        <form id="loginform" action=<?php echo $GLOBALS['siteDir'] . "/login"; ?> method="post">
+         <fieldset>
+
+            <label for="longinname">Όνομα:</label>
+            <input type="text" name="longinname" id="longinname"><br>
+            <label for="pwd">Κωδικός:</label>
+            <input type="password" name="pwd" id="pwd"><br>
+        
+        <input type="submit" value="Σύνδεση">
+         </fieldset>
+        </form>
+        
+<?php
+
+        }
+}
+

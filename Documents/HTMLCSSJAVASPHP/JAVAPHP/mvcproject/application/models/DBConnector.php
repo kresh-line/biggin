@@ -141,6 +141,14 @@ class DBConnector {
         
     }
         function registerUser($un, $pwd, $by) {
+         // θα ελεγνο αν τ χριστι ειπαρχει ιδιαιτερα αν το email υπάρχει ήδη στη βάση
+        $sql = "select * from users where username='$un'";
+        $res = mysqli_query($this->conn, $sql);
+        $num = mysqli_num_rows($res);
+        if ($num>0) {
+            return "ο χριστής εγγραφει ήδη!";
+        }
+
             //kane hash τον κωδικό πρόσβασης πριν τον αποθηκεύσεις στη βάση
         $hashpwd = password_hash($pwd, PASSWORD_DEFAULT);    
         $sql = "insert into users (username, password, yearofbirth) values ('$un', '$hashpwd', $by)";
@@ -149,9 +157,9 @@ class DBConnector {
         //Βλέπουμε πόσες εγγραφές επηρεάστηκαν από το update 
         $num = mysqli_affected_rows($this->conn); 
         if ($num==1)
-			return true;
+			return "";
 		else 
-			return false;
+			return "Η εγγραφή απέτυχε!";
         
     }
         

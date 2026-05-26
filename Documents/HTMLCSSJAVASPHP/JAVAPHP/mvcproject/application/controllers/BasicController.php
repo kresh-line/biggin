@@ -41,15 +41,15 @@ class BasicController {
             if ($msg == "") {
                 $dbc = new DBConnector();
                 $dbc->openConnection();
-               $res =  $dbc->registerUser($username, $pwd1, $bd);
+                $res =  $dbc->registerUser($username, $pwd1, $bd);
                 $dbc->closeConnection();
 
                 
                 //Εδώ θα έπρεπε να κάνω την εγγραφή του χρήστη στη βάση
-                if ($res) 
+                if ($res=="") 
                     $GLOBALS["registerrezultMsg"] = "<h3>Επιτυχής Εγγραφή</h3>";
                  else 
-                    $GLOBALS["registerrezultMsg"] = "<h3>Η εγγραφή απέτυχε. Ίσως το email είναι ήδη καταχωρημένο.</h3>";
+                    $GLOBALS["registerrezultMsg"] = "<br>$res<br>";
                 
                 //$GLOBALS["registerMsg"] = "<h3>Επιτυχής Εγγραφή</h3>";
             }

@@ -6,7 +6,8 @@
     <div id="content">
         <h1>Καλωσήρθατε στην σελίδα Εγγραφής</h1>
 
-        <form method="post">
+        <form class="productsformdiv" method="post">
+
             <fieldset>
                 <legend> Στοιχεία Εγγραφής</legend>
                 <label for="user">Όνομα Χρήστη: (email)</label>
@@ -25,6 +26,9 @@
              <!-- <input type="submit" value="Εγγραφή"> -->
             </fieldset>
         </form>
+        <?PHP 
+            echo $GLOBALS["registerMsg"];
+        ?>
     </div>
 <?php 
     require_once("views/footer.php"); 

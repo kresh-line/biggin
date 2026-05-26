@@ -10,7 +10,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         <link rel ="stylesheet" type="text/css" href="/mvcproject/css/format.css">
         <link rel ="stylesheet" type="text/css" href="/mvcproject/css/extra.css">
         <?php 
-        if ($GLOBALS['pageSelection']=="products") 
+        if ($GLOBALS['pageSelection']=="products" || $GLOBALS['pageSelection']=="register") 
             echo "<link rel ='stylesheet' type='text/css' href='/mvcproject/css/products.css'>\n";
         
         ?>

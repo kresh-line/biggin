@@ -65,7 +65,7 @@ switch ($request) {
         
     case $siteDir . '/products/register':
         case $siteDir . '/products/register/':
-		$selection = "CONTACT";
+		$selection = "register";
             $bc = new BasicController();
             $bc->register();
 		break;

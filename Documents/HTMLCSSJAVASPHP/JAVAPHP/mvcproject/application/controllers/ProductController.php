@@ -53,9 +53,9 @@ class ProductController {
         $dbc->openConnection();
         $GLOBALS['results'] = $dbc->getProductsAsForms();
         $dbc->closeConnection();
-        
-        require_once($GLOBALS['viewDir'] . '/products/show.php'); 
-    }
+        }
+
+        require_once($GLOBALS['viewDir'] . '/products/show.php');
     }
     function add() {
         $hp = new HelperClass();

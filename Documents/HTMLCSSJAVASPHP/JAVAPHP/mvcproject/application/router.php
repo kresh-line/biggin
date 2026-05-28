@@ -38,8 +38,8 @@ if (isset($_POST['longinname'], $_POST['pwd'])) {
 }
 
 if (isset($_POST['logout'])) {
-    $_SESSION = [];
-    session_destroy();
+    $hp = new HelperClass();
+    $hp->logoutUser();
 }
 
 switch ($request) {

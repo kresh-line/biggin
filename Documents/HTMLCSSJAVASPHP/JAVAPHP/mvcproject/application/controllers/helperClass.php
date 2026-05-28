@@ -30,6 +30,11 @@ class HelperClass {
                 return null;
         }
 
+        function logoutUser() {
+            $_SESSION = [];
+            session_destroy();
+        }
+
         function loginUser($un, $pwd) {
             $db = new DBConnector();
             $db->openConnection();

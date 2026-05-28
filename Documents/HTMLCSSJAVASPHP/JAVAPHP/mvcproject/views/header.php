@@ -27,7 +27,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
             </div>
             <div id='logdialog'>
         <?php
-        require_once("application/controllers/helperClass.php");
+        
         $helper = new HelperClass();
         $helper->printlongin();
         ?>

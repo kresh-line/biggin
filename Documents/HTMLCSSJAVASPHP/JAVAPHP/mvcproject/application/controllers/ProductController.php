@@ -15,6 +15,14 @@ class ProductController {
      * 3) Ο χρήστης πάτησε "Διαγραφή" σε ένα προϊόν
      */
     function show() {
+        // prostateyoume tin selida mas gia na min exei prosvasi xoris login
+        $hp = new HelperClass();
+        $GLOBALS['username'] = $hp->isLoggedIn();
+
+        if ($GLOBALS['username'] !=null) {
+           
+        
+
         //Ελέγχω ποια περίπτωση έχω
         //Ελέγχω αν έχω ενημέρωση προϊόντος
         if (isset($_POST['pid'])) {
@@ -48,26 +56,25 @@ class ProductController {
         
         require_once($GLOBALS['viewDir'] . '/products/show.php'); 
     }
-    
+    }
     function add() {
-        if (isset($_POST["pname"]) && trim($_POST["pname"]) !== "" && floatval($_POST["pprice"]) > 0) {
+        $hp = new HelperClass();
+        $GLOBALS['username'] = $hp->isLoggedIn();
+
+        if ($GLOBALS['username'] != null) {
+            if (isset($_POST["pname"]) && trim($_POST["pname"]) !== "" && floatval($_POST["pprice"]) > 0) {
+                $dbc = new DBConnector();
+                $dbc->openConnection();
+                $success = $dbc->insertProduct(trim($_POST["pname"]), $_POST["pprice"], $_POST["pcat"]);
+                $dbc->closeConnection();
+                $GLOBALS["insertProductResult"] = $success ? true : false;
+            }
+
             $dbc = new DBConnector();
             $dbc->openConnection();
-            $success = $dbc->insertProduct(trim($_POST["pname"]), $_POST["pprice"], $_POST["pcat"]);
+            $GLOBALS['categories'] = $dbc->getCategories();
             $dbc->closeConnection();
-            if ($success) {
-                $GLOBALS["insertProductResult"] = true;
-                
-            } else {
-                $GLOBALS["insertProductResult"] = false;
-             
-            }
         }
-
-        $dbc = new DBConnector();
-        $dbc->openConnection();
-        $GLOBALS['categories'] = $dbc->getCategories();
-        $dbc->closeConnection();
 
         require_once($GLOBALS['viewDir'] . '/products/add.php');
     }

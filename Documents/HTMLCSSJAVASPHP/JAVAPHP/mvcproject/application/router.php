@@ -25,6 +25,7 @@ $modelDir = 'application/Models';
 //functions γράφοντας $GLOBALS['viewDir'] 
 $viewDir = 'views';
 
+require_once("application/controllers/helperClass.php");
 require_once($controllerDir . "/BasicController.php");
 require_once($controllerDir . "/ProductController.php");
 

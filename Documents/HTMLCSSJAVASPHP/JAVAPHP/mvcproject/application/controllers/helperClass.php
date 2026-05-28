@@ -17,5 +17,13 @@ class HelperClass {
 <?php
 
         }
+        // μεθοδος που ελέγχει αν ο χρήστης έχει κάνει login, επιστρέφει το username του χρήστη αν έχει κάνει login, αλλιώς επιστρέφει null
+        function isLoggedIn() {
+            if (isset($_SESSION['user'])) {
+                return $_SESSION['user'];
+            } else 
+                return null;
+            
+        }
 }
 

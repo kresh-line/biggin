@@ -1,29 +1,46 @@
 <?php
 class HelperClass {
         function printlongin() {
-            ?>
-        <form id="loginform" action=<?php echo $GLOBALS['siteDir'] . "/login"; ?> method="post">
-         <fieldset>
-
-            <label for="longinname">Όνομα:</label>
-            <input type="text" name="longinname" id="longinname"><br>
-            <label for="pwd">Κωδικός:</label>
-            <input type="password" name="pwd" id="pwd"><br>
-        
-        <input type="submit" value="Σύνδεση">
-         </fieldset>
-        </form>
-        
-<?php
-
+            if ($this->isLoggedIn() == null) {
+                echo '<form id="loginform" action="" method="post">';
+                echo '<fieldset>';
+                echo '<label for="longinname">Όνομα:</label>';
+                echo '<input type="text" name="longinname" id="longinname" required><br>';
+                echo '<label for="pwd">Κωδικός:</label>';
+                echo '<input type="password" name="pwd" id="pwd" required><br>';
+                echo '<input type="submit" value="Σύνδεση">';
+                echo '</fieldset>';
+                echo '</form>';
+            } else {
+                echo "Καλωσήρθες " . $_SESSION['user'];
+                echo '<form action="" method="post">';
+                echo '<input type="hidden" name="logout">';
+                echo '<input type="submit" value="Αποσύνδεση">';
+                echo '</form>';
+            }
         }
-        // μεθοδος που ελέγχει αν ο χρήστης έχει κάνει login, επιστρέφει το username του χρήστη αν έχει κάνει login, αλλιώς επιστρέφει null
+
+        // επιστρέφει το username αν έχει κάνει login, αλλιώς null
         function isLoggedIn() {
             if (isset($_SESSION['user'])) {
                 return $_SESSION['user'];
-            } else 
+            } else
                 return null;
-            
+        }
+
+        function loginUser($un, $pwd) {
+            $db = new DBConnector();
+            $db->openConnection();
+            $pwdhash = $db->getUser($un);
+            $db->closeConnection();
+            if ($pwdhash == null)
+                return "Δεν υπάρχει χρήστης με όνομα $un";
+            else {
+                if (password_verify($pwd, $pwdhash) == true) {
+                    $_SESSION['user'] = $un;
+                    return "";
+                } else
+                    return "Λάθος κωδικός!";
+            }
         }
 }
-

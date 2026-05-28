@@ -31,6 +31,16 @@ require_once($controllerDir . "/ProductController.php");
 
 $pageSelection ="general";
 
+if (isset($_POST['longinname'], $_POST['pwd'])) {
+    $hp = new HelperClass();
+    $hp->loginUser($_POST['longinname'], $_POST['pwd']);
+}
+
+if (isset($_POST['logout'])) {
+    $_SESSION = [];
+    session_destroy();
+}
+
 switch ($request) {
     case $siteDir:
     case $siteDir . '/':

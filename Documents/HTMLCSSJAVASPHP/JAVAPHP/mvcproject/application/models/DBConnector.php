@@ -169,6 +169,19 @@ class DBConnector {
         
     }
         
-    
+    function getUser($un){
+        $sql = "select * from users where username='$un'";
+        $res = mysqli_query($this->conn, $sql);
+        $num = mysqli_num_rows($res);
+        if ($num>0) {
+            $r = mysqli_fetch_array($res);
+            return $r[2]; //επιστρέφω το hash του κωδικού πρόσβασης που είναι στη βάση για τον χρήστη με username $un
+            //return "Ο χριστής είναι ήδη εγγεγραμμένος!";
+        }
+        else 
+            return null;
+        
+
+    }
 }
 

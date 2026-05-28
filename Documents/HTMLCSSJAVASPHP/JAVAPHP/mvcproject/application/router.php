@@ -31,9 +31,10 @@ require_once($controllerDir . "/ProductController.php");
 
 $pageSelection ="general";
 
+$GLOBALS['loginError'] = "";
 if (isset($_POST['longinname'], $_POST['pwd'])) {
     $hp = new HelperClass();
-    $hp->loginUser($_POST['longinname'], $_POST['pwd']);
+    $GLOBALS['loginError'] = $hp->loginUser($_POST['longinname'], $_POST['pwd']);
 }
 
 if (isset($_POST['logout'])) {

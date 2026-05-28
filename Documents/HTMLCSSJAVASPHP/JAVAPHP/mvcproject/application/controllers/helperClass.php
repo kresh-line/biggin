@@ -11,6 +11,8 @@ class HelperClass {
                 echo '<input type="submit" value="Σύνδεση">';
                 echo '</fieldset>';
                 echo '</form>';
+                if (!empty($GLOBALS['loginError']))
+                    echo '<span class="errormsg">' . $GLOBALS['loginError'] . '</span>';
             } else {
                 echo "Καλωσήρθες " . $_SESSION['user'];
                 echo '<form action="" method="post">';

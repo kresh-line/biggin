@@ -9,7 +9,21 @@ class Car : public Vehicle {
             
         
         void print() {
-            Vehicle::print();
+            cout << "Registration: " << registration_number << endl;
+            cout << "Owner: " << owner_name << endl;
+            cout << "CC: " << cc << endl;
             cout << "Number of Doors: " << number_of_doors << endl;
         }
+
+        double traffic_tax(){
+
+            double tax = 140.0;
+            if (cc <= 1000){
+                 tax += (cc-1000)/100*10;
+            }
+                return tax;
+               
+            
+        }
 };
+

@@ -11,7 +11,7 @@
                 echo "<p> Δεν έστειλες το φόρμα </p>";
         ?>
         <div class='productsformdiv'>
-            <form id='insertProductForm' method='post' novalidate>
+            <form id='insertProductForm' method='post' enctype='multipart/form-data' novalidate>
                 <fieldset>
 
             <label for='pname'>Όνομα</label>
@@ -32,15 +32,10 @@
             ?>
             </select>
             <br>
-    <form  enctype="multipart/form-data" action="index.php?selection=11" method="post">
-    <fieldset>
-        <legend> Ανέβασμα Αρχείων</legend>
-        <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
-        <label for="file">Επελεγμένο Αρχείο που θα ανεβάσεις:</label>
-        <input type="file" name="f" id="f" required >
 
-    </fieldset>
-    </form>
+            <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
+            <label for="f">Επελεγμένο Αρχείο που θα ανεβάσεις:</label>
+            <input type="file" name="f" id="f"><br>
 
             <button class='insertButton' type='submit'>Εισαγωγή</button><br>
             <span class="errormsg" id="ifem"></span>

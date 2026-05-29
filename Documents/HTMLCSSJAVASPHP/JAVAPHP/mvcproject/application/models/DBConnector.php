@@ -64,9 +64,9 @@ class DBConnector {
             
             $str = $str . "<div class='productsformdiv'>\n";
             if ($r[4]==null || $r[4]=='')
-                $str = $str . "<img src='images/noimage.jpg' width='100px'>\n";
+                $str = $str . "<img src='/mvcproject/images/noimage.jpg' width='100px'>\n";
             else
-                $str = $str . "<img src='images/" . htmlspecialchars($r[4]) . "' width='100px'>\n";
+                $str = $str . "<img src='/mvcproject/images/" . htmlspecialchars($r[4]) . "' width='100px'>\n";
             $str = $str . "<form id='updateForm$r[0]' onsubmit='return validateUpdateForm($r[0])' method='post'><fieldset>\n";
             $str = $str . "<label for='pid$r[0]'>Κωδικός</label>\n";
             $str = $str . "<input type='text' id='pid$r[0]' name='pid' value='$r[0]' readonly>\n";

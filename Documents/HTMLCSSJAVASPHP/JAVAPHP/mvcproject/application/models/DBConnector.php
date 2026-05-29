@@ -61,7 +61,12 @@ class DBConnector {
         $str = "";
         for ($i=0; $i<$num; ++$i) {
             $r = mysqli_fetch_array($res);
+            
             $str = $str . "<div class='productsformdiv'>\n";
+            if ($r[4]==null || $r[4]=='')
+                $str = $str . "<img src='images/noimage.jpg' width='100px'>\n";
+            else
+                $str = $str . "<img src='images/" . htmlspecialchars($r[4]) . "' width='100px'>\n";
             $str = $str . "<form id='updateForm$r[0]' onsubmit='return validateUpdateForm($r[0])' method='post'><fieldset>\n";
             $str = $str . "<label for='pid$r[0]'>Κωδικός</label>\n";
             $str = $str . "<input type='text' id='pid$r[0]' name='pid' value='$r[0]' readonly>\n";
@@ -128,8 +133,8 @@ class DBConnector {
         
         return $categ;
     }
-    function insertProduct($pname, $pprice, $pcat) {
-        $sql = "insert into products (name, price, catid) values ('$pname', $pprice, $pcat)";
+    function insertProduct($pname, $pprice, $pcat, $imgname='') {
+        $sql = "insert into products (name, price, catid, image) values ('$pname', $pprice, $pcat, '$imgname')";
         //Εκτέλεση ερωτήματος
         $res = mysqli_query($this->conn, $sql);
         //Βλέπουμε πόσες εγγραφές επηρεάστηκαν από το update 

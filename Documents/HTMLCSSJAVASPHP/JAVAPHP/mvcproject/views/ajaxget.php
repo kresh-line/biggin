@@ -3,7 +3,7 @@
 ?>
     <div id="content">
         <h1> φορμα Υπολογισμού - Χωρις AJAX</h1>
-        <form action="" method="post">
+        <form id="addform" onsubmit ="makeajaxget(event);">
             <fieldset>
                 <legend>Προσθεσι</legend>
             <label for="num1">Αριθμός 1:</label>
@@ -16,6 +16,7 @@
             </fieldset>
         </form>
         <span id="spanformresult" class='formresult'>  </span>   
+        <script src="js/ajaxcode.js"></script>
     </div>
 <?php 
     require_once("views/footer.php"); 

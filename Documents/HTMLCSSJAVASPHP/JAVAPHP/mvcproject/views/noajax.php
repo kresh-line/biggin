@@ -1,5 +1,6 @@
 <?php 
     require_once("views/header.php"); 
+    
 ?>
     <div id="content">
         <h1> φορμα Υπολογισμού - Χωρις AJAX</h1>

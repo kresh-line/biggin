@@ -70,11 +70,21 @@ class BasicController {
         
         require_once($GLOBALS['viewDir'] . '/noajax.php');
     }
-    function test_alaxget() {
-       require_once($GLOBALS['viewDir'] . '/alaxget.php'); 
+    function test_ajaxget() {
+       require_once($GLOBALS['viewDir'] . '/ajaxget.php'); 
     }
-        //require_once($GLOBALS['viewDir'] . '/test_alax_get.php');}
-    function test_alaxpost() {
-         require_once($GLOBALS['viewDir'] . '/alaxpost.php');
+        //require_once($GLOBALS['viewDir'] . '/test_ajax_get.php');}
+    function test_ajaxpost() {
+         require_once($GLOBALS['viewDir'] . '/ajaxpost.php');
+    }
+    function test_ajaxgetres() {
+        if (isset($_GET["n1"])) {
+            $n1 = intval($_GET["n1"]);
+            $n2 = intval($_GET["n2"]);
+            
+             echo "Αποτεσεμα " . ($n1 + $n2);
+        }
+        else 
+            echo "";
     }
 }

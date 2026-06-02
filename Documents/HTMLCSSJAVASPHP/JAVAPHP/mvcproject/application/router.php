@@ -41,7 +41,11 @@ if (isset($_POST['logout'])) {
     $hp = new HelperClass();
     $hp->logoutUser();
 }
-
+if (substr($request,0,30) == '/test/ajax/get/res/?n1=' && isset($_GET['n1']) && isset($_GET['n2'])) {
+    $bc = new BasicController();
+    $bc->test_ajaxgetres();
+    exit();
+}
 switch ($request) {
     case $siteDir:
     case $siteDir . '/':
@@ -82,16 +86,20 @@ switch ($request) {
             break;
      
             
-    case $siteDir . '/test/alax/get':
-	case $siteDir . '/test/alax/get/':
+    case $siteDir . '/test/ajax/get':
+	case $siteDir . '/test/ajax/get/':
             $bc = new BasicController();
-            $bc->test_alaxget();
+            $bc->test_ajaxget();
             break;
+
+     
+        
+	
             
-    case $siteDir . '/test/alax/post':
-	case $siteDir . '/test/alax/post/':
+    case $siteDir . '/test/ajax/post':
+	case $siteDir . '/test/ajax/post/':
             $bc = new BasicController();
-            $bc->test_alaxpost();
+            $bc->test_ajaxpost();
             break;
 
     case $siteDir . '/products/register':

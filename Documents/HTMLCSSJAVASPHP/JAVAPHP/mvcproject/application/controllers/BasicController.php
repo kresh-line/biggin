@@ -59,6 +59,15 @@ class BasicController {
     }
 
     function test_noalax() {
+        if (isset($_POST["num1"])) {
+            $n1 = intval($_POST["num1"]);
+            $n2 = intval($_POST["num2"]);
+            
+             $GLOBALS['addresult'] = "Αποτεσεμα " . ($n1 + $n2);
+        }
+        else 
+            $GLOBALS['addresult'] = "";
+        
         require_once($GLOBALS['viewDir'] . '/noajax.php');
     }
     function test_alaxget() {

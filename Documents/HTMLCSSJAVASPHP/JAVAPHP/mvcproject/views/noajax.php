@@ -3,7 +3,7 @@
 ?>
     <div id="content">
         <h1> φορμα Υπολογισμού - Χωρις AJAX</h1>
-        <form method="post">
+        <form action="" method="post">
             <fieldset>
                 <legend>Προσθεσι</legend>
             <label for="num1">Αριθμός 1:</label>
@@ -15,6 +15,7 @@
             <button type="submit">Υπολογισμός</button>
             </fieldset>
         </form>
+        <span class='formresult'> <?php echo $GLOBALS['addresult']; ?> </span>   
     </div>
 <?php 
     require_once("views/footer.php"); 

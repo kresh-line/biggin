@@ -229,3 +229,7 @@ span.errormsg {
 input:invalid {
 	border: 2px solid red;
 }
+span.formresult {
+	color:burlywood;
+	font-weight: bold;
+}

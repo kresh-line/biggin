@@ -57,5 +57,15 @@ class BasicController {
         
         require_once($GLOBALS['viewDir'] . '/register.php'); 
     }
-    
+
+    function test_noalax() {
+        require_once($GLOBALS['viewDir'] . '/noalax.php'); 
+    }
+    function test_alaxget() {
+       require_once($GLOBALS['viewDir'] . '/alaxget.php'); 
+    }
+        //require_once($GLOBALS['viewDir'] . '/test_alax_get.php');}
+    function test_alaxpost() {
+         require_once($GLOBALS['viewDir'] . '/alaxpost.php');
+    }
 }

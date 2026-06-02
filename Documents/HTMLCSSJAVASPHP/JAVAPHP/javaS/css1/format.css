@@ -111,3 +111,29 @@ span.errormsg {
     width: 50%;
     padding: 5px;
 }
+
+#daddiv1 {
+    min-height: 200px;
+    background-color:aliceblue;
+}
+#daddiv2 {
+    min-height: 200px;
+    background-color: #ff99ff;
+}
+
+#imgcontdiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#imgcontdiv div {
+    width: 33.33%;
+}
+#imgdiv1, #imgdiv3 {
+    width: 40%;
+    background-color: #99ff99;
+    min-height: 300px;
+}
+#imgdiv2 {
+    width: 20%;
+}

@@ -10,8 +10,10 @@
 
     <link rel="stylesheet" type="text/css" href="css1/cookiedialog.css">
     <link rel="stylesheet" type="text/css" href="css1/modaldialog.css">
+    <link rel="stylesheet" type="text/css" href="css1/format.css">
     <script src="js1/cookiedialog.js" defer></script>
     <script src="js1/modaldialog.js" defer></script>
+    <script src="js1/dad.js" defer></script>
 </head>
 
 <body>
@@ -79,6 +81,34 @@
             </p>
         </div>
     </div>
+
+
+    <div id='daddiv1' ondragover="allowDrop(event)" ondrop="drop(event)" >
+        <p id="dadpi1" draggable="true" ondragstart="drag(event)">This is the first parent div.</p>
+        <p id="dadpi2" draggable="true" ondragstart="drag(event)">This is the second parent div.</p>
+        <p id="dadpi3" draggable="true" ondragstart="drag(event)">This is the third parent div.</p>
+    </div>
+
+
+    <div id='daddiv2' ondragover="allowDrop(event)" ondrop="drop(event)">
+        <!-- <p id="dadpi4">This is the fourth parent div.</p> -->
+       
+    </div>
+    <div id="imgcontdiv">  
+        <div id="imgdiv1" draggable="true" ondragstart="drag2(event)" ondragover="allowDrop2(event)" ondrop="drop2(event)">
+            <img id="dadimg1" src="/img/car3.3.jpg"  width="95%" ondragstart="drag2(event)" alt="Image 3" >
+            <img id="dadimg2" src="/img/car2.2.jpg" width="95%" ondragstart="drag2(event)" alt="Image 2" >
+            <img id="dadimg3" src="/img/car1.1.jpg" width="95%" ondragstart="drag2(event)" alt="Image 1" >
+        </div>
+        <div id="imgdiv2" draggable="true" ondragstart="drag2(event)" ondragover="allowDrop2(event)" ondrop="drop2(event)">
+            <!-- <img src="JAVAS/img/2.png" alt="Image 2"> -->
+        </div>
+        <div id="imgdiv3" draggable="true" ondragstart="drag2(event)" ondragover="allowDrop2(event)" ondrop="drop2(event)">
+            <!-- <img src="JAVAS/img/3.png" alt="Image 3"> -->    
+        </div>
+
+    </div>
+
 </body>
 
 </html>

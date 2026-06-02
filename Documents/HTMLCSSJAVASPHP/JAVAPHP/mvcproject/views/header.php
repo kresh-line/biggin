@@ -42,10 +42,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
 		<li><a href=<?php echo $GLOBALS['siteDir'] . "/products/show/"; ?>>Προβολή Προϊόντων</a></li>
         <li><a href=<?php echo $GLOBALS['siteDir'] . "/products/add/"?>>Εισαγωγή Προϊόντος</a></li>
 		<li><a href=<?php echo $GLOBALS['siteDir'] . "/info/"?>>Πληροφορίες</a></li>
-                <li><a href="index.php?selection=5">Εικόνες</a></li>
-                <li><a href="index.php?selection=10">Αγορές</a></li>
-                <li><a href="index.php?selection=11">Ανέβασμα Αρχείου</a></li>
-                <li><a href=<?php echo $GLOBALS['siteDir'] . "/products/register/"?>>Εγγραφή</a></li>
+        <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/noalax/"?>>Test No ALAX</a></li>
+        <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/alax/get/"?>>Test ALAX GET</a></li>
+        <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/alax/post/"?>>Test  ALAX POST</a></li>
+        <li><a href=<?php echo $GLOBALS['siteDir'] . "/products/register/"?>>Εγγραφή</a></li>
 		</ul>
 		</div>
             

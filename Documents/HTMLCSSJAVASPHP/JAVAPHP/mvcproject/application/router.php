@@ -74,7 +74,26 @@ switch ($request) {
             $bc = new BasicController();
             $bc->info();
             break;
-        
+
+    case $siteDir . '/test/noalax':
+	case $siteDir . '/test/noalax/':
+            $bc = new BasicController();
+            $bc->test_noalax();
+            break;
+     
+            
+    case $siteDir . '/test/alax/get':
+	case $siteDir . '/test/alax/get/':
+            $bc = new BasicController();
+            $bc->test_alaxget();
+            break;
+            
+    case $siteDir . '/test/alax/post':
+	case $siteDir . '/test/alax/post/':
+            $bc = new BasicController();
+            $bc->test_alaxpost();
+            break;
+
     case $siteDir . '/products/register':
         case $siteDir . '/products/register/':
 		    $pageSelection = "register";

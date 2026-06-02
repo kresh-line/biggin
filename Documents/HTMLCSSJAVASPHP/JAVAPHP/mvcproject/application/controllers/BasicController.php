@@ -59,7 +59,7 @@ class BasicController {
     }
 
     function test_noalax() {
-        require_once($GLOBALS['viewDir'] . '/noalax.php'); 
+        require_once($GLOBALS['viewDir'] . '/noajax.php');
     }
     function test_alaxget() {
        require_once($GLOBALS['viewDir'] . '/alaxget.php'); 

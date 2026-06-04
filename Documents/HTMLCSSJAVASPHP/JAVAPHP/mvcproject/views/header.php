@@ -37,12 +37,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
 		<li><a href=<?php echo $GLOBALS['siteDir'] . "/"; ?>>Αρχική Σελίδα</a></li>
 		<li><a href=<?php echo $GLOBALS['siteDir'] . "/paroysiasi/"; ?>>Παρουσίαση</a></li>
 		<li><a href=<?php echo $GLOBALS['siteDir'] . "/products/show/"; ?>>Προβολή Προϊόντων</a></li>
-                <li><a href=<?php echo $GLOBALS['siteDir'] . "/products/add/"?>>Εισαγωγή Προϊόντος</a></li>
+        <li><a href=<?php echo $GLOBALS['siteDir'] . "/products/add/"?>>Εισαγωγή Προϊόντος</a></li>
 		<li><a href=<?php echo $GLOBALS['siteDir'] . "/info/"?>>Πληροφορίες</a></li>
-                <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/noajax/"?>>Test No AJAX</a></li>
-                <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/ajax/get/"?>>Test AJAX GET</a></li>
-                <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/ajax/post/"?>>Test AJAX POST</a></li>
-                <li><a href=<?php echo $GLOBALS['siteDir'] . "/register/"?>>Εγγραφή</a></li>
-		</ul>
+        <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/noajax/"?>>Test No AJAX</a></li>
+        <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/ajax/get/"?>>Test AJAX GET</a></li>
+        <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/ajax/post/"?>>Test AJAX POST</a></li>
+        <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/ajax/post/fetchapi/"?>>Test AJAX POST fetch API</a></li>
+        <li><a href=<?php echo $GLOBALS['siteDir'] . "/register/"?>>Εγγραφή</a></li>
+</ul>
 		</div>
             

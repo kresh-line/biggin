@@ -106,6 +106,12 @@ switch ($request) {
             $bc->test_ajaxpost_do();
             break; 
 
+case $siteDir . '/test/ajax/post/fetchapi':
+	case $siteDir . '/test/ajax/post/fetchapi/':
+            $bc = new BasicController();
+            $bc->test_ajaxpost_fetchapi();
+            break; 
+
     case $siteDir . '/register':
         case $siteDir . '/register/':
 		$PageSelection = "register";

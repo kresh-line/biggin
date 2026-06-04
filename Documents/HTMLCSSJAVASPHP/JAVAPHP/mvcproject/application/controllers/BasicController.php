@@ -106,4 +106,8 @@ class BasicController {
         else
            echo ""; 
     }
+    function test_ajaxpost_fetchapi() {
+        require_once($GLOBALS['viewDir'] . '/ajaxpostfetchapi.php');
+    }
+
 }

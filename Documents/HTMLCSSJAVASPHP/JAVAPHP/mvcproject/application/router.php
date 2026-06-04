@@ -41,7 +41,7 @@ if (isset($_POST['logout'])) {
     $hp = new HelperClass();
     $hp->logoutUser();
 }
-if (substr($request,0,30) == '/test/ajax/get/res/?n1=' && isset($_GET['n1']) && isset($_GET['n2'])) {
+if (str_starts_with($request, $siteDir . '/test/ajax/get/res/') && isset($_GET['n1']) && isset($_GET['n2'])) {
     $bc = new BasicController();
     $bc->test_ajaxgetres();
     exit();

@@ -7,9 +7,10 @@ function makeAjaxGet(e) {
     //Πάρε τις τιμές των δύο πεδίων της φόρμας
     let num1 = document.getElementById("num1").value;
     let num2 = document.getElementById("num2").value;
+    let num3 = document.getElementById("num3").value;
     
     //Φτιάξε το URL που θα ζητήσουμε στο αίτημα
-    let myurl = "/mvcproject/test/ajax/get/res/?n1=" + num1 + "&n2=" + num2;
+    let myurl = "/mvcproject/test/ajax/get/res/?n1=" + num1 + "&n2=" + num2 + "&n3=" + num3;
     
     //Δημιούργησε το XMLHttpRequest αίτημα
     req.open("GET", myurl);

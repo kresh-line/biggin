@@ -85,7 +85,8 @@ class BasicController {
         if (isset($_GET["n1"])) {
             $n1 = intval($_GET["n1"]);
             $n2 = intval($_GET["n2"]);
-            echo "Αποτέλεσμα " . ($n1 + $n2);
+            $n3 = intval($_GET["n3"]);
+            echo "Αποτέλεσμα " . ($n1 + $n2 + $n3);
         }
         else
            echo ""; 
@@ -99,7 +100,8 @@ class BasicController {
         if (isset($_POST["num1"])) {
             $n1 = intval($_POST["num1"]);
             $n2 = intval($_POST["num2"]);
-            echo "Αποτέλεσμα " . ($n1 + $n2);
+            $n3 = intval($_POST["num3"]);
+            echo "Αποτέλεσμα " . ($n1 + $n2 + $n3);
         }
         else
            echo ""; 

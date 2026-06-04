@@ -98,7 +98,14 @@ switch ($request) {
             $bc = new BasicController();
             $bc->test_ajaxpost();
             break; 
-        
+
+
+    case $siteDir . '/test/ajax/post/res':
+	case $siteDir . '/test/ajax/post/res/':
+            $bc = new BasicController();
+            $bc->test_ajaxpost_do();
+            break; 
+
     case $siteDir . '/register':
         case $siteDir . '/register/':
 		$PageSelection = "register";

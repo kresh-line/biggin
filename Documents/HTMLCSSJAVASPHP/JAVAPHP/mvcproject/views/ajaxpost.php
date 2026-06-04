@@ -2,7 +2,7 @@
     require_once("views/header.php"); 
 ?>
     <div id="content">
-        <h1>Φόρμα Υπολογισμού - με AJAX get</h1>
+        <h1>Φόρμα Υπολογισμού - με AJAX post</h1>
         <form id="addform">
             <fieldset>
             <legend>Πρόσθεση</legend>

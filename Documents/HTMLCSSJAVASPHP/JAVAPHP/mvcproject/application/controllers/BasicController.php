@@ -82,9 +82,9 @@ class BasicController {
     //Στέλνω μόνο το αποτέλεσμα
     function test_ajaxget_do() {
         //Αν στάλθηκε με AJAX με  GET
-        if (isset($_GET["num1"])) {
-            $n1 = intval($_GET["num1"]);
-            $n2 = intval($_GET["num2"]);
+        if (isset($_GET["n1"])) {
+            $n1 = intval($_GET["n1"]);
+            $n2 = intval($_GET["n2"]);
             echo "Αποτέλεσμα " . ($n1 + $n2);
         }
         else
@@ -96,9 +96,9 @@ class BasicController {
     }    
     function test_ajaxpost_do() {
         //Αν στάλθηκε με AJAX με  POST
-        if (isset($_POST["num1"])) {
-            $n1 = intval($_POST["num1"]);
-            $n2 = intval($_POST["num2"]);
+        if (isset($_POST["n1"])) {
+            $n1 = intval($_POST["n1"]);
+            $n2 = intval($_POST["n2"]);
             echo "Αποτέλεσμα " . ($n1 + $n2);
         }
         else

@@ -96,9 +96,9 @@ class BasicController {
     }    
     function test_ajaxpost_do() {
         //Αν στάλθηκε με AJAX με  POST
-        if (isset($_POST["n1"])) {
-            $n1 = intval($_POST["n1"]);
-            $n2 = intval($_POST["n2"]);
+        if (isset($_POST["num1"])) {
+            $n1 = intval($_POST["num1"]);
+            $n2 = intval($_POST["num2"]);
             echo "Αποτέλεσμα " . ($n1 + $n2);
         }
         else

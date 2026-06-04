@@ -10,8 +10,8 @@ function makePostRequest(e) {
     req.open("POST", myurl);
      
     let formData = new FormData();
-    formData.append("n1", num1);
-    formData.append("n2", num2);
+    formData.append("num1", num1);
+    formData.append("num2", num2);
     req.onload = handleResponsePOST;
     req.send(formData);
 }

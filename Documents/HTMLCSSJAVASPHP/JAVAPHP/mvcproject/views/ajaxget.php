@@ -16,7 +16,7 @@
             </fieldset>
         </form>
         <span id="spanformresult" class='formresult'>  </span>   
-        <script src="js/ajaxcode.js"></script>
+        <script src="mvcproject/js/ajaxcode.js"></script>
     </div>
 <?php 
     require_once("views/footer.php"); 

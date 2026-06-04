@@ -3,19 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/mvcproject/index.php</file>
-            <file>file:/C:/xampp/htdocs/mvcproject/views/home.php</file>
             <file>file:/C:/xampp/htdocs/mvcproject/views/products/add.php</file>
             <file>file:/C:/xampp/htdocs/mvcproject/views/header.php</file>
             <file>file:/C:/xampp/htdocs/mvcproject/application/router.php</file>
-            <file>file:/C:/xampp/htdocs/mvcproject/views/products/show.php</file>
-            <file>file:/C:/xampp/htdocs/mvcproject/application/Models/DBConnector.php</file>
-            <file>file:/C:/xampp/htdocs/mvcproject/views/info.php</file>
-            <file>file:/C:/xampp/htdocs/mvcproject/.htaccess</file>
             <file>file:/C:/xampp/htdocs/mvcproject/application/controllers/BasicController.php</file>
-            <file>file:/C:/xampp/htdocs/mvcproject/application/controllers/ProductController.php</file>
-            <file>file:/C:/xampp/htdocs/mvcproject/views/footer.php</file>
+            <file>file:/C:/xampp/htdocs/mvcproject/views/noajax.php</file>
+            <file>file:/C:/xampp/htdocs/mvcproject/js/ajaxcode.js</file>
             <file>file:/C:/xampp/htdocs/mvcproject/css/format.css</file>
+            <file>file:/C:/xampp/htdocs/mvcproject/views/footer.php</file>
+            <file>file:/C:/xampp/htdocs/mvcproject/views/ajaxget.php</file>
         </group>
     </open-files>
 </project-private>

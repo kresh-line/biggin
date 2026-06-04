@@ -15,14 +15,12 @@ class ProductController {
      * 3) Ο χρήστης πάτησε "Διαγραφή" σε ένα προϊόν
      */
     function show() {
-        // prostateyoume tin selida mas gia na min exei prosvasi xoris login
+        //Προστατευμένη σελίδα, μόνο αν είναι loggin θα εμφανίζεται
         $hp = new HelperClass();
-        $GLOBALS['username'] = $hp->isLoggedIn();
-
-        if ($GLOBALS['username'] !=null) {
-           
+        $GLOBALS['username']=$hp->isLoggedIn();
         
-
+        if ($GLOBALS['username']!=null) {
+        
         //Ελέγχω ποια περίπτωση έχω
         //Ελέγχω αν έχω ενημέρωση προϊόντος
         if (isset($_POST['pid'])) {
@@ -53,30 +51,42 @@ class ProductController {
         $dbc->openConnection();
         $GLOBALS['results'] = $dbc->getProductsAsForms();
         $dbc->closeConnection();
+        
         }
-
-        require_once($GLOBALS['viewDir'] . '/products/show.php');
+        
+        require_once($GLOBALS['viewDir'] . '/products/show.php'); 
     }
+    
     function add() {
+        //Προστατευμένη σελίδα, μόνο αν είναι loggin θα εμφανίζεται
         $hp = new HelperClass();
-        $GLOBALS['username'] = $hp->isLoggedIn();
-
-        if ($GLOBALS['username'] != null) {
-            if (isset($_POST["pname"]) && trim($_POST["pname"]) !== "" && floatval($_POST["pprice"]) > 0) {
-                $dbc = new DBConnector();
-                $dbc->openConnection();
-                $success = $dbc->insertProduct(trim($_POST["pname"]), $_POST["pprice"], $_POST["pcat"]);
-                $dbc->closeConnection();
-                $GLOBALS["insertProductResult"] = $success ? true : false;
-            }
-
-            $dbc = new DBConnector();
-            $dbc->openConnection();
-            $GLOBALS['categories'] = $dbc->getCategories();
-            $dbc->closeConnection();
+        $GLOBALS['username']=$hp->isLoggedIn();
+        
+        //Αν έχει κάνει login
+        if ($GLOBALS['username']!=null) {
+        
+        
+        $dbc = new DBConnector();
+        $dbc->openConnection();
+        
+        //Αν στάλθηκε η φόρμα με το προϊόν εισήγαγέ το
+        if (isset($_POST["pname"])) {
+            $_GLOBALS["insertProduct"] = true;
+            $success = $dbc->insertProduct($_POST["pname"], $_POST["pprice"], $_POST["pcat"]);
+            if ($success)
+                $_GLOBALS["insertProductResult"] = true;
+            else
+                $_GLOBALS["insertProductResult"] = false;
+        }    
+        else
+            $_GLOBALS["insertProduct"] = false;
+                
+        
+        $GLOBALS['categories'] = $dbc->getCategories();
+        $dbc->closeConnection();
+        
         }
-
-        require_once($GLOBALS['viewDir'] . '/products/add.php');
+        require_once($GLOBALS['viewDir'] . '/products/add.php'); 
     }
     
 }

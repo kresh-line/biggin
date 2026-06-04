@@ -1,58 +1,52 @@
 .productsformdiv {
     width: 80%;
-    margin: 5px;
-    padding-bottom: 15px;
+    margin:auto;
     /* ΣΚΙΑ */
     -moz-box-shadow: 2px 2px 2px #333;
     -webkit-box-shadow: 2px 2px 2px #333;
     box-shadow: 2px 2px 2px #333;
-    background-color: #dfeff0;
+    background-color: #DFEFF0;
+    margin:5px;
 }
-.productsformdiv:hover
-{
-    background-color: #e5eff5;
-}
-button.updateButton {
-    background-color: #50a9e0;
-    color: #ffffff;
-    position: relative;
-    left: 70%;
-    width: 100px;
-    border:1px solid #50a9e0;
-    box-shadow: 2px 4px #888888; 
 
-    
+.productsformdiv:hover {
+    background-color: #e5EFF5;
 }
-button.updateButton:hover {
-  box-shadow: 3px 6px #aaaaaa;
-  background-color: #3355e5;
-  font-weight: bold;
+
+
+
+.productsformdiv form fieldset {
+    border:0px;
 }
 button.deleteButton {
     background-color: #e55555;
     color: #ffffff;
-    position: relative;
-    left: 70%;
-    width: 100px;
-    border:1px solid #e55555;
+    position:relative;
+    left:70%;
+    width:100px;
+    border: 1px solid #e55555;
     box-shadow: 2px 4px #888888;
-    
-    
 }
 button.deleteButton:hover {
-  box-shadow: 3px 6px #aaaaaa;
-  background-color: #e53333;
-  font-weight: bold;
+    box-shadow: 3px 6px #888888;
+    background-color: #e53333;
+    font-weight: bold;
 }
-.productsformdiv form fieldset {
-    border: 0px;
-}
-button.insertButton {
-    background-color: #50a9e0;
+
+button.updateButton, button.insertButton {
+    background-color: #5555e5;
     color: #ffffff;
-    float: right;
-    margin-right: 10px;
-    width: 100px;
-    border: 1px solid #50a9e0;
+    position:relative;
+    left:70%;
+    width:100px;
+    border: 1px solid #5555e5;
     box-shadow: 2px 4px #888888;
 }
+
+button.updateButton:hover, button.insertButton:hover  {
+    box-shadow: 3px 6px #888888;
+    background-color: #3355e5;
+    font-weight: bold;
+}
+
+

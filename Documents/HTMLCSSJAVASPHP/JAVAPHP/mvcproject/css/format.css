@@ -173,25 +173,17 @@ label {
 	color:#b2a9cf;
 }
 
-.formdiv {
-    width: 80%;
-    margin:auto;
-    /* ΣΚΙΑ */
-    -moz-box-shadow: 2px 2px 2px #333;
-    -webkit-box-shadow: 2px 2px 2px #333;
-    box-shadow: 2px 2px 2px #333;
-    background-color: #eeddee;
-}
 
-/*fieldset {
-	width: 400px;
+
+fieldset {
+	/*width: 400px;
 	margin:auto;
 	 ΣΚΙΑ 
 	-moz-box-shadow: 2px 2px 2px #333;
 	-webkit-box-shadow: 2px 2px 2px #333;
-	box-shadow: 2px 2px 2px #333; 
+	box-shadow: 2px 2px 2px #333; */
 }
-*/
+
 #loginform fieldset {
 	width: 180px;
 	margin:auto;
@@ -222,14 +214,19 @@ input:required:invalid {
 input:focus {
 	background-color:#f7eed5;
 }
+
+
 span.errormsg {
-	color:red;
-	font-weight: bold;
-}
-input:invalid {
-	border: 2px solid red;
+    color:red;
+    font-weight: bold;
 }
 span.formresult {
-	color:burlywood;
-	font-weight: bold;
+    color: burlywood;
+    font-weight: bold;
+}
+input:invalid {
+    border: 2px solid red;
+}
+input:valid {
+    border: 1px solid black;
 }

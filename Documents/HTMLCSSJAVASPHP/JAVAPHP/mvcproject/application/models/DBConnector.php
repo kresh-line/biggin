@@ -61,12 +61,11 @@ class DBConnector {
         $str = "";
         for ($i=0; $i<$num; ++$i) {
             $r = mysqli_fetch_array($res);
-            
             $str = $str . "<div class='productsformdiv'>\n";
-            if ($r[4]==null || $r[4]=='')
-                $str = $str . "<img src='/mvcproject/images/noimage.jpg' width='100px'>\n";
+            if ($r[4]==null || $r[4]=="")
+                $str = $str . "<img src='/mvcproject/images/noimage.jpg' width='100px'>";
             else
-                $str = $str . "<img src='/mvcproject/images/" . htmlspecialchars($r[4]) . "' width='100px'>\n";
+                $str = $str . "<img src='mvcproject/images/$r[4]' width='100px'>";
             $str = $str . "<form id='updateForm$r[0]' onsubmit='return validateUpdateForm($r[0])' method='post'><fieldset>\n";
             $str = $str . "<label for='pid$r[0]'>Κωδικός</label>\n";
             $str = $str . "<input type='text' id='pid$r[0]' name='pid' value='$r[0]' readonly>\n";
@@ -133,60 +132,70 @@ class DBConnector {
         
         return $categ;
     }
-    function insertProduct($pname, $pprice, $pcat, $imgname='') {
-        $sql = "insert into products (name, price, catid, image) values ('$pname', $pprice, $pcat, '$imgname')";
+    
+    function insertProduct($pname, $pprice, $pcat) {
+        
+
+        $sql = "insert into products (name, price, catid) values ('$pname', $pprice, $pcat)";
         //Εκτέλεση ερωτήματος
         $res = mysqli_query($this->conn, $sql);
         //Βλέπουμε πόσες εγγραφές επηρεάστηκαν από το update 
         $num = mysqli_affected_rows($this->conn); 
         if ($num==1)
-			return true;
-		else 
-			return false;
-        
+            return true;
+        else
+            return false;
     }
-    /* 
-        Mέθοδος για την εγγραφή ενός χρήστη στη βάση. Επιστρέφει κενή συμβολοσειρά αν η εγγραφή ήταν επιτυχής, διαφορετικά επιστρέφει ένα μήνυμα λάθους.
-        ΠΡΙΝ την αποθήκευση του κωδικού πρόσβασης στη βάση, τον κάνουμε hash για να είναι πιο ασφαλής η αποθήκευση.
-        Σε καθε περίπτωση, πριν την προσπάθεια εγγραφής, ελέγχουμε αν το email υπάρχει ήδη στη βάση και αν ναι επιστρέφουμε κατάλληλο μήνυμα λάθους.
-        
-    */
-        function registerUser($un, $pwd, $by) {
-         // θα ελεγνο αν τ χριστι ειπαρχει ιδιαιτερα αν το email υπάρχει ήδη στη βάση
+    
+  
+    /*
+     * Μέθοδος που εισάγει τον χρήστη (κάνει την εγγραφή του) στον
+     * πίνακα users. Πριν τον εισάγει ελέγχει αν υπάρχει ήδη χρήστη
+     * με το ίδιο username (email) στον πίνακα ήδη.
+     * Σε κάθε περίπτωση αν πετύχει η εισαγωγή (δηλαδή η εγγραφή) τότε
+     * επιστρέφει κενό string, αλλιώς αν αποτύχει επιστρέφει ένα string
+     * με μία περιγραφή του λάθους.
+     */
+    function registerUser($un, $pwd, $by) {
+        //Θα ελέγξω αν ο χρήστης με αυτό το email υπάρχει ήδη
         $sql = "select * from users where username='$un'";
+        //Εκτέλεση ερωτήματος
         $res = mysqli_query($this->conn, $sql);
+        //Δες πόσες εγγραφές επιλέχτηκαν
         $num = mysqli_num_rows($res);
         if ($num>0) {
-            return "Ο χριστής είναι ήδη εγγεγραμμένος!";
+            return "Ο χρήστης έχει εγγραφεί ήδη!";
         }
-
-            //kane hash τον κωδικό πρόσβασης πριν τον αποθηκεύσεις στη βάση
-        $hashpwd = password_hash($pwd, PASSWORD_DEFAULT);    
+        
+        //Κάνε hash (κατακερματισμό) το password 
+        $hashpwd = password_hash($pwd, PASSWORD_DEFAULT);
         $sql = "insert into users (username, password, yearofbirth) values ('$un', '$hashpwd', $by)";
         //Εκτέλεση ερωτήματος
         $res = mysqli_query($this->conn, $sql);
         //Βλέπουμε πόσες εγγραφές επηρεάστηκαν από το update 
         $num = mysqli_affected_rows($this->conn); 
         if ($num==1)
-			return "";
-		else 
-			return "Η εγγραφή απέτυχε!";
-        
+            return "";
+        else
+            return "Η εγγραφή απέτυχε!";
     }
-        
-    function getUser($un){
+    
+    //Μέθοδος που της δίνω το username και μου επιστρέφει από
+    //τη ΒΔ το password (το hash που έχει αποθηκευτεί για τον χρήστη)
+    function getUserPwd($un) {
+        //Θα ελέγξω αν υπάρχει ο χρήστης με αυτό το username
         $sql = "select * from users where username='$un'";
+        //Εκτέλεση ερωτήματος
         $res = mysqli_query($this->conn, $sql);
+        //Δες πόσες εγγραφές επιλέχτηκαν
         $num = mysqli_num_rows($res);
-        if ($num>0) {
+        if ($num>0) { //αν υπάρχει επέστρεψε το hash
             $r = mysqli_fetch_array($res);
-            return $r[2]; //επιστρέφω το hash του κωδικού πρόσβασης που είναι στη βάση για τον χρήστη με username $un
-            //return "Ο χριστής είναι ήδη εγγεγραμμένος!";
+            return $r[2];
         }
-        else 
+        else //αν δεν υπάρχει επέστρεψε null
             return null;
         
-
     }
 }
 

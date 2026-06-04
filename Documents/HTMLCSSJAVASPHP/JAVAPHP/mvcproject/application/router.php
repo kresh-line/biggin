@@ -25,27 +25,29 @@ $modelDir = 'application/Models';
 //functions γράφοντας $GLOBALS['viewDir'] 
 $viewDir = 'views';
 
-require_once("application/controllers/helperClass.php");
+require_once("application/HelperClass.php");
 require_once($controllerDir . "/BasicController.php");
 require_once($controllerDir . "/ProductController.php");
 
-$pageSelection ="general";
+$PageSelection = "general";
 
-$GLOBALS['loginError'] = "";
-if (isset($_POST['longinname'], $_POST['pwd'])) {
-    $hp = new HelperClass();
-    $GLOBALS['loginError'] = $hp->loginUser($_POST['longinname'], $_POST['pwd']);
-}
+//Ελέγχω εδώ πριν από όλες τις σελίδες μήπως ο χρήστης έχει στείλει
+//τη φόρμα login για να τον κάνω login
+$x = new HelperClass();
+$LoginResult = $x->loginUser();
+$x->logoutUser();
 
-if (isset($_POST['logout'])) {
-    $hp = new HelperClass();
-    $hp->logoutUser();
-}
-if (str_starts_with($request, $siteDir . '/test/ajax/get/res/') && isset($_GET['n1']) && isset($_GET['n2'])) {
+
+//Διαχειρίσου ξεχωριστά το AJAX Request με GET γιατί έχουμε
+//URI που δεν είναι σταθερό αλλά αλλάζει με βάση τα ζεύγη
+//ιδιοτήτων-τιμών μετά ? στο τέλος του σταθερού μέρους του URI 
+if (substr($request,0,30) == '/mvcproject/test/ajax/get/res/') {
     $bc = new BasicController();
-    $bc->test_ajaxgetres();
-    exit();
+    $bc->test_ajaxget_do();
 }
+else {
+
+
 switch ($request) {
     case $siteDir:
     case $siteDir . '/':
@@ -61,14 +63,14 @@ switch ($request) {
             break;
     case $siteDir . '/products/show':
 	case $siteDir . '/products/show/':
-            $pageSelection = "products";
+            $PageSelection = "products";
             $sc = new ProductController();
             $sc->show();
             break;
             
     case $siteDir . '/products/add':
 	case $siteDir . '/products/add/':
-            $pageSelection = "products";
+            $PageSelection = "products";
             $sc = new ProductController();
             $sc->add();
             break;
@@ -78,35 +80,30 @@ switch ($request) {
             $bc = new BasicController();
             $bc->info();
             break;
-
-    case $siteDir . '/test/noalax':
-	case $siteDir . '/test/noalax/':
+        
+    case $siteDir . '/test/noajax':
+	case $siteDir . '/test/noajax/':
             $bc = new BasicController();
-            $bc->test_noalax();
-            break;
-     
-            
+            $bc->test_noajax();
+            break; 
+
     case $siteDir . '/test/ajax/get':
 	case $siteDir . '/test/ajax/get/':
             $bc = new BasicController();
             $bc->test_ajaxget();
-            break;
-
-     
+            break; 
         
-	
-            
     case $siteDir . '/test/ajax/post':
 	case $siteDir . '/test/ajax/post/':
             $bc = new BasicController();
             $bc->test_ajaxpost();
-            break;
-
-    case $siteDir . '/products/register':
-        case $siteDir . '/products/register/':
-		    $pageSelection = "register";
-            $bc = new BasicController();
-            $bc->register();
+            break; 
+        
+    case $siteDir . '/register':
+        case $siteDir . '/register/':
+		$PageSelection = "register";
+                $bc = new BasicController();
+                $bc->register();
 		break;
 
     default:
@@ -114,5 +111,5 @@ switch ($request) {
         break;
 }
 
-//Εμφάνισε τη σελίδα  
-//require_once('views/layout.php');  
+}
+

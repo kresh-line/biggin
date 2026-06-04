@@ -3,52 +3,57 @@
 ?>
     <div id="content">
         <h1>Εισαγωγή Προϊόντος</h1>
-        <?php if ($GLOBALS['username'] != null): ?>
         <?php
-            if (isset($_POST["pname"]) && $_POST["pname"] !== "")
-                echo "<p> Στάλθηκε η φόρμα </p>";
-            else
-                echo "<p> Δεν έστειλες το φόρμα </p>";
+        //Αν έχει κάνει login εμφάνισε τα απαραίτητα
+         if ($GLOBALS['username']!=null) {
+            if ($_GLOBALS["insertProduct"]) {
+                if ($_GLOBALS["insertProductResult"])
+                    echo "<p>Η εισαγωγή του προϊόντος έγινε!</p>";
+                else 
+                    echo "<p>Η εισαγωγή του προϊόντος απέτυχε!</p>"; 
+            }
+        
         ?>
+        
         <div class='productsformdiv'>
-            <form id='insertProductForm' method='post' enctype='multipart/form-data' novalidate>
-                <fieldset>
+        <form id='insertProductForm' enctype="multipart/form-data"  method='post'>
+            <fieldset>
 
-            <label for='pname'>Όνομα</label>
-            <input type='text' id='pname' name='pname'  placeholder="Όνομα Προϊόντος" required><br>
+            <label for='pname'>Όνομα: </label>
+            <input type='text' id='pname' name='pname' placeholder='Γράψε το όνομα του προϊόντος ...' required>
             <label for='pprice'>Τιμή</label>
-            <input type='number' id='pprice' name='pprice' min="0.00" max="9999.99" step="0.01" value='0.00' required><br>
-
+            <input type='number' id='pprice' name='pprice' min='0.00' max='2000.00' step="0.01" value="0.00" required><br>
+            
             <label for='pcat'>Κατηγορία</label>
             <select id='pcat' name='pcat' required>
+            
             <?php
-
+            
             for ($j=0; $j<count($GLOBALS['categories']); ++$j) {
-
-               echo "<option value='" . $GLOBALS['categories'][$j][0] . "'>" . $GLOBALS['categories'][$j][1] . "</option>\n";
-
-               }
-
+                echo "<option value='" . $GLOBALS['categories'][$j][0] . "'>" . $GLOBALS['categories'][$j][1] . "</option>\n";
+            }
+           
             ?>
             </select>
             <br>
-
-            <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
-            <label for="f">Επελεγμένο Αρχείο που θα ανεβάσεις:</label>
-            <input type="file" name="f" id="f"><br>
-
-            <button class='insertButton' type='submit'>Εισαγωγή</button><br>
-            <span class="errormsg" id="ifem"></span>
+            <input type="hidden" name="MAX_FILE_SIZE" value="30000">
+            <label for="f">Φωτογραφία προϊόντος: </label> 
+            <input type="file" name="f" id="f" required>
+            <br>
+            <button class='insertButton' type='submit'>Εισαγωγή</button>
             </fieldset>
-
-            </form>
+        </form>
         </div>
+        <span id="ifem" class="errormsg"></span>
+        
         <script src="/mvcproject/js/jscode.js"></script>
-        <?php else: ?>
-        <p>Δεν έχεις κάνει σύνδεση. Παρακαλώ συνδέσου για να εισάγεις προϊόν.</p>
-        <?php endif; ?>
     </div>
 <?php 
+
+         }
+         else //Αν δεν έχει κάνει login
+             echo "<p>Πρέπει να κάνετε σύνδεση για να χρησιμοποιήσετε αυτή τη σελίδα!</p>";
+         
     require_once("views/footer.php"); 
 ?>	
 

@@ -8,14 +8,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         <meta charset="UTF-8">
         <title>PHP ΣΕΛΙΔΑ</title>
         <link rel ="stylesheet" type="text/css" href="/mvcproject/css/format.css">
-        <link rel ="stylesheet" type="text/css" href="/mvcproject/css/extra.css">
-        <?php 
-        if ($GLOBALS['pageSelection']=="products" || $GLOBALS['pageSelection']=="register") 
-            echo "<link rel ='stylesheet' type='text/css' href='/mvcproject/css/products.css'>\n";
-        
+        <link rel ="stylesheet" type="text/css" href="/mvcproject/css/extrmvcproject/cssa.css">
+        <?php
+        if ($GLOBALS['PageSelection']=="products" || $GLOBALS['PageSelection']=="register")
+            echo '<link rel ="stylesheet" type="text/css" href="/mvcproject/css/products.css">';
         ?>
-
-
     </head>
     <body>
 
@@ -27,10 +24,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
             </div>
             <div id='logdialog'>
         <?php
-        
-        $helper = new HelperClass();
-        $helper->printlongin();
-        ?>
+                
+                $hp = new HelperClass();
+                $hp->printLoginForm();    
+        ?>   
             </div>
 	</div>
 	<div id="middle">
@@ -40,12 +37,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
 		<li><a href=<?php echo $GLOBALS['siteDir'] . "/"; ?>>Αρχική Σελίδα</a></li>
 		<li><a href=<?php echo $GLOBALS['siteDir'] . "/paroysiasi/"; ?>>Παρουσίαση</a></li>
 		<li><a href=<?php echo $GLOBALS['siteDir'] . "/products/show/"; ?>>Προβολή Προϊόντων</a></li>
-        <li><a href=<?php echo $GLOBALS['siteDir'] . "/products/add/"?>>Εισαγωγή Προϊόντος</a></li>
+                <li><a href=<?php echo $GLOBALS['siteDir'] . "/products/add/"?>>Εισαγωγή Προϊόντος</a></li>
 		<li><a href=<?php echo $GLOBALS['siteDir'] . "/info/"?>>Πληροφορίες</a></li>
-        <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/noalax/"?>>Test No ALAX</a></li>
-        <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/alax/get/"?>>Test ALAX GET</a></li>
-        <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/alax/post/"?>>Test  ALAX POST</a></li>
-        <li><a href=<?php echo $GLOBALS['siteDir'] . "/products/register/"?>>Εγγραφή</a></li>
+                <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/noajax/"?>>Test No AJAX</a></li>
+                <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/ajax/get/"?>>Test AJAX GET</a></li>
+                <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/ajax/post/"?>>Test AJAX POST</a></li>
+                <li><a href=<?php echo $GLOBALS['siteDir'] . "/register/"?>>Εγγραφή</a></li>
 		</ul>
 		</div>
             

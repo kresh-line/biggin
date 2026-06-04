@@ -19,72 +19,80 @@ class BasicController {
     function info() {
         require_once($GLOBALS['viewDir'] . '/info.php'); 
     }
+    
     function register() {
         $msg = "";
-        $GLOBALS["registererrorMsg"] = "";
-        $GLOBALS["registerrezultMsg"] = "";
-        //Ελέγχω αν έχω υποβληθεί η φόρμα
-        if (isset($_POST["user"]) ) {
+        
+        $GLOBALS["RegisterErrorMsg"] = "";
+        $GLOBALS["RegisterResultMsg"] = "";
+        //Έλεγχος αν στάλθηκε η φόρμα
+        if (isset($_POST["user"])) {
             $username = $_POST["user"];
             $pwd1 = $_POST["pswd"];
             $pwd2 = $_POST["pswd2"];
             $bd = $_POST["bd"];
-            if (filter_var($username, FILTER_VALIDATE_EMAIL) !=true ||str_ends_with($username, "@gmail.com") == false) 
-               $msg = $msg . "<h3>Το email πρέπει να είναι έγκυρο και να τελειώνει σε @gmail.com</h3>";
             
-            if ($pwd1 != $pwd2) 
-                $msg = $msg . "<h3>πρέπει οι κωδικοί πρόσβασης να ταιριάζουν</h3>";
-            if (strlen($pwd1) < 8 || strlen($pwd1) > 30)
-                $msg = $msg . "<h3>Ο κωδικός πρόσβασης πρέπει να είναι τουλάχιστον 8 χαρακτήρες και το πολύ 30</h3>";
-            //Εδώ θα έπρεπε να κάνω έλεγχο για το αν τα
-            $GLOBALS["registererrorMsg"] = $msg;
-            if ($msg == "") {
+            if (filter_var($username, FILTER_VALIDATE_EMAIL)==false || str_ends_with($username, "@gmail.com")==false)
+                $msg = $msg . "Πρέπει να βάλετε email στο @gmail.com!<br>";
+
+            if ($pwd1!=$pwd2)
+                $msg = $msg . "Πρέπει ο κωδικός και η επιβεβαίωση να είναι ίδια!<br>"; 
+            
+            if (strlen($pwd1)<8 || strlen($pwd1)>30)
+                $msg = $msg . "Πρέπει ο κωδικός να είναι μεταξύ 8 και 30 χαρακτήρων!<br>"; 
+            
+            $GLOBALS["RegisterErrorMsg"] = $msg;
+            
+            //Όλα τα δεδομένα είναι εντάξει
+            if ($msg=="") {   
                 $dbc = new DBConnector();
                 $dbc->openConnection();
-                $res =  $dbc->registerUser($username, $pwd1, $bd);
+                $res = $dbc->registerUser($username, $pwd1, $bd);
                 $dbc->closeConnection();
-
                 
-                //Εδώ θα έπρεπε να κάνω την εγγραφή του χρήστη στη βάση
+                //Αν η registerUser() επιστρέψει κενό, η εγγραφή έχει πετύχει
                 if ($res=="") 
-                    $GLOBALS["registerrezultMsg"] = "<h3>Επιτυχής Εγγραφή</h3>";
-                 else 
-                    $GLOBALS["registerrezultMsg"] = "<br>$res<br>";
-                
-                //$GLOBALS["registerMsg"] = "<h3>Επιτυχής Εγγραφή</h3>";
+                    $GLOBALS["RegisterResultMsg"] = "<b>Η εγγραφή σας πέτυχε!</b>";
+                else
+                    $GLOBALS["RegisterResultMsg"] = "<b>$res</b>";
             }
         }
         
         require_once($GLOBALS['viewDir'] . '/register.php'); 
     }
-
-    function test_noalax() {
+    
+    function test_noajax() {
+        //Αν στάλθηκε η φόρμα υπολόγισε το αποτέλεσμα
         if (isset($_POST["num1"])) {
             $n1 = intval($_POST["num1"]);
             $n2 = intval($_POST["num2"]);
-            
-             $GLOBALS['addresult'] = "Αποτεσεμα " . ($n1 + $n2);
+            $GLOBALS['addresult']  = "Αποτέλεσμα " . ($n1 + $n2);
         }
-        else 
-            $GLOBALS['addresult'] = "";
+        else
+           $GLOBALS['addresult'] = ""; 
         
         require_once($GLOBALS['viewDir'] . '/noajax.php');
     }
+    
     function test_ajaxget() {
-       require_once($GLOBALS['viewDir'] . '/ajaxget.php'); 
+        require_once($GLOBALS['viewDir'] . '/ajaxget.php');
     }
-        //require_once($GLOBALS['viewDir'] . '/test_ajax_get.php');}
-    function test_ajaxpost() {
-         require_once($GLOBALS['viewDir'] . '/ajaxpost.php');
-    }
-    function test_ajaxgetres() {
-        if (isset($_GET["n1"])) {
-            $n1 = intval($_GET["n1"]);
-            $n2 = intval($_GET["n2"]);
-            
-             echo "Αποτεσεμα " . ($n1 + $n2);
+    
+    //Δεν στέλνω ολόκληρη τη σελίδα !!
+    //Στέλνω μόνο το αποτέλεσμα
+    function test_ajaxget_do() {
+        //Αν στάλθηκε με AJAX με  GET
+        if (isset($_GET["num1"])) {
+            $n1 = intval($_GET["num1"]);
+            $n2 = intval($_GET["num2"]);
+            echo "Αποτέλεσμα " . ($n1 + $n2);
         }
-        else 
-            echo "";
+        else
+           echo ""; 
     }
+    
+    function test_ajaxpost() {
+        require_once($GLOBALS['viewDir'] . '/ajaxpost.php');
+    }    
+    
 }

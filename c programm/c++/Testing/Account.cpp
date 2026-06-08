@@ -28,10 +28,35 @@ public:
     void print() {
         cout << "logariasmo: Katochos=  " << katochos << " Ypolipo: " << ypolipo << endl;
     }
+    void katathesi(double poso) {
+        ypolipo += poso;
+    }
+
+    void analipsi(double poso) {
+        try {
+             if (poso < 0) 
+                throw poso;
+            if (poso >= ypolipo)
+                ypolipo -= poso;
+            else 
+                cout << " to poso pou thelete na analipsete prepi na einai thetiko " << endl;
+     }
+    
+        catch (double d) {
+            cout <<"edhoses poso: " << d << endl;    
+        }
+        
+        
+    
+            
+        
+    
+
+
 };
 void printAccounts(vector<Account> &accounts) {
-
-   cout <<"\n stixeiologio logariasmwn: " << endl;
+ 
+   cout <<"\n \t stixeiologio logariasmwn: " << endl;
     for (int i = 0; i < accounts.size(); i++) {
         accounts[i].print();
     }
@@ -50,12 +75,18 @@ int main() {
         cout << "\n Enter ypolipo (-9999 gia telos):  ";
         cin >> ypolipo;
     }
+
+    accounts[0].katathesi(100.0);
+   // accounts[0].print();
+    accounts[1].analipsi(100.0);
+    //accounts[1].print();
+
 //    Account acc1("John ", -1000.0);
 //    acc1.print();
 //    accounts.push_back(acc1);
 //    Account acc2("Jane ", 500.0);
 //    accounts.push_back(acc2);
-   printAccounts(accounts);
+   //printAccounts(accounts);
 
-    return 0;
+    return printAccounts(accounts), 0;
 }

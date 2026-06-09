@@ -36,8 +36,8 @@ function checkSubmission(e) {
         msgstr = msgstr + "Παρακαλώ επιλέξτε τουλάχιστον 2 επιλογές.<br>";
     }
 
-    //e.preventDefault(); // gjithmonë ndal refresh-in e faqes
     if (msgstr !== "") {
+        e.preventDefault(); // ndal refresh-in kur ka gabime
         errormgs.innerHTML = msgstr;
     } //else {
         //errormgs.innerHTML = "U dërgua me sukses!"; // nuk ka gabime

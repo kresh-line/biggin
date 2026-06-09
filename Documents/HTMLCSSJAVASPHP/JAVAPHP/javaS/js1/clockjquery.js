@@ -25,3 +25,30 @@ function myclock() {
 }
 
 setInterval(myclock,  1000);
+
+var platos = 500;
+var stap = 100;
+$("#testing").click(imgclick);
+function imgclick(e) {
+    //alert("You clicked the image");
+    let x = platos+"px";
+    $("#testing").css({"width": x});
+    platos = platos - stap;
+    if (platos < 100) {
+        platos = 200;
+        stap = -stap;
+    }
+    else if (platos > 500) {
+        platos = 400;
+        stap = -stap;
+    }
+}
+$("#testing").css({"position": "relative"});
+$("#testing").mouseover(imganim);
+function imganim(e) {
+     $("#testing").animate({"width": "100px", right: "100px"}, 3000);
+}
+$("#testing").mouseout(imganim2);
+function imganim2(e) {
+     $("#testing").animate({"width": "500px"}, 5000);
+}

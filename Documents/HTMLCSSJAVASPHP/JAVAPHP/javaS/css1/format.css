@@ -137,3 +137,23 @@ span.errormsg {
 #imgdiv2 {
     width: 20%;
 }
+#parentmovdiv3 {
+   overflow: hidden;
+    /*right:-40px;*/
+    /*top: 105px;*/
+    /*z-index: -100;*/ 
+   width: 30%;
+   height: 150px;
+}
+#movdiv3  {
+   position: relative;
+    /*right:-40px;*/
+    /*top: 105px;*/
+    /*z-index: -100;*/ 
+  
+}
+#movdiv3 img {
+    float: left;
+    width: 180px;
+    
+}

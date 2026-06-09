@@ -1,114 +1,149 @@
-
 <!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
 -->
 <html>
-    <head>
-        <title>Layout</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
-        <link rel="stylesheet" type="text/css" href="css1/layout.css">
-        <link rel="stylesheet" type="text/css" href="css1/mainmenu.css">
-        <link rel="stylesheet" type="text/css" href="css1/format.css">
-        <link rel="icon" href="data:,">
-        <script src="https://code.jquery.com/jquery-4.0.0.js" 
-                    integrity="sha256
-                    eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
-                    crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <div class="pagecontent"> 
-            <header class="pageheader"> 
-                <div id="leftheader">
-                   
-                </div>
-                <div id="centerheader">
-                    <h1>Επικεφαλίδα Σελίδας</h1>
-                </div>
-                <div id="rightheader">
-                    <span id="myclock"></span>
-                </div>
-            </header>
-            
-            <nav class="mainmenu"> 
-                <ul>
-                    <li class="withsubmenu"><a href="page1.html">Επιλογή 1</a>
-                      <div class="submenu">
-                            <ul>
-                                <li><a href="page2.html">Υποεπιλογή 1.1</a></li> 
-                                <li><a href="page3.html">Υποεπιλογή 1.2</a></li>
-                                <li><a href="page4.html">Υποεπιλογή 1.3</a></li>
-                            </ul>
-                       </div>  
-                    </li>
-                    <li><a href="page2.html">Επιλογή 2</a></li> 
-                    <li><a href="page3.html">Επιλογή 3</a></li>
-                    <li class="withsubmenu"><a href="page4.html">Επιλογή 4</a>
-                        <div class="submenu">
-                            <ul>
-                                <li><a href="page2.html">Υποεπιλογή 4.1</a></li> 
-                                <li><a href="page3.html">Υποεπιλογή 4.2</a></li>
-                                <li><a href="page4.html">Υποεπιλογή 4.3</a></li>
-                                <li><a href="page4.html">Υποεπιλογή 4.4</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="page5.html">Επιλογή 5</a></li>
-                </ul>
-            </nav>
-        
-            <div id="centerdiv">   
-                <div class="leftmenu">
-                    test
-                </div>
-                <main class="maincontent"> 
-                    <article class="mainarticle"><p class="cleverp" data-MGS1="Η παρατισι " >Άρθρο 1 </p></article> 
-                    <article class="mainarticle"><p class="cleverp" data-MGS1="Η παρατισ " >Άρθρο 2</p></article>
-                    <article class="mainarticle"><p class="cleverp" data-MGS1="Η παρα " >Άρθρο 3</p></article> 
-                    <article class="mainarticle"><p class="cleverp" data-MGS1="Η παρτι " >Άρθρο 4</p></article> 
-                    <article class="mainarticle"><p class="cleverp" data-MGS1="Η giasou file" >Άρθρο 5</p></article> 
-                </main> 
-                <div class="featurearea" id ="farea "> 
-                    <div class="feature1">Προβολή Θέμα 1</div> 
-                    <div class="feature2" id="parentmovdiv">
 
-                    
+<head>
+    <title>Layout</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <link rel="stylesheet" type="text/css" href="css1/layout.css">
+    <link rel="stylesheet" type="text/css" href="css1/mainmenu.css">
+    <link rel="stylesheet" type="text/css" href="css1/format.css">
+    <link rel="icon" href="data:,">
+    <script src="https://code.jquery.com/jquery-4.0.0.js"
+        integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="pagecontent">
+        <header class="pageheader">
+            <div id="leftheader">
+
+            </div>
+            <div id="centerheader">
+                <h1>Επικεφαλίδα Σελίδας</h1>
+            </div>
+            <div id="rightheader">
+                <span id="myclock"></span>
+            </div>
+        </header>
+
+        <nav class="mainmenu">
+            <ul>
+                <li class="withsubmenu"><a href="page1.html">Επιλογή 1</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="page2.html">Υποεπιλογή 1.1</a></li>
+                            <li><a href="page3.html">Υποεπιλογή 1.2</a></li>
+                            <li><a href="page4.html">Υποεπιλογή 1.3</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="page2.html">Επιλογή 2</a></li>
+                <li><a href="page3.html">Επιλογή 3</a></li>
+                <li class="withsubmenu"><a href="page4.html">Επιλογή 4</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="page2.html">Υποεπιλογή 4.1</a></li>
+                            <li><a href="page3.html">Υποεπιλογή 4.2</a></li>
+                            <li><a href="page4.html">Υποεπιλογή 4.3</a></li>
+                            <li><a href="page4.html">Υποεπιλογή 4.4</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="page5.html">Επιλογή 5</a></li>
+            </ul>
+        </nav>
+
+        <div id="centerdiv">
+            <div class="leftmenu">
+                test
+            </div>
+            <main class="maincontent">
+                <article class="mainarticle">
+                    <p class="cleverp" data-MGS1="Η παρατισι ">Άρθρο 1 </p>
+                </article>
+                <article class="mainarticle">
+                    <p class="cleverp" data-MGS1="Η παρατισ ">Άρθρο 2</p>
+                </article>
+                <article class="mainarticle">
+                    <p class="cleverp" data-MGS1="Η παρα ">Άρθρο 3</p>
+                </article>
+                <article class="mainarticle">
+                    <p class="cleverp" data-MGS1="Η παρτι ">Άρθρο 4</p>
+                </article>
+                <article class="mainarticle">
+                    <p class="cleverp" data-MGS1="Η giasou file">Άρθρο 5</p>
+                </article>
+            </main>
+            <div class="featurearea" id="farea ">
+                <div class="feature1">Προβολή Θέμα 1</div>
+                <div class="feature2" id="parentmovdiv">
+
+
                     <div id="movdiv">
                         <img src="img/car0.0.jpg" alt="Car">
-                          <p> Εν αναμονή του νέου γύρου ειρηνευτικών συνομιλιών μεταξύ των ΗΠΑ και του Ιράν, όλο και περισσότερες επιθέσεις σημειώνονται σε πετρελαιοφόρα πλοία στα Στενά του Ορμούζ, ενώ σε ισχύ παραμένει και ο αμερικανικός αποκλεισμός των ιρανικών πλοίων μέσω αυτής της κρίσιμης εμπορικής οδού. και πληροφορίες που αποστέλλονται από μια συσκευή για εξατομικευμένες διαφημίσεις και περιεχόμενο, μέτρηση διαφήμισης και περιεχομένου, έρευνα ακροατηρίου και ανάπτυξη υπηρεσιών. Με την άδειά σας,</p></div></div>
-                    <div class="feature3" id="parentmovdiv2">
-                        <div id="movdiv2" title="svsv">
-                            <img src="img/car1.1.jpg" alt="Car">
-                            <p> Εν αναμονή του νέου γύρου ειρηνευτικών συνομιλιών μεταξύ των ΗΠΑ και του Ιράν, όλο και περισσότερες επιθέσεις σημειώνονται σε πετρελαιοφόρα πλοία στα Στενά του Ορμούζ, ενώ σε ισχύ παραμένει και ο αμερικανικός αποκλεισμός των ιρανικών πλοίων μέσω αυτής της κρίσιμης εμπορικής οδού. και πληροφορίες που αποστέλλονται από μια συσκευή για εξατομικευμένες διαφημίσεις και περιεχόμενο, μέτρηση διαφήμισης και περιεχομένου, έρευνα ακροατηρίου και ανάπτυξη υπηρεσιών. Με την άδειά σας,</p>
-                        </div>
+                        <p> Εν αναμονή του νέου γύρου ειρηνευτικών συνομιλιών μεταξύ των ΗΠΑ και του Ιράν, όλο και
+                            περισσότερες επιθέσεις σημειώνονται σε πετρελαιοφόρα πλοία στα Στενά του Ορμούζ, ενώ σε ισχύ
+                            παραμένει και ο αμερικανικός αποκλεισμός των ιρανικών πλοίων μέσω αυτής της κρίσιμης
+                            εμπορικής οδού. και πληροφορίες που αποστέλλονται από μια συσκευή για εξατομικευμένες
+                            διαφημίσεις και περιεχόμενο, μέτρηση διαφήμισης και περιεχομένου, έρευνα ακροατηρίου και
+                            ανάπτυξη υπηρεσιών. Με την άδειά σας,</p>
+                    </div>
+                </div>
+                <div class="feature3" id="parentmovdiv2">
+                    <div id="movdiv2" title="svsv">
+                        <img src="img/car1.1.jpg" alt="Car">
+                        <p> Εν αναμονή του νέου γύρου ειρηνευτικών συνομιλιών μεταξύ των ΗΠΑ και του Ιράν, όλο και
+                            περισσότερες επιθέσεις σημειώνονται σε πετρελαιοφόρα πλοία στα Στενά του Ορμούζ, ενώ σε ισχύ
+                            παραμένει και ο αμερικανικός αποκλεισμός των ιρανικών πλοίων μέσω αυτής της κρίσιμης
+                            εμπορικής οδού. και πληροφορίες που αποστέλλονται από μια συσκευή για εξατομικευμένες
+                            διαφημίσεις και περιεχόμενο, μέτρηση διαφήμισης και περιεχομένου, έρευνα ακροατηρίου και
+                            ανάπτυξη υπηρεσιών. Με την άδειά σας,</p>
+                    </div>
 
-                    </div> 
                 </div>
             </div>
-        <footer class="pagefooter">Υποσέλιδο Σελίδας</footer> 
+        </div>
+        <footer class="pagefooter">Υποσέλιδο Σελίδας</footer>
         <div id="globalmovdiv" title="svsv">
-                <img src="img/car1.1.jpg" alt="Car">
-                <p> Εν αναμονή του νέου γύρου ειρηνευτικών συνομιλιών μεταξύ των ΗΠΑ και του Ιράν, όλο και περισσότερες επιθέσεις σημειώνονται σε πετρελαιοφόρα πλοία στα Στενά του Ορμούζ, ενώ σε ισχύ παραμένει και ο αμερικανικός αποκλεισμός των ιρανικών πλοίων μέσω αυτής της κρίσιμης εμπορικής οδού. και πληροφορίες που αποστέλλονται από μια συσκευή για εξατομικευμένες διαφημίσεις και περιεχόμενο, μέτρηση διαφήμισης και περιεχομένου, έρευνα ακροατηρίου και ανάπτυξη υπηρεσιών. Με την άδειά σας,</p>
-                </div>
-
-
+            <img src="img/car1.1.jpg" alt="Car">
+            <p> Εν αναμονή του νέου γύρου ειρηνευτικών συνομιλιών μεταξύ των ΗΠΑ και του Ιράν, όλο και περισσότερες
+                επιθέσεις σημειώνονται σε πετρελαιοφόρα πλοία στα Στενά του Ορμούζ, ενώ σε ισχύ παραμένει και ο
+                αμερικανικός αποκλεισμός των ιρανικών πλοίων μέσω αυτής της κρίσιμης εμπορικής οδού. και πληροφορίες που
+                αποστέλλονται από μια συσκευή για εξατομικευμένες διαφημίσεις και περιεχόμενο, μέτρηση διαφήμισης και
+                περιεχομένου, έρευνα ακροατηρίου και ανάπτυξη υπηρεσιών. Με την άδειά σας,</p>
         </div>
 
-        <div id="globalmovdiv2" title="svsv">
-                <img src="img/car2.2.jpg" alt="Car">
-                <p> Εν αναμονή του νέου γύρου ειρηνευτικών συνομιλιών μεταξύ των ΗΠΑ και του Ιράν, όλο και περισσότερες επιθέσεις σημειώνονται σε πετρελαιοφόρα πλοία στα Στενά του Ορμούζ, ενώ σε ισχύ παραμένει και ο αμερικανικός αποκλεισμός των ιρανικών πλοίων μέσω αυτής της κρίσιμης εμπορικής οδού. και πληροφορίες που αποστέλλονται από μια συσκευή για εξατομικευμένες διαφημίσεις και περιεχόμενο, μέτρηση διαφήμισης και περιεχομένου, έρευνα ακροατηρίου και ανάπτυξη υπηρεσιών. Με την άδειά σας,</p>
-                </div>
 
-        <div id="globalmovdiv3" title="svsv">
-                <img src="img/car1.1.jpg" alt="Car">
-                <p> Εν αναμονή του νέου γύρου ειρηνευτικών συνομιλιών μεταξύ των ΗΠΑ και του Ιράν, όλο και περισσότερες επιθέσεις σημειώνονται σε πετρελαιοφόρα πλοία στα Στενά του Ορμούζ, ενώ σε ισχύ παραμένει και ο αμερικανικός αποκλεισμός των ιρανικών πλοίων μέσω αυτής της κρίσιμης εμπορικής οδού. και πληροφορίες που αποστέλλονται από μια συσκευή για εξατομικευμένες διαφημίσεις και περιεχόμενο, μέτρηση διαφήμισης και περιεχομένου, έρευνα ακροατηρίου και ανάπτυξη υπηρεσιών. Με την άδειά σας,</p>
-                </div>        
-        <script src="js1/clockjquery.js"></script>
-        <script src="js1/myclasses.js"></script>
-        <script src="js1/animation.js"></script>
-        <script src="js1/animation1.js"></script> 
-        
-    </body>
+    </div>
+
+    <div id="globalmovdiv2" title="svsv">
+        <img src="img/car2.2.jpg" alt="Car">
+        <p> Εν αναμονή του νέου γύρου ειρηνευτικών συνομιλιών μεταξύ των ΗΠΑ και του Ιράν, όλο και περισσότερες
+            επιθέσεις σημειώνονται σε πετρελαιοφόρα πλοία στα Στενά του Ορμούζ, ενώ σε ισχύ παραμένει και ο αμερικανικός
+            αποκλεισμός των ιρανικών πλοίων μέσω αυτής της κρίσιμης εμπορικής οδού. και πληροφορίες που αποστέλλονται
+            από μια συσκευή για εξατομικευμένες διαφημίσεις και περιεχόμενο, μέτρηση διαφήμισης και περιεχομένου, έρευνα
+            ακροατηρίου και ανάπτυξη υπηρεσιών. Με την άδειά σας,</p>
+    </div>
+
+    <div id="globalmovdiv3" title="svsv">
+        <img src="img/car1.1.jpg" alt="Car">
+        <p> Εν αναμονή του νέου γύρου ειρηνευτικών συνομιλιών μεταξύ των ΗΠΑ και του Ιράν, όλο και περισσότερες
+            επιθέσεις σημειώνονται σε πετρελαιοφόρα πλοία στα Στενά του Ορμούζ, ενώ σε ισχύ παραμένει και ο αμερικανικός
+            αποκλεισμός των ιρανικών πλοίων μέσω αυτής της κρίσιμης εμπορικής οδού. και πληροφορίες που αποστέλλονται
+            από μια συσκευή για εξατομικευμένες διαφημίσεις και περιεχόμενο, μέτρηση διαφήμισης και περιεχομένου, έρευνα
+            ακροατηρίου και ανάπτυξη υπηρεσιών. Με την άδειά σας,</p>
+    </div>
+    <img id="testing" src="img/car1.1.jpg">
+    <script src="js1/clockjquery.js"></script>
+    <script src="js1/myclasses.js"></script>
+    <script src="js1/animation.js"></script>
+    <script src="js1/animation1.js"></script>
+
+</body>
+
 </html>

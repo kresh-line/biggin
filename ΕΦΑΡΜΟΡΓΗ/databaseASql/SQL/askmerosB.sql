@@ -32,7 +32,7 @@ delete from Mathimata where Cid = 'CS101';
  
 SELECT m.Τιτλος, k.Επονυμο
 FROM Mathimata m
-JOIN Kathghths k ON m.KK = k.KK;
+ INNER JOIN Kathghths k ON m.KK = k.KK;
 
  
 SELECT Επονυμο

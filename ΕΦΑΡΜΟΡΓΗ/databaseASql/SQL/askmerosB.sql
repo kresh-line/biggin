@@ -1,3 +1,5 @@
+create database askmerosB;
+
 create table Kathghths 
 (
     KK int primary key,

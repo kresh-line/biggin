@@ -8,7 +8,7 @@
         <?php
         $f = scandir("docs/");
         for ($i=2; $i < count($f); ++$i)
-            echo $f[$i] . "<br>";
+            echo "<a href='docs/" . $f[$i] . "'>" . $f[$i] . "</a><br>";
 
         ?>
     </div>

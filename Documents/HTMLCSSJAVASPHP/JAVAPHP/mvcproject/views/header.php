@@ -18,7 +18,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
 
 <div id="main">
 	<div id="header">
-            <div id='logo'>EIKONA</div>
+            <div id='logo'>
+                if 
+            
+            
+            
+            EIKONA
+                /div>
             <div id='centerheader'>
                 
             </div>
@@ -45,7 +51,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/ajax/post/"?>>Test AJAX POST</a></li>
         <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/ajax/post/fetchapi/"?>>Test AJAX POST fetch API</a></li>
         <li><a href=<?php echo $GLOBALS['siteDir'] . "/login/"?>>Συνθεσι</a></li>
+        <li><a href=<?php echo $GLOBALS['siteDir'] . "/apoth/"?>>Apothin</a></li>
+        <li><a href=<?php echo $GLOBALS['siteDir'] . "/manual/"; ?>>Manual</a></li>
+        
         <li><a href=<?php echo $GLOBALS['siteDir'] . "/register/"?>>Εγγραφή</a></li>
-</ul>
+</ul>   
 		</div>
             

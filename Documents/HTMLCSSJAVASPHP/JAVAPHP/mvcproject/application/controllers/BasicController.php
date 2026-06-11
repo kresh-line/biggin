@@ -117,4 +117,12 @@ class BasicController {
 
      require_once($GLOBALS['viewDir'] . '/login.php');
     }
+    function apoth() {
+        unset($_SESSION["user"]);
+        require_once($GLOBALS['viewDir'] . '/apothi.php');
+    }
+    function manuals() {
+        //unset($_SESSION["user"]);
+        require_once($GLOBALS['viewDir'] . '/manual.php');
+    } 
 }

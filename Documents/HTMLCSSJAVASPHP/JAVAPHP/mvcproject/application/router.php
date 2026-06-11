@@ -69,6 +69,13 @@ case $siteDir . '/login/':
                 $bc = new BasicController();
                 $bc->login();
 		break;
+
+case $siteDir . '/apoth/':
+        case $siteDir . '/apoth':
+		
+                $bc = new BasicController();
+                $bc->apoth();
+		break;        
     /*case $siteDir . '/paroysiasi':
 	case $siteDir . '/paroysiasi/':
             $bc = new BasicController();
@@ -90,6 +97,7 @@ case $siteDir . '/login/':
     
     case $siteDir . '/info':
 	case $siteDir . '/info/':
+                $PageSelection = "info";
             $bc = new BasicController();
             $bc->info();
             break;
@@ -98,6 +106,12 @@ case $siteDir . '/login/':
 	case $siteDir . '/test/noajax/':
             $bc = new BasicController();
             $bc->test_noajax();
+            break; 
+
+case $siteDir . '/manual':
+	case $siteDir . '/manual/':
+            $bc = new BasicController();
+            $bc->manuals();
             break; 
 
     case $siteDir . '/test/ajax/get':

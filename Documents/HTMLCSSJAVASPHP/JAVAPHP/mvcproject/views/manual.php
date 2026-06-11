@@ -7,10 +7,10 @@
 
         <?php
         $f = scandir("docs/");
-        for ($i=2; $i < count($f); ++$i)
+        for ($i=2; $i < count($f); ++$i) {
             $n = "/mvcproject/docs/" . $f[$i];
-
             echo "<a href='$n' target='_blank'> $f[$i]  </a><br>";
+        }
 
         ?>
     </div>

@@ -7,11 +7,8 @@
 
         <?php
         $f = scandir("docs/");
-        for ($i=2; count($f); ++$i)
+        for ($i=2; $i < count($f); ++$i)
             echo $f[$i] . "<br>";
-
-        
-
 
         ?>
     </div>

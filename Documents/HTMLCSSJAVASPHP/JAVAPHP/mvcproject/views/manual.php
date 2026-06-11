@@ -6,10 +6,13 @@
 
 
         <?php
-        
-        
+        $f = scandir("docs/");
+        for ($i=2; count($f); ++$i)
+            echo $f[$i] . "<br>";
 
         
+
+
         ?>
     </div>
 <?php 

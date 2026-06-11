@@ -56,19 +56,19 @@ switch ($request) {
             $bc->home();
         break;
 
- case $siteDir . '/ask':
-        case $siteDir . '/ask/':
+ case $siteDir . '/user/select/app':
+        case $siteDir . '/user/select/app/':
 		
                 $bc = new BasicController();
                 $bc->Ask1();
 		break;
 
 
-    case $siteDir . '/paroysiasi':
+    /*case $siteDir . '/paroysiasi':
 	case $siteDir . '/paroysiasi/':
             $bc = new BasicController();
             $bc->paroysiasi();
-            break;
+            break;*/
     case $siteDir . '/products/show':
 	case $siteDir . '/products/show/':
             $PageSelection = "products";

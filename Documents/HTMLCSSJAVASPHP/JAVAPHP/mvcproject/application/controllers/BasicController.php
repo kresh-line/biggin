@@ -112,4 +112,9 @@ class BasicController {
     function Ask1() {
      require_once($GLOBALS['viewDir'] . '/ask1.php');
     }
+    function login() {
+        $_SESSION["user"]="client@gmail.com";
+
+     require_once($GLOBALS['viewDir'] . '/login.php');
+    }
 }

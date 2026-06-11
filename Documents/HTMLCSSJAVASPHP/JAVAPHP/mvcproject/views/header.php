@@ -44,6 +44,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/ajax/get/"?>>Test AJAX GET</a></li>
         <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/ajax/post/"?>>Test AJAX POST</a></li>
         <li><a href=<?php echo $GLOBALS['siteDir'] . "/test/ajax/post/fetchapi/"?>>Test AJAX POST fetch API</a></li>
+        <li><a href=<?php echo $GLOBALS['siteDir'] . "/login/"?>>Συνθεσι</a></li>
         <li><a href=<?php echo $GLOBALS['siteDir'] . "/register/"?>>Εγγραφή</a></li>
 </ul>
 		</div>

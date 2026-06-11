@@ -63,7 +63,12 @@ switch ($request) {
                 $bc->Ask1();
 		break;
 
-
+case $siteDir . '/login/':
+        case $siteDir . '/login':
+		
+                $bc = new BasicController();
+                $bc->login();
+		break;
     /*case $siteDir . '/paroysiasi':
 	case $siteDir . '/paroysiasi/':
             $bc = new BasicController();

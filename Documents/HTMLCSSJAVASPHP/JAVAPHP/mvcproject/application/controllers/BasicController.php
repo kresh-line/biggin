@@ -109,5 +109,7 @@ class BasicController {
     function test_ajaxpost_fetchapi() {
         require_once($GLOBALS['viewDir'] . '/ajaxpostfetchapi.php');
     }
-
+    function Ask1() {
+     require_once($GLOBALS['viewDir'] . '/aks1.php');
+    }
 }

@@ -56,6 +56,14 @@ switch ($request) {
             $bc->home();
         break;
 
+ case $siteDir . '/ask':
+        case $siteDir . '/ask/':
+		
+                $bc = new BasicController();
+                $bc->Ask1();
+		break;
+
+
     case $siteDir . '/paroysiasi':
 	case $siteDir . '/paroysiasi/':
             $bc = new BasicController();

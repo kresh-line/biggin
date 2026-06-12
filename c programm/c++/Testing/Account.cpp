@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <string>
 #include <vector>
 using namespace std;
@@ -126,6 +126,126 @@ int main()
         athroisma += accounts[i].getYpolipo();
 
     cout << "\nAthroisma ypoloipwn olwn twn logariasmwn: " << athroisma << endl;
+
+    return 0;
+}
+*/
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+class Account{
+    protected:
+        string katochos;
+        double ypoloipo;
+
+    public:
+    
+        Account(string kat, double ypol){
+            katochos = kat;
+            try {
+                if (ypol < 0)
+                    throw ypol;
+                ypoloipo = ypol;    
+            }
+            catch(double d) {
+                cout << "Edwses Ypoloipo: " << d << endl;
+                cout << "To ypoloipo tou logarismou prepei na einai thetiko \n";
+                ypoloipo = 0.0;    
+            }
+            
+        }
+
+        double getYpoloipo(){
+            return ypoloipo;
+        }
+
+        void print(){
+            cout << "Katochos: "<< katochos << " \t Ypoloipo: "<<ypoloipo << endl;
+        }
+
+        void katathesi(double poso){
+            ypoloipo += poso;
+        }
+
+        void analipsi(double poso){
+            try{
+                if (poso < 0)
+                    throw poso;
+                if (poso <= ypoloipo)
+                    ypoloipo -= poso;
+                else 
+                    cout << "Den yparxei eparkes ypoloipo\n";
+
+            }
+            catch (double d){
+                cout << "Edwses arnhtiko poso analipsis\n";
+            }
+            
+        }
+
+};
+
+class Pistotikos : public Account
+{
+	double orio;
+
+public:
+	Pistotikos(string o, double p, double limit) : Account(o, p), orio(limit) { }
+
+	void analipsi(double p)
+	{
+       if (p > orio)
+            cout << "To poso ths analipsisi xepernaei to orio analipsewn\n";      
+       else
+			Account::analipsi(p);
+	}
+};
+
+int main(){
+    vector<Pistotikos> accounts;
+    double ypoloipo, orio;
+    string onoma;
+    cout << "Dwse ypoloipo (-9999 gia telos): ";
+    cin >> ypoloipo;
+
+    while (ypoloipo != -9999){
+        cout << "Dwse onoma katochou: ";
+        cin >> onoma;
+        cout << "Dwse orio analipsewn: ";
+        cin >> orio;
+        accounts.push_back(Pistotikos(onoma, ypoloipo, orio));
+        cout << "\nDwse ypoloipo (-9999 gia telos): ";
+        cin >> ypoloipo;
+    }
+
+  
+
+     cout << "\nStoixeia Logariasmwn" << endl;
+     for (int i = 0; i < accounts.size(); i++)
+     {
+         accounts[i].print();
+     }
+
+    
+     cout << "\nAnalipsi 100 Euro apo olous tous Logariasmous" << endl;
+     for (int i = 0; i < accounts.size(); i++)
+     {
+         accounts[i].analipsi(100);
+     }
+
+     double sum = 0.0;
+     for (int i = 0; i < accounts.size(); i++)
+     {
+        sum += accounts[i].getYpoloipo();
+     }
+
+     cout << "To synolo twn katathesewn einai " << sum << endl;
+
+
 
     return 0;
 }

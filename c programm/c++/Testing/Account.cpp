@@ -5,7 +5,7 @@ using namespace std;
 
 class Account
 {
-protected:
+private:
     string onoma;
     double ypolipo;
 
@@ -121,7 +121,7 @@ int main()
     for (int i = 0; i < accounts.size(); i++)
         accounts[i].analipsi(100.0);
 
-    double athroisma = 0;
+    double athroisma = 0.0;
     for (int i = 0; i < accounts.size(); i++)
         athroisma += accounts[i].getYpolipo();
 

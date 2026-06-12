@@ -3,90 +3,129 @@
 #include <vector>
 using namespace std;
 
-
-class Account {
-private:
-    string katochos;
+class Account
+{
+protected:
+    string onoma;
     double ypolipo;
+
 public:
-    Account(string kat, double ypol) {
-        katochos = kat;
-        try {
-            if (ypol < 0) 
+    Account(string kat, double ypol)
+    {
+        onoma = kat;
+        try
+        {
+            if (ypol < 0)
                 throw ypol;
             ypolipo = ypol;
-            
-            
         }
-        catch (double d) {
-            cout <<"edhoses ypolipo: " << d << endl;
+        catch (double d)
+        {
+            cout << "edhoses ypolipo: " << d << endl;
             cout << " to ypolipo tou logariasmo prepi na einai thetiko " << endl;
             ypolipo = 0.0;
         }
+    }
 
+    void print()
+    {
+        cout << "logariasmo: Katochos=  " << onoma << " Ypolipo: " << ypolipo << endl;
     }
-    void print() {
-        cout << "logariasmo: Katochos=  " << katochos << " Ypolipo: " << ypolipo << endl;
+
+    double getYpolipo()
+    {
+        return ypolipo;
     }
-    void katathesi(double poso) {
+
+    void katathesi(double poso)
+    {
         ypolipo += poso;
     }
 
-    void analipsi(double poso) {
-        try {
-             if (poso < 0) 
+    virtual void analipsi(double poso)
+    {
+        try
+        {
+            if (poso < 0)
                 throw poso;
-            if (poso >= ypolipo)
+            if (poso <= ypolipo)
                 ypolipo -= poso;
-            else 
-                cout << " to poso pou thelete na analipsete prepi na einai thetiko " << endl;
-     }
-    
-        catch (double d) {
-            cout <<"edhoses poso: " << d << endl;    
+            else
+                cout << " den uparxoun arketa xrimata " << endl;
         }
-        
-        
-    
-            
-        
-    
-
-
+        catch (double d)
+        {
+            cout << "edhoses arnhtiko poso: " << d << endl;
+        }
+    }
 };
-void printAccounts(vector<Account> &accounts) {
- 
-   cout <<"\n \t stixeiologio logariasmwn: " << endl;
-    for (int i = 0; i < accounts.size(); i++) {
+
+class Pistotikos : public Account
+{
+private:
+    float orio;
+
+public:
+    Pistotikos(string kat, double ypol, int limit) : Account(kat, ypol)
+    {
+        orio = limit;
+    }
+
+    void analipsi(double poso) override
+    {
+        if (poso > orio)
+            cout << "perasate to orio tou analipsis: " << orio << endl;
+        else if (poso > ypolipo)
+            cout << "den yparxei eparkes ypolipo gia analipsi " << poso << endl;
+        else
+            ypolipo -= poso;
+    }
+
+    void print()
+    {
+        Account::print();
+        cout << "Orio analipseon: " << orio << endl;
+    }
+};
+
+void printAccounts(vector<Account> &accounts)
+{
+    cout << "\n \t stixeiologio logariasmwn: " << endl;
+    for (int i = 0; i < accounts.size(); i++)
+    {
         accounts[i].print();
     }
 }
-int main() {
-    vector<Account> accounts;
+
+int main()
+{
+    vector<Pistotikos> accounts;
     double ypolipo;
     string onoma;
-    cout << "Enter ypolipo (-9999 gia telos):  ";
+    float orio;
+
+    cout << "Enter ypolipo (-1 gia telos): ";
     cin >> ypolipo;
 
-    while (ypolipo != -9999) {
+    while (ypolipo != -1)
+    {
         cout << "Enter onoma katochou: ";
         cin >> onoma;
-        accounts.push_back(Account(onoma, ypolipo));
-        cout << "\n Enter ypolipo (-9999 gia telos):  ";
+        cout << "Enter orio analipseon: ";
+        cin >> orio;
+        accounts.push_back(Pistotikos(onoma, ypolipo, orio));
+        cout << "\nEnter ypolipo (-1 gia telos): ";
         cin >> ypolipo;
     }
 
-    accounts[0].katathesi(100.0);
-   // accounts[0].print();
-    accounts[1].analipsi(100.0);
-    //accounts[1].print();
+    for (int i = 0; i < accounts.size(); i++)
+        accounts[i].analipsi(100.0);
 
-//    Account acc1("John ", -1000.0);
-//    acc1.print();
-//    accounts.push_back(acc1);
-//    Account acc2("Jane ", 500.0);
-//    accounts.push_back(acc2);
-   //printAccounts(accounts);
+    double athroisma = 0;
+    for (int i = 0; i < accounts.size(); i++)
+        athroisma += accounts[i].getYpolipo();
 
-    return printAccounts(accounts), 0;
+    cout << "\nAthroisma ypoloipwn olwn twn logariasmwn: " << athroisma << endl;
+
+    return 0;
 }

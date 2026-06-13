@@ -4,9 +4,9 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:/msys64/ucrt64/include/**"
+                "C:/fauc/ucrt64/include/**"
             ],
-            "compilerPath": "C:/msys64/ucrt64/bin/g++.exe",
+            "compilerPath": "C:/fauc/ucrt64/bin/g++.exe",
             "cppStandard": "c++20",
             "intelliSenseMode": "windows-gcc-x64"
         }
